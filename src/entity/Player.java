@@ -112,6 +112,8 @@ public class Player extends Entity{
         // g2.setColor(Color.white);
         // g2.fillRect(x, y, gp.tileSize, gp.tileSize);
 
+        int playerTileSize = 48 * gp.scale;
+
         BufferedImage image = null;
 
         switch (direction) {
@@ -196,6 +198,6 @@ public class Player extends Entity{
                 }
                 break;
         }
-        g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(image, x, y, playerTileSize, playerTileSize, null);
     }
 }
