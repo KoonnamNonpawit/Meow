@@ -17,8 +17,8 @@ public class GamePanel extends JPanel implements Runnable {
     public final int scale = 3;
 
     public final int tileSize = originalTileSize * scale; 
-    final int maxScreenCol = 16;
-    final int maxScreenRow = 9;
+    public final int maxScreenCol = 16;
+    public final int maxScreenRow = 9;
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow; 
 
@@ -63,25 +63,30 @@ public class GamePanel extends JPanel implements Runnable {
             timer += (currentTime - lastTime);
             lastTime = currentTime;
 
-            if(delta >= 1) {
+            if(delta >= 1) {  
+
                 update();
                 repaint();
                 delta--;
                 drawCount++;
+                
             }
 
-            // if(timer >= 1000000000) {
-            //     System.out.println("FPS:" + drawCount);
-            //     drawCount = 0;
-            //     timer = 0;
+            if(timer >= 1000000000) {
+                System.out.println("FPS:" + drawCount);
+                drawCount = 0;
+                timer = 0;
 
-            // }
+            }
         }
     }
+
     public void update() {
 
         player.update();
+    
     }
+    
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
