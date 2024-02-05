@@ -64,6 +64,7 @@ public class GamePanel extends JPanel implements Runnable {
             lastTime = currentTime;
 
             if(delta >= 1) {  
+
                 update();
                 repaint();
                 delta--;
@@ -85,6 +86,7 @@ public class GamePanel extends JPanel implements Runnable {
         player.update();
     
     }
+    
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
