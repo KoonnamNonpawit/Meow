@@ -13,22 +13,28 @@ import entity.Player;
 public class GamePanel extends JPanel implements Runnable {
 
     // SCREEN SETTING
-    final int originalTileSize = 32; 
+    final int originalTileSize = 32; //16
     public final int scale = 3;
 
     public final int tileSize = originalTileSize * scale; 
     public final int maxScreenCol = 16;
     public final int maxScreenRow = 9;
-    final int screenWidth = tileSize * maxScreenCol;
-    final int screenHeight = tileSize * maxScreenRow; 
+    public final int screenWidth = tileSize * maxScreenCol;
+    public final int screenHeight = tileSize * maxScreenRow; 
 
-    //FPS
+    // WORLD MAP SETTINGS
+    public final int maxWorldCol = 50;
+    public final int maxWorldRow = 50;
+    public final int worldWidth = tileSize * maxScreenCol;
+    public final int worldHeight = tileSize * maxScreenRow;
+
+    // FPS
     int FPS = 60;
 
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    Player player = new Player(this,keyH);
+    public Player player = new Player(this,keyH);
 
     public GamePanel() {
 
@@ -86,7 +92,7 @@ public class GamePanel extends JPanel implements Runnable {
         player.update();
     
     }
-    
+
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
