@@ -65,6 +65,7 @@ public class GamePanel extends JPanel implements Runnable {
         // pass index of the song
         playMusic(0);
 
+        aSetter.setObject();
         gameState = playState;
     }
 
@@ -128,6 +129,13 @@ public class GamePanel extends JPanel implements Runnable {
 
         // TILE
         tileM.draw(g2);
+
+        // OBJECT
+        for(int i = 0; i < obj.length; i++) {
+            if(obj[i] != null) {
+                obj[i].draw(g2, this);
+            }
+        }
         
         // PLAYER
         player.draw(g2);
