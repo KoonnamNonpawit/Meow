@@ -15,6 +15,12 @@ public class OBJ_Door extends SuperObject{
         }catch(IOException e) {
             e.printStackTrace();
         } 
+        solidArea.x = 0;
+        solidArea.y = 25*3;
+        solidArea.width = 37*3;
+        solidArea.height = 25*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
         collision = true;
     }
 }
