@@ -40,7 +40,7 @@ public class TileManager {
 
             tile[1] = new Tile();
             tile[1].image = ImageIO.read(new FileInputStream("res/tiles/TilesetG60.png"));
-            tile[1].collision = true;
+            // tile[1].collision = true;
 
             tile[2] = new Tile();
             tile[2].image = ImageIO.read(new FileInputStream("res/plant/PlantT1L.png"));

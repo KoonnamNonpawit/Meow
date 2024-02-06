@@ -19,7 +19,7 @@ public class Player extends Entity{
     // Indicate where we draw player on the screen (camera).
     public final int screenX;
     public final int screenY;
-    public int hasKey = 0;
+    public int hasPaper = 0;
 
     public Player(GamePanel gp, KeyHandler keyH) {
 
@@ -34,6 +34,8 @@ public class Player extends Entity{
         solidArea = new Rectangle();
         solidArea.x = 42;
         solidArea.y = 99;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
         solidArea.width = 63;
         solidArea.height = 45;
 
@@ -101,6 +103,11 @@ public class Player extends Entity{
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
+            // CHECK OBJECT COLLISION
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
+
+
             // IF COLLISION IS FALSE, PLAYER CAN MOVE
             if (collisionOn == false) {
                 
@@ -141,8 +148,15 @@ public class Player extends Entity{
 
             String objectName = gp.obj[i].name;
 
+            switch (objectName) {
+                case "Paper":
+                    hasPaper++;
+                    gp.obj[i] = null;
+                    break;
+            }
         }
     }
+
     public void draw(Graphics2D g2) {
 
         int playerTileSize = 48 * gp.scale;

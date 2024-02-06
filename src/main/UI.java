@@ -34,6 +34,6 @@ public class UI {
         g2.setFont(arial_40);
         g2.setColor(Color.white);
         g2.drawImage(paperImage, gp.tileSize/2, gp.tileSize/2, gp.tileSize, gp.tileSize, null);
-        g2.drawString("x " + gp.player.hasKey, 140, 105);
+        g2.drawString("x " + gp.player.hasPaper, 140, 105);
     }
 }
