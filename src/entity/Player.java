@@ -1,8 +1,7 @@
 package entity;
 
-// import java.awt.Color;
 import java.awt.Graphics2D;
-// import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -32,12 +31,18 @@ public class Player extends Entity{
         screenX = gp.screenWidth/2 - (gp.tileSize/2);
         screenY = gp.screenHeight/2 - (gp.tileSize/2);
 
+        solidArea = new Rectangle();
+        solidArea.x = 42;
+        solidArea.y = 99;
+        solidArea.width = 63;
+        solidArea.height = 45;
+
         setDefaultValues();
         getPlayerImage();
     }
     public void setDefaultValues() {
 
-        worldX = gp.tileSize * 25;
+        worldX = gp.tileSize * 30;
         worldY = gp.tileSize * 20;
         speed = 4;
         direction = "down";
@@ -77,23 +82,36 @@ public class Player extends Entity{
     }
     public void update() {
 
-        if(keyH.upPressed == true) {
-            direction = "up";
-            worldY -= speed;
-        }
-        else if(keyH.downPressed == true) {
-            direction = "down";
-            worldY += speed;
-        }
-        else if(keyH.leftPressed == true) {
-            direction = "left";
-            worldX -= speed;
-        }
-        else if(keyH.rightPressed == true) {
-            direction = "right";
-            worldX += speed;
-        }
+        if(keyH.upPressed == true || keyH.downPressed == true || 
+           keyH.leftPressed == true || keyH.rightPressed == true) {
+            if(keyH.upPressed == true) {
+                direction = "up";
+            }
+            else if(keyH.downPressed == true) {
+                direction = "down";
+            }
+            else if(keyH.leftPressed == true) {
+                direction = "left";
+            }
+            else if(keyH.rightPressed == true) {
+                direction = "right";
+            }
 
+            // CHECK TILE COLLISION
+            collisionOn = false;
+            gp.cChecker.checkTile(this);
+
+            // IF COLLISION IS FALSE, PLAYER CAN MOVE
+            if (collisionOn == false) {
+                
+                switch (direction) {
+                case "up": worldY -= speed; break;
+                case "down": worldY += speed; break;
+                case "left": worldX -= speed; break;
+                case "right": worldX += speed; break;
+                }
+            }
+        }
         spriteCounter++;
         if(spriteCounter > 9) {
             if(spriteNum == 1) {
@@ -122,13 +140,10 @@ public class Player extends Entity{
         if(i != 999) {
 
             String objectName = gp.obj[i].name;
-            
+
         }
     }
     public void draw(Graphics2D g2) {
-
-        // g2.setColor(Color.white);
-        // g2.fillRect(x, y, gp.tileSize, gp.tileSize);
 
         int playerTileSize = 48 * gp.scale;
 

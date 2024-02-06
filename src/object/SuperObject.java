@@ -25,7 +25,12 @@ public class SuperObject {
             if(name == "Paper") {
                 g2.drawImage(image, screenX, screenY, 16 * gp.scale, 16 * gp.scale, null); 
             }
-            
+            if(name == "Door") {
+                g2.drawImage(image, screenX, screenY, 37 * gp.scale, 50 * gp.scale, null); 
+            }
+            if(name == "Chest") {
+                g2.drawImage(image, screenX, screenY, 32 * gp.scale, 31 * gp.scale, null); 
+            }
         }
 
     }
