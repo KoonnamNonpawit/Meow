@@ -20,6 +20,7 @@ public class Player extends Entity{
     // Indicate where we draw player on the screen (camera).
     public final int screenX;
     public final int screenY;
+    public int hasKey = 0;
 
     public Player(GamePanel gp, KeyHandler keyH) {
 
@@ -114,6 +115,14 @@ public class Player extends Entity{
                 spriteNum = 1;
             }
             spriteCounter = 0;
+        }
+    }
+    public void pickUpObject(int i) {
+
+        if(i != 999) {
+
+            String objectName = gp.obj[i].name;
+            
         }
     }
     public void draw(Graphics2D g2) {
