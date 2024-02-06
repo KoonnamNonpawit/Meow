@@ -2,6 +2,7 @@ package main;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import tile.TileManager;
@@ -31,6 +32,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     // FPS
     int FPS = 60;
+    int fps;
 
     // SYSTEM
     TileManager tileM = new TileManager(this);
@@ -103,6 +105,7 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
             if(timer >= 1000000000) {
+                fps = drawCount;
                 System.out.println("FPS:" + drawCount);
                 drawCount = 0;
                 timer = 0;
@@ -127,6 +130,12 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
 
+        // DEBUG
+        long drawStart = 0;
+        if(keyH.checkDrawTime == true) {
+            drawStart = System.nanoTime();
+        }
+
         // TILE
         tileM.draw(g2);
 
@@ -144,6 +153,20 @@ public class GamePanel extends JPanel implements Runnable {
         // UI
         ui.draw(g2);
 
+        // FPS
+        g2.setColor(Color.CYAN);
+        g2.setFont(new Font("Arial", Font.BOLD, 20));
+        g2.drawString("FPS: " + fps, 1440, 40);
+
+        // DEBUG
+        if(keyH.checkDrawTime == true) {
+            long drawEnd = System.nanoTime();
+            long passed = drawEnd - drawStart;
+            g2.setColor(Color.white);
+            g2.drawString("Draw Time: " + passed, 10, 400);
+            System.out.println("Draw Time: " + passed); 
+        }
+        
         g2.dispose();
     }
 
