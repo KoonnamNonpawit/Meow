@@ -13,6 +13,11 @@ public class AssetSetter {
     public void setObject() {
 
         gp.obj[0] = new OBJ_Paper();
-        gp.obj[0].worldX = 
+        gp.obj[0].worldX = 23 * gp.tileSize;
+        gp.obj[0].worldY = 7 * gp.tileSize;
+
+        gp.obj[1] = new OBJ_Paper();
+        gp.obj[1].worldX = 23 * gp.tileSize;
+        gp.obj[1].worldY = 40 * gp.tileSize;
     }
 }
