@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -17,6 +18,8 @@ public class UI {
     public String message = "";
     int messageCounter = 0;
     public boolean gameFinished = false;
+
+    public int commandNum = 0;
 
 
     public UI(GamePanel gp) {
@@ -37,13 +40,80 @@ public class UI {
 
         this.g2 = g2;
 
+        // TITLE STATE
+        if(gp.gameState == gp.titleState) {
+            drawTitleScreen();
+        }
+
+        // PLAY STATE
         if(gp.gameState == gp.playState) {
             // Do playState Stuff later
         }
+
+        // PAUSE STATE
         if(gp.gameState == gp.pauseState) {
             drawPauseScreen();
         }
     }
+
+    public void drawTitleScreen() {
+
+        // SET BACKGROUND COLOR
+        g2.setColor(new Color(0, 0, 0));
+        g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+
+        // TITLE NAME
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 96F));
+        String text = "MEOW";
+        int x = getXforCenteredText(text);
+        int y = gp.tileSize*3;
+
+        // SHADOW (draw same text but shift right 5px)
+        g2.setColor(Color.gray);
+        g2.drawString(text, x+5, y+5);
+
+        // MAIN TITLE COLOR
+        g2.setColor(Color.white);
+        g2.drawString(text, x, y);
+
+        // DRAW IMAGE AS BACKGROUND MAYBE
+
+        // MENU
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 48F));
+
+        text = "NEW GAME";
+        x = getXforCenteredText(text);
+        y += gp.tileSize*2;
+        g2.drawString(text, x, y);
+        if(commandNum == 0) {
+            g2.drawString(">", x-gp.tileSize, y);
+        }
+
+        text = "LOAD GAME";
+        x = getXforCenteredText(text);
+        y += gp.tileSize;
+        g2.drawString(text, x, y);
+        if(commandNum == 1) {
+            g2.drawString(">", x-gp.tileSize, y);
+        }
+
+        text = "OPTION";
+        x = getXforCenteredText(text);
+        y += gp.tileSize;
+        g2.drawString(text, x, y);
+        if(commandNum == 2) {
+            g2.drawString(">", x-gp.tileSize, y);
+        }
+
+        text = "QUIT";
+        x = getXforCenteredText(text);
+        y += gp.tileSize;
+        g2.drawString(text, x, y);
+        if(commandNum == 3) {
+            g2.drawString(">", x-gp.tileSize, y);
+        }
+    }
+
     
     public void drawPauseScreen() {
 
