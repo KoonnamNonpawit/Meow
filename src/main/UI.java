@@ -1,10 +1,10 @@
 package main;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.text.DecimalFormat;
 
 import object.OBJ_Paper;
 
@@ -18,6 +18,7 @@ public class UI {
     public String message = "";
     int messageCounter = 0;
     public boolean gameFinished = false;
+    public String currentDialogue = "";
 
     public int commandNum = 0;
 
@@ -40,24 +41,15 @@ public class UI {
 
         this.g2 = g2;
 
-        // TITLE STATE
-        if(gp.gameState == gp.titleState) {
-            drawTitleScreen();
-        }
-
-        // PLAY STATE
         if(gp.gameState == gp.playState) {
             // Do playState Stuff later
         }
-
-        // PAUSE STATE
         if(gp.gameState == gp.pauseState) {
             drawPauseScreen();
         }
-
-        // OPSTIONS STATE
-        if(gp.gameState == gp.optionsState) {
-            drawOptionsScreen();
+        // DIALOGUE STATE
+        if(gp.gameState == gp.dialogueState) {
+            drawDialogueScreen();
         }
     }
 
@@ -129,18 +121,36 @@ public class UI {
 
         g2.drawString(text, x, y);
     }
+    public void drawDialogueScreen() {
 
-    public void drawOptionsScreen() {
+        // WINDOW
+        int x = gp.tileSize;
+        int y = gp.tileSize*6;
+        int width = gp.screenWidth - (x*2);
+        int height = gp.tileSize*2;
 
-        g2.setColor(Color.white);
-        g2.setFont(g2.getFont().deriveFont(32F));
+        drawSubWindow(x, y, width, height);
 
-        // SUB WINDOW
-        int frameX = gp.tileSize*6;
-        int frameY = gp.tileSize;
-        int frameWidth = gp.tileSize*8;
-        int frameHeight = gp.tileSize*10;
-        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN,30));
+        x += 32*2;
+        y += 32*2;
+
+        for(String line : currentDialogue.split("\n")) {
+            g2.drawString(line, x, y);
+            y += 40;
+        }
+    }
+
+    public void drawSubWindow(int x, int y, int width, int height) {
+        
+        Color c = new Color(110,102,95,200);
+        g2.setColor(c);
+        g2.fillRoundRect(x, y, width, height, 35, 35);
+
+        c = new Color(86,53,33);
+        g2.setColor(c);
+        g2.setStroke(new BasicStroke(5));
+        g2.drawRoundRect(x+5, y+5, width-10, height-10, 25, 25);
     }
 
     public int getXforCenteredText(String text) {
@@ -150,5 +160,5 @@ public class UI {
         return x;
     }
 
-    public void drawSubWindow(int x, int y, int width, int height) {}
+    //public void drawSubWindow(int x, int y, int width, int height) {}
 }

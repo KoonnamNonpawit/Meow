@@ -6,6 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class OBJ_Angel extends SuperObject {
+
     public OBJ_Angel() {
 
         name = "Angel";

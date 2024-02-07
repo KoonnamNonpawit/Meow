@@ -106,7 +106,9 @@ public class Player extends Entity{
             // CHECK OBJECT COLLISION
             int objIndex = gp.cChecker.checkObject(this, true);
             pickUpObject(objIndex);
-
+            if(objIndex == 6) {
+                interactOBJ(objIndex);
+            }
 
             // IF COLLISION IS FALSE, PLAYER CAN MOVE
             if (collisionOn == false) {
@@ -154,13 +156,21 @@ public class Player extends Entity{
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a paper!");
                     break;
-                case "Chest":
-                    gp.ui.gameFinished = true;
-                    gp.stopMusic();
-                    gp.playSE(1);
-                    break;
             }
         }
+    }
+    public void interactOBJ(int i) {
+
+        if(i != 999) {
+            if(gp.keyH.enterPressed == true) {
+                gp.gameState = gp.dialogueState;
+                if(i == 6) {
+                    gp.ui.currentDialogue = "Hello \nmewo";
+                }
+            }
+            
+        }
+        gp.keyH.enterPressed = false;
     }
 
     public void draw(Graphics2D g2) {
