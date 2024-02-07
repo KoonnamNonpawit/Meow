@@ -35,6 +35,9 @@ public class SuperObject {
             if(name == "Chest") {
                 g2.drawImage(image, screenX, screenY, 32 * gp.scale, 31 * gp.scale, null); 
             }
+            if(name == "Angel") {
+                g2.drawImage(image, screenX, screenY, 37 * gp.scale, 73 * gp.scale, null); 
+            }
         }
 
     }
