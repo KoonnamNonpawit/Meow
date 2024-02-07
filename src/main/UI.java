@@ -54,6 +54,11 @@ public class UI {
         if(gp.gameState == gp.pauseState) {
             drawPauseScreen();
         }
+
+        // OPSTIONS STATE
+        if(gp.gameState == gp.optionsState) {
+            drawOptionsScreen();
+        }
     }
 
     public void drawTitleScreen() {
@@ -125,10 +130,25 @@ public class UI {
         g2.drawString(text, x, y);
     }
 
+    public void drawOptionsScreen() {
+
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(32F));
+
+        // SUB WINDOW
+        int frameX = gp.tileSize*6;
+        int frameY = gp.tileSize;
+        int frameWidth = gp.tileSize*8;
+        int frameHeight = gp.tileSize*10;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+    }
+
     public int getXforCenteredText(String text) {
 
         int length = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         int x = gp.screenWidth/2 - length/2;
         return x;
     }
+
+    public void drawSubWindow(int x, int y, int width, int height) {}
 }
