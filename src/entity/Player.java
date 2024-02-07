@@ -106,6 +106,7 @@ public class Player extends Entity{
             // CHECK OBJECT COLLISION
             int objIndex = gp.cChecker.checkObject(this, true);
             pickUpObject(objIndex);
+
             if(objIndex == 6) {
                 interactOBJ(objIndex);
             }
@@ -159,6 +160,20 @@ public class Player extends Entity{
             }
         }
     }
+    public void interactOBJ(int i) {
+
+        if(i != 999) {
+            if(gp.keyH.enterPressed == true) {
+                gp.gameState = gp.dialogueState;
+                if(i == 6) {
+                    gp.ui.currentDialogue = "Hello \nmewo";
+                }
+            }
+            
+        }
+        gp.keyH.enterPressed = false;
+    }
+
     public void interactOBJ(int i) {
 
         if(i != 999) {

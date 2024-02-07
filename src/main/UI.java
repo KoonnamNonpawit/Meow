@@ -160,5 +160,6 @@ public class UI {
         return x;
     }
 
-    //public void drawSubWindow(int x, int y, int width, int height) {}
+    public void drawSubWindow(int x, int y, int width, int height) {}
 }
+
