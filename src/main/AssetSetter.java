@@ -35,5 +35,9 @@ public class AssetSetter {
         gp.obj[5] = new OBJ_Chest();
         gp.obj[5].worldX = 10 * gp.tileSize;
         gp.obj[5].worldY = 7 * gp.tileSize;
+
+        gp.obj[6] = new OBJ_Angel();
+        gp.obj[6].worldX = 13 * gp.tileSize;
+        gp.obj[6].worldY = 7 * gp.tileSize;
     }
 }
