@@ -57,13 +57,13 @@ public class KeyHandler implements KeyListener {
             }
         }
 
-        if(gp.gameState == gp.optionsState) {
-            optionsState(code);
-        }
+        // if(gp.gameState == gp.optionsState) {
+        //     optionsState(code);
+        // }
 
         if(gp.gameState == gp.dialogueState) {
             if(code == KeyEvent.VK_ENTER) {
-                gp.gameState = gp.playState;
+                gp.gameState = gp.dialogueState;
             }
         }
 
@@ -90,9 +90,9 @@ public class KeyHandler implements KeyListener {
             
         }
 
-        if (code == KeyEvent.VK_ESCAPE) {
-            gp.gameState = gp.optionsState;
-        }
+        // if (code == KeyEvent.VK_ESCAPE) {
+        //     gp.gameState = gp.optionsState;
+        // }
 
         // DEBUG
         if(code == KeyEvent.VK_T) {
@@ -105,15 +105,16 @@ public class KeyHandler implements KeyListener {
         }
     }
 
-    public void optionsState(int code) {
+    // // OPTION STATE
+    // public void optionsState(int code) {
 
-        if(code == KeyEvent.VK_ESCAPE) {
-            gp.gameState = gp. playState;
-        }
-        if(code == KeyEvent.VK_ENTER) {
-            enterPressed = true;
-        }
-    }
+    //     if(code == KeyEvent.VK_ESCAPE) {
+    //         gp.gameState = gp.playState;
+    //     }
+    //     if(code == KeyEvent.VK_ENTER) {
+    //         enterPressed = true;
+    //     }
+    // }
 
     @Override
     public void keyReleased(KeyEvent e) {

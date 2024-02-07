@@ -164,13 +164,9 @@ public class Player extends Entity{
     public void interactOBJ(int i) {
 
         if(i != 999) {
-            if(gp.keyH.enterPressed == true) {
-                gp.gameState = gp.dialogueState;
-                if(i == 6) {
-                    gp.ui.currentDialogue = "Hello \nmewo";
-                }
-            }
             
+            gp.gameState = gp.dialogueState;
+            gp.obj[i].speak();
         }
         gp.keyH.enterPressed = false;
     }

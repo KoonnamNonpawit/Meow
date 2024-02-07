@@ -8,6 +8,7 @@ import main.GamePanel;
 
 public class SuperObject {
     
+    GamePanel gp;
     public BufferedImage image;
     public String name;
     public boolean collision = false;
@@ -15,6 +16,18 @@ public class SuperObject {
     public Rectangle solidArea = new Rectangle();
     public int solidAreaDefaultX;
     public int solidAreaDefaultY;
+    String dialogues[] = new String[20];
+
+    public SuperObject() {
+
+    }
+
+    public SuperObject(GamePanel gp) {
+        this.gp = gp;
+    }
+
+    public void update() {}
+    public void speak() {}
 
     public void draw(Graphics2D g2, GamePanel gp) {
 

@@ -155,6 +155,9 @@ public class GamePanel extends JPanel implements Runnable {
             // PLAYER
             player.update();
         }
+        if(gameState == dialogueState) {
+            player.update();
+        }
         if(gameState == pauseState) {
             // nothing
         }
