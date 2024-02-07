@@ -61,6 +61,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     // GAME STATE
     public int gameState;
+    public final int titleState = 0;
     public final int playState = 1;
     public final int pauseState = 2;
     public final int dialogueState = 3;
@@ -78,11 +79,13 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void setupGame() {
 
-        // pass index of the song
-        playMusic(0);
+        // Play music when on TITLE Screen
+        if(gameState == titleState) {
+            playMusic(1);
+        }
 
         aSetter.setObject();
-        gameState = playState;
+        gameState = titleState;
 
         tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB);
         g2 = (Graphics2D)tempScreen.getGraphics();
@@ -170,27 +173,32 @@ public class GamePanel extends JPanel implements Runnable {
             drawStart = System.nanoTime();
         }
         
-        // TILE
-        tileM.draw(g2);
+        // TITLE SCREEN
+        if(gameState == titleState) {
+            ui.draw(g2);
+        } else {
+            // TILE
+            tileM.draw(g2);
         
-        // OBJECT
-        for(int i = 0; i < obj.length; i++) {
-            if(obj[i] != null) {
-                obj[i].draw(g2, this);
+            // OBJECT
+            for(int i = 0; i < obj.length; i++) {
+                if(obj[i] != null) {
+                    obj[i].draw(g2, this);
+                }
             }
-        }
                 
-        // PLAYER
-        player.draw(g2);
+            // PLAYER
+            player.draw(g2);
         
-        // UI
-        ui.draw(g2);
+            // UI
+            ui.draw(g2);
         
-        // FPS
-        g2.setColor(Color.CYAN);
-        g2.setFont(new Font("Arial", Font.BOLD, 20));
-        g2.drawString("FPS: " + fps, 1440, 40);
-        
+            // FPS
+            g2.setColor(Color.CYAN);
+            g2.setFont(new Font("Arial", Font.BOLD, 20));
+            g2.drawString("FPS: " + fps, 1440, 40);
+        }
+
         // DEBUG
         if(keyH.checkDrawTime == true) {
             long drawEnd = System.nanoTime();
