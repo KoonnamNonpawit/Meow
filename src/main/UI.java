@@ -19,6 +19,7 @@ public class UI {
     int messageCounter = 0;
     public boolean gameFinished = false;
     public String currentDialogue = "";
+    int subState = 0;
 
     public int commandNum = 0;
 
@@ -41,15 +42,29 @@ public class UI {
 
         this.g2 = g2;
 
+        // TITLE STATE
+        if(gp.gameState == gp.titleState) {
+            drawTitleScreen();
+        }
+
+        // PLAY STATE
         if(gp.gameState == gp.playState) {
             // Do playState Stuff later
         }
+
+        // PAUSE STATE
         if(gp.gameState == gp.pauseState) {
             drawPauseScreen();
         }
+
         // DIALOGUE STATE
         if(gp.gameState == gp.dialogueState) {
             drawDialogueScreen();
+        }
+
+        // OPTION STATE
+        if(gp.gameState == gp.optionsState) {
+            drawOptionsScreen();
         }
     }
 
@@ -153,13 +168,67 @@ public class UI {
         g2.drawRoundRect(x+5, y+5, width-10, height-10, 25, 25);
     }
 
+    public void drawOptionsScreen() {
+
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(32F));
+
+        // SUB WINDOW
+        int frameX = gp.tileSize*6;
+        int frameY = gp.tileSize;
+        int frameWidth = gp.tileSize*6;
+        int frameHeight = gp.tileSize*8;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+        switch (subState) {
+            case 0: option_top(frameX, frameY); break;
+            case 1: break;
+            case 2: break;
+        }
+    }
+
+    public void option_top(int frameX, int frameY) {
+
+        int textX;
+        int textY;
+
+        // TITLE
+        String text = "Option";
+        textX = getXforCenteredText(text);
+        textY = frameY + gp.tileSize;
+        g2.drawString(text, textX+100, textY);
+
+        // FULL SCREEN ON/OFF
+        textX = frameX + gp.tileSize;
+        textY += gp.tileSize*0.5;
+        g2.drawString("Full Screen", textX, textY);
+
+        // MUSIC
+        textY += gp.tileSize*0.5;
+        g2.drawString("Music", textX, textY);
+
+        // SE
+        textY += gp.tileSize*0.5;
+        g2.drawString("SE", textX, textY);
+
+        // CONTROL
+        textY += gp.tileSize*0.5;
+        g2.drawString("Control", textX, textY);
+
+        // QUIT
+        textY += gp.tileSize*0.5;
+        g2.drawString("QUIT", textX, textY);
+
+        // BACK
+        textY += gp.tileSize*1.5;
+        g2.drawString("Back", textX, textY);
+    }
+
     public int getXforCenteredText(String text) {
 
         int length = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         int x = gp.screenWidth/2 - length/2;
         return x;
     }
-
-    public void drawSubWindow(int x, int y, int width, int height) {}
 }
 

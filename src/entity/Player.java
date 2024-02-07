@@ -174,20 +174,6 @@ public class Player extends Entity{
         gp.keyH.enterPressed = false;
     }
 
-    public void interactOBJ(int i) {
-
-        if(i != 999) {
-            if(gp.keyH.enterPressed == true) {
-                gp.gameState = gp.dialogueState;
-                if(i == 6) {
-                    gp.ui.currentDialogue = "Hello \nmewo";
-                }
-            }
-            
-        }
-        gp.keyH.enterPressed = false;
-    }
-
     public void draw(Graphics2D g2) {
 
         int playerTileSize = 48 * gp.scale;
