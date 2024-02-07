@@ -60,7 +60,12 @@ public class KeyHandler implements KeyListener {
         if(gp.gameState == gp.optionsState) {
             optionsState(code);
         }
-        
+
+        if(gp.gameState == gp.dialogueState) {
+            if(code == KeyEvent.VK_ENTER) {
+                gp.gameState = gp.playState;
+            }
+        }
 
         if (code == KeyEvent.VK_W) {
             upPressed = true;
