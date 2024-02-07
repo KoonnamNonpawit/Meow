@@ -152,6 +152,12 @@ public class Player extends Entity{
                 case "Paper":
                     hasPaper++;
                     gp.obj[i] = null;
+                    gp.ui.showMessage("You got a paper!");
+                    break;
+                case "Chest":
+                    gp.ui.gameFinished = true;
+                    gp.stopMusic();
+                    gp.playSE(1);
                     break;
             }
         }
