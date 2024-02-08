@@ -5,13 +5,18 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import main.GamePanel;
+
 public class OBJ_Paper extends SuperObject{
+
+    GamePanel gp;
     
-    public OBJ_Paper() {
+    public OBJ_Paper(GamePanel gp) {
 
         name = "Paper";
         try {
             image = ImageIO.read(new FileInputStream("res/object/ObjectP.png"));
+            uTool.scaleImage(image, gp.tileSize, gp.tileSize);
         }catch(IOException e) {
             e.printStackTrace();
         } 

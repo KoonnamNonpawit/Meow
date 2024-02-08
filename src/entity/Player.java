@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.KeyHandler;
+import main.UtilityTool;
 
 public class Player extends Entity{
     
@@ -50,38 +51,49 @@ public class Player extends Entity{
         direction = "down";
     }
     public void getPlayerImage() {
+        // syntax to add image 
+        //varName = setup("image name");
 
+        up1 = setup("PlayerU1");
+        up2 = setup("PlayerU2");
+        up3 = setup("PlayerU3");
+        up4 = setup("PlayerU4");
+        up5 = setup("PlayerU5");
+        up6 = setup("PlayerU6");
+        down1 = setup("PlayerD1");
+        down2 = setup("PlayerD2");
+        down3 = setup("PlayerD3");
+        down4 = setup("PlayerD4");
+        down5 = setup("PlayerD5");
+        down6 = setup("PlayerD6");
+        left1 = setup("PlayerL1");
+        left2 = setup("PlayerL2");
+        left3 = setup("PlayerL3");
+        left4 = setup("PlayerL4");
+        left5 = setup("PlayerL5");
+        left6 = setup("PlayerL6");
+        right1 = setup("PlayerR1");
+        right2 = setup("PlayerR2");
+        right3 = setup("PlayerR3");
+        right4 = setup("PlayerR4");
+        right5 = setup("PlayerR5");
+        right6 = setup("PlayerR6");
+
+    }
+
+    public BufferedImage setup(String imageName) {
+
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
         try {
-
-            up1 = ImageIO.read(new FileInputStream("res/player/PlayerU1.png"));
-            up2 = ImageIO.read(new FileInputStream("res/player/PlayerU2.png"));
-            up3 = ImageIO.read(new FileInputStream("res/player/PlayerU3.png"));
-            up4 = ImageIO.read(new FileInputStream("res/player/PlayerU4.png"));
-            up5 = ImageIO.read(new FileInputStream("res/player/PlayerU5.png"));
-            up6 = ImageIO.read(new FileInputStream("res/player/PlayerU6.png"));
-            down1 = ImageIO.read(new FileInputStream("res/player/PlayerD1.png"));
-            down2 = ImageIO.read(new FileInputStream("res/player/PlayerD2.png"));
-            down3 = ImageIO.read(new FileInputStream("res/player/PlayerD3.png"));
-            down4 = ImageIO.read(new FileInputStream("res/player/PlayerD4.png"));
-            down5 = ImageIO.read(new FileInputStream("res/player/PlayerD5.png"));
-            down6 = ImageIO.read(new FileInputStream("res/player/PlayerD6.png"));
-            left1 = ImageIO.read(new FileInputStream("res/player/PlayerL1.png"));
-            left2 = ImageIO.read(new FileInputStream("res/player/PlayerL2.png"));
-            left3 = ImageIO.read(new FileInputStream("res/player/PlayerL3.png"));
-            left4 = ImageIO.read(new FileInputStream("res/player/PlayerL4.png"));
-            left5 = ImageIO.read(new FileInputStream("res/player/PlayerL5.png"));
-            left6 = ImageIO.read(new FileInputStream("res/player/PlayerL6.png"));
-            right1 = ImageIO.read(new FileInputStream("res/player/PlayerR1.png"));
-            right2 = ImageIO.read(new FileInputStream("res/player/PlayerR2.png"));
-            right3 = ImageIO.read(new FileInputStream("res/player/PlayerR3.png"));
-            right4 = ImageIO.read(new FileInputStream("res/player/PlayerR4.png"));
-            right5 = ImageIO.read(new FileInputStream("res/player/PlayerR5.png"));
-            right6 = ImageIO.read(new FileInputStream("res/player/PlayerR6.png"));
-
-        }catch(IOException e) {
+            image = ImageIO.read(new FileInputStream("res/player/" + imageName +".png"));
+            image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        return image;
     }
+
     public void update() {
 
         if(keyH.upPressed == true || keyH.downPressed == true || 

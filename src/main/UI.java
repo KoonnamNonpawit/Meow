@@ -27,7 +27,7 @@ public class UI {
         this.gp = gp;
 
         arial_40 = new Font("Arial", Font.PLAIN, 40);
-        OBJ_Paper paper = new OBJ_Paper();
+        OBJ_Paper paper = new OBJ_Paper(gp);
         paperImage = paper.image;
     }
 

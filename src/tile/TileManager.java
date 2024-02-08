@@ -3,13 +3,13 @@ package tile;
 import java.awt.Graphics2D;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import javax.imageio.ImageIO;
 
 import main.GamePanel;
+import main.UtilityTool;
 
 public class TileManager {
 
@@ -27,28 +27,36 @@ public class TileManager {
         getTileImage();
         loadMap("res/maps/mapTest.txt"); // change file Path here.
     }
-
-    // Create a new kind of tile here (inside try...catch) by 
+    
+    // OLD VERSION (BEFORE IMPROVING RENDERING PERFORMANCE)
+    // Create a new kind of tile here (inside try...catch) by
     //tile[1] = new Tile();
-    //tile[1].image = ImageIO.read(new FileInputStream("Image directory")); 
+    //tile[1].image = ImageIO.read(new FileInputStream("Image directory"));
+    
+    // NEW VERSION (AFTER IMPROVING RENDERING PERFORMANCE)
+    // try_catch block was removed
+    // Create an Object like next line.
+    //setup(index, "Image Name", collision true or false);
+
     public void getTileImage() {
 
+        setup(0, "TilesetSG40", false);
+        setup(1, "TilesetG60", true);
+        setup(2, "TilesetG43", false);
+
+    }
+
+    public void setup(int index, String imageName, boolean collision) {
+
+        UtilityTool uTool = new UtilityTool();
+
         try {
+            tile[index] = new Tile();
+            tile[index].image = ImageIO.read(new FileInputStream("res/tiles/" + imageName + ".png"));
+            tile[index].image = uTool.scaleImage(tile[index].image, gp.tileSize, gp.tileSize);
+            tile[index].collision = collision;
 
-            tile[0] = new Tile();
-            tile[0].image = ImageIO.read(new FileInputStream("res/tiles/TilesetG5.png"));
-
-            tile[1] = new Tile();
-            tile[1].image = ImageIO.read(new FileInputStream("res/tiles/TilesetG60.png"));
-            // tile[1].collision = true;
-
-            tile[2] = new Tile();
-            tile[2].image = ImageIO.read(new FileInputStream("res/plant/PlantT1L.png"));
-
-            tile[3] = new Tile();
-            tile[3].image = ImageIO.read(new FileInputStream("res/plant/PlantT1U.png"));
-
-        } catch(IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -111,7 +119,7 @@ public class TileManager {
                worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
                worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
 
-                g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+                g2.drawImage(tile[tileNum].image, screenX, screenY, null);
             }
 
             worldCol++;
