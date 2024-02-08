@@ -3,11 +3,16 @@ package main;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
+
 import java.io.File;
 
 public class Sound {
     private Clip clip;
     private String[] sound = new String[10];
+    FloatControl fc;
+    int volumeScale = 3;
+    float volume;
 
     public Sound() {
         sound[0] = "res/sound/best-adventure-ever-122726.wav";
@@ -20,6 +25,9 @@ public class Sound {
             AudioInputStream ais = AudioSystem.getAudioInputStream(new File(sound[i]));
             clip = AudioSystem.getClip();
             clip.open(ais);
+            fc = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            checkVolume();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,5 +55,18 @@ public class Sound {
         } else {
             System.err.println("Clip is not initialized. Call setFile() before calling stop().");
         }
+    }
+
+    public void checkVolume() {
+
+        switch (volumeScale) {
+            case 0: volume = -80f; break;
+            case 1: volume = -20f; break;
+            case 2: volume = -12f; break;
+            case 3: volume = -5f; break;
+            case 4: volume = 1f; break;
+            case 5: volume = 6f; break;
+        }
+        fc.setValue(volume);
     }
 }
