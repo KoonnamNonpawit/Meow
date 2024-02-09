@@ -237,21 +237,6 @@ public class TileManager {
             tile[67] = new Tile();
             tile[67].image = ImageIO.read(new FileInputStream("res/tiles/TilesetSG10.png"));
 
-            tile[68] = new Tile();
-            tile[68].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
-            tile[69] = new Tile();
-            tile[69].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
-            tile[70] = new Tile();
-            tile[70].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
-            tile[71] = new Tile();
-            tile[71].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
-            tile[72] = new Tile();
-            tile[72].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
             tile[73] = new Tile();
             tile[73].image = ImageIO.read(new FileInputStream("res/tiles/TilesetSG16.png"));
 
@@ -356,21 +341,6 @@ public class TileManager {
 
             tile[160] = new Tile();
             tile[160].image = ImageIO.read(new FileInputStream("res/tiles/TilesetW5.png"));
-
-            tile[161] = new Tile();
-            tile[161].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
-            tile[162] = new Tile();
-            tile[162].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
-            tile[163] = new Tile();
-            tile[163].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
-            tile[164] = new Tile();
-            tile[164].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
-
-            tile[165] = new Tile();
-            tile[165].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
 
             tile[166] = new Tile();
             tile[166].image = ImageIO.read(new FileInputStream("res/tiles/TilesetW55.png"));
