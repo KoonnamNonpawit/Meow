@@ -12,8 +12,8 @@ public class AssetSetter {
 
     public void setObject() {
 
-        gp.obj[0] = new OBJ_Paper();
-        gp.obj[0].worldX = 23 * gp.tileSize;
+        gp.obj[0] = new OBJ_Angel();
+        gp.obj[0].worldX = 13 * gp.tileSize;
         gp.obj[0].worldY = 7 * gp.tileSize;
 
         gp.obj[1] = new OBJ_Paper();
@@ -36,8 +36,5 @@ public class AssetSetter {
         gp.obj[5].worldX = 10 * gp.tileSize;
         gp.obj[5].worldY = 7 * gp.tileSize;
 
-        gp.obj[6] = new OBJ_Angel();
-        gp.obj[6].worldX = 13 * gp.tileSize;
-        gp.obj[6].worldY = 7 * gp.tileSize;
     }
 }
