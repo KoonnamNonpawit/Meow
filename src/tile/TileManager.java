@@ -43,6 +43,7 @@ public class TileManager {
 
             tile[0] = new Tile();
             tile[0].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
+            tile[0].collision = true;
 
             tile[1] = new Tile();
             tile[1].image = ImageIO.read(new FileInputStream("res/tiles/TilesetG0.png"));
@@ -455,8 +456,6 @@ public class TileManager {
                     worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
                     worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
 
-                g2.setColor(new Color(24,24,24));
-                g2.fillRect(screenX, screenY, gp.screenWidth, gp.screenHeight);
                 g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
             }
 
