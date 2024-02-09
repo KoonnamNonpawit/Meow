@@ -17,8 +17,8 @@ public class OBJ_Paper extends SuperObject{
         } 
         solidArea.x = 0;
         solidArea.y = 0;
-        solidArea.width = 16*3;
-        solidArea.height = 16*3;
+        solidArea.width = 53;
+        solidArea.height = 55;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
     }

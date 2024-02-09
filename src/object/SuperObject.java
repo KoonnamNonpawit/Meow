@@ -27,7 +27,7 @@ public class SuperObject {
            worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
 
             if(name == "Paper") {
-                g2.drawImage(image, screenX, screenY, 16 * gp.scale, 16 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 53 , 55, null); 
             }
             if(name == "Door") {
                 g2.drawImage(image, screenX, screenY, 37 * gp.scale, 50 * gp.scale, null); 
