@@ -39,6 +39,7 @@ public class AssetSetter {
         gp.obj[6] = new OBJ_SCV();
         gp.obj[6].worldX = 9 * gp.tileSize;
         gp.obj[6].worldY = 5 * gp.tileSize;
+        gp.obj[6].collision = true;
 
         gp.obj[7] = new OBJ_T3L();
         gp.obj[7].worldX = 6 * gp.tileSize;
@@ -100,6 +101,15 @@ public class AssetSetter {
         gp.obj[21].worldX = (3 * gp.tileSize) - (2*gp.scale);
         gp.obj[21].worldY = 14 * gp.tileSize;
 
+        gp.obj[22] = new OBJ_Paper();
+        gp.obj[22].worldX = (9 * gp.tileSize) + (8*gp.scale);
+        gp.obj[22].worldY = (6 * gp.tileSize) - (14*gp.scale);
+        gp.obj[22].solidArea.x = 0;
+        gp.obj[22].solidArea.y = 0;
+        gp.obj[22].solidArea.width = (32 * gp.scale) + (2*gp.scale);
+        gp.obj[22].solidArea.height = (57 * gp.scale) + (2*gp.scale);
+        gp.obj[22].solidAreaDefaultX = gp.obj[22].solidArea.x;
+        gp.obj[22].solidAreaDefaultY = gp.obj[22].solidArea.y;
 
     }
 }
