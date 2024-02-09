@@ -59,6 +59,12 @@ public class SuperObject {
             if(name == "W23") {
                 g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
             }
+            if(name == "W17") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+            if(name == "W25") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
 
 
             if(name == "Door") {
