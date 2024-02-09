@@ -107,7 +107,7 @@ public class Player extends Entity{
             int objIndex = gp.cChecker.checkObject(this, true);
             pickUpObject(objIndex);
 
-            if(objIndex == 6) {
+            if(objIndex == 0) {
                 interactOBJ(objIndex);
             }
 
@@ -165,7 +165,7 @@ public class Player extends Entity{
         if(i != 999) {
             if(gp.keyH.enterPressed == true) {
                 gp.gameState = gp.dialogueState;
-                if(i == 6) {
+                if(i == 0) {
                     gp.ui.currentDialogue = "Hello \nmewo";
                 }
             }
