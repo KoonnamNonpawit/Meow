@@ -37,6 +37,9 @@ public class KeyHandler implements KeyListener {
         else if(gp.gameState == gp.optionsState) {
             optionsState(code);
         }
+        else if(gp.gameState == gp.dialogueState) {
+            dialogueState(code);
+        }
     }
 
     // PLAY STATE
