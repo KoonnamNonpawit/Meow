@@ -26,18 +26,45 @@ public class SuperObject {
            worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
            worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
 
-            if(name == "Paper") {
-                g2.drawImage(image, screenX, screenY, 53 , 55, null); 
+            if(name == "Angel") {
+                g2.drawImage(image, screenX, screenY, 37 * gp.scale, 73 * gp.scale, null); 
             }
+            if(name == "A") {
+                g2.drawImage(image, screenX, screenY, 94 * gp.scale, 72 * gp.scale, null); 
+            }
+            if(name == "RPX3") {
+                g2.drawImage(image, screenX, screenY, 26 * gp.scale, 66 * gp.scale, null); 
+            }
+            if(name == "RPB") {
+                g2.drawImage(image, screenX, screenY, 26 * gp.scale, 38 * gp.scale, null); 
+            }
+            if(name == "SCV") {
+                g2.drawImage(image, screenX, screenY, 32 * gp.scale, 57 * gp.scale, null); 
+            }
+            if(name == "T3U") {
+                g2.drawImage(image, screenX, screenY, 113 * gp.scale, 75 * gp.scale, null); 
+            }
+            if(name == "T3L") {
+                g2.drawImage(image, screenX, screenY, 113 * gp.scale, 64 * gp.scale, null); 
+            }
+            if(name == "W0") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+            if(name == "W8") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+
+
             if(name == "Door") {
                 g2.drawImage(image, screenX, screenY, 37 * gp.scale, 50 * gp.scale, null); 
             }
             if(name == "Chest") {
                 g2.drawImage(image, screenX, screenY, 32 * gp.scale, 31 * gp.scale, null); 
             }
-            if(name == "Angel") {
-                g2.drawImage(image, screenX, screenY, 37 * gp.scale, 73 * gp.scale, null); 
+            if(name == "Paper") {
+                g2.drawImage(image, screenX, screenY, 53 , 55, null); 
             }
+            
         }
 
     }
