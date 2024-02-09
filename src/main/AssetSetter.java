@@ -39,7 +39,6 @@ public class AssetSetter {
         gp.obj[6] = new OBJ_SCV();
         gp.obj[6].worldX = 9 * gp.tileSize;
         gp.obj[6].worldY = 5 * gp.tileSize;
-        gp.obj[6].collision = true;
 
         gp.obj[7] = new OBJ_T3L();
         gp.obj[7].worldX = 6 * gp.tileSize;
