@@ -1,6 +1,8 @@
 package tile;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,6 +17,7 @@ public class TileManager {
 
     GamePanel gp;
     public Tile[] tile;
+    public Tile bg;
     public int mapTileNum[][];
 
     public TileManager(GamePanel gp) {
@@ -35,6 +38,9 @@ public class TileManager {
 
         try {
 
+            bg = new Tile();
+            bg.BG = ImageIO.read(new FileInputStream("res/background/BG.png"));
+
             tile[0] = new Tile();
             tile[0].image = ImageIO.read(new FileInputStream("res/tiles/TilesetG5.png"));
 
@@ -43,10 +49,13 @@ public class TileManager {
             // tile[1].collision = true;
 
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(new FileInputStream("res/plant/PlantT1L.png"));
+            tile[2].image = ImageIO.read(new FileInputStream("res/tiles/TilesetGF8.png"));
 
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(new FileInputStream("res/plant/PlantT1U.png"));
+            tile[3].image = ImageIO.read(new FileInputStream("res/tiles/TilesetGF9.png"));
+            
+            tile[5] = new Tile();
+            tile[5].image = ImageIO.read(new FileInputStream("res/tiles/Tileset00.png"));
 
         } catch(IOException e) {
             e.printStackTrace();
@@ -111,6 +120,8 @@ public class TileManager {
                worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
                worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
 
+                g2.setColor(new Color(24,24,24));
+                g2.fillRect(screenX, screenY, gp.screenWidth, gp.screenHeight);
                 g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
             }
 
@@ -120,6 +131,7 @@ public class TileManager {
                 worldCol = 0;
                 worldRow++;
             }
+
         }
     }
 
