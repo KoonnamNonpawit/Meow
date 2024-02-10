@@ -10,7 +10,7 @@ public class KeyHandler implements KeyListener {
                     rightPressed,enterPressed;
 
     // DEBUG
-    boolean checkDrawTime = false;
+    boolean showDebugText = false;
 
     public KeyHandler(GamePanel gp) {
         this.gp = gp;
@@ -68,13 +68,16 @@ public class KeyHandler implements KeyListener {
         }
         
         // DEBUG
-        if(code == KeyEvent.VK_T) {
-            if(checkDrawTime == false) {
-                checkDrawTime = true;
+        if(code == KeyEvent.VK_F3) {
+            if(showDebugText == false) {
+                showDebugText = true;
             }
-            else if(checkDrawTime == true) {
-                checkDrawTime = false;
+            else if(showDebugText == true) {
+                showDebugText = false;
             }
+        }
+        if(code == KeyEvent.VK_F5) {
+            gp.tileM.loadMap("res/maps/maps.txt");
         }
     }
 

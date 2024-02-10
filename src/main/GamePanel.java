@@ -169,7 +169,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         // DEBUG
         long drawStart = 0;
-        if(keyH.checkDrawTime == true) {
+        if(keyH.showDebugText == true) {
             drawStart = System.nanoTime();
         }
         
@@ -196,16 +196,23 @@ public class GamePanel extends JPanel implements Runnable {
             // FPS
             g2.setColor(Color.CYAN);
             g2.setFont(new Font("Arial", Font.BOLD, 20));
-            g2.drawString("FPS: " + fps, 1440, 40);
         }
 
         // DEBUG
-        if(keyH.checkDrawTime == true) {
+        if(keyH.showDebugText == true) {
             long drawEnd = System.nanoTime();
             long passed = drawEnd - drawStart;
-            g2.setColor(Color.white);
-            g2.drawString("Draw Time: " + passed, 10, 400);
-            System.out.println("Draw Time: " + passed); 
+
+            g2.setFont(new Font("Arial", Font.PLAIN, 20));
+            g2.setColor(Color.cyan);
+            int x = 1300;
+            int y = 40;
+            int lineHeight =20;
+
+            g2.drawString("FPS: " + fps, x, y); y += lineHeight;
+            g2.drawString("x : " + (player.worldX + player.solidArea.x)/tileSize, x, y); y += lineHeight;
+            g2.drawString("y : " + (player.worldY + player.solidArea.y)/tileSize, x, y); y += lineHeight;
+            g2.drawString("Draw Time: " + passed, x, y);
         }
         
     }
