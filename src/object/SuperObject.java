@@ -71,6 +71,12 @@ public class SuperObject {
             if(name == "W2") {
                 g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
             }
+            if(name == "W7") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+            if(name == "W3") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
             if(name == "W9") {
                 g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
             }
@@ -102,7 +108,7 @@ public class SuperObject {
                 g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
             }
             if(name == "BLM") {
-                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 49 * gp.scale, 96 * gp.scale, null); 
             }
             if(name == "BLR") {
                 g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
