@@ -40,6 +40,9 @@ public class KeyHandler implements KeyListener {
         else if(gp.gameState == gp.dialogueState) {
             dialogueState(code);
         }
+        else if(gp.gameState == gp.characterState) {
+            characterState(code);
+        }
     }
 
     // PLAY STATE
@@ -66,6 +69,10 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_ESCAPE) {
             gp.gameState = gp.optionsState;
         }
+        // open inventory
+        if (code == KeyEvent.VK_E) {
+            gp.gameState = gp.characterState;
+        }
         
         // DEBUG
         if(code == KeyEvent.VK_F3) {
@@ -81,6 +88,7 @@ public class KeyHandler implements KeyListener {
         }
     }
 
+    // TITLE STATE
     public void titleState(int code) {
         if (code == KeyEvent.VK_W) {
             gp.ui.commandNum--;
@@ -112,6 +120,7 @@ public class KeyHandler implements KeyListener {
         }        
     }
 
+    // PAUSE STATE
     public void pauseState(int code) {
         if(gp.gameState == gp.pauseState) {
             if(code == KeyEvent.VK_P) {
@@ -120,6 +129,7 @@ public class KeyHandler implements KeyListener {
         }
     }
 
+    // DIALOGUE STATE
     public void dialogueState(int code) {
         if(gp.gameState == gp.dialogueState) {
             if(code == KeyEvent.VK_ENTER) {
@@ -127,7 +137,8 @@ public class KeyHandler implements KeyListener {
             }
         }
     } 
-        
+    
+    // OPTIONS STATE
     public void optionsState(int code) {
         if(code == KeyEvent.VK_ESCAPE) {
             gp.gameState = gp. playState;
@@ -173,6 +184,33 @@ public class KeyHandler implements KeyListener {
                 if(gp.ui.commandNum == 2 && gp.se.volumeScale  < 5) {
                     gp.se.volumeScale++;
                 }
+            }
+        }
+    }
+
+    // CHARACTER STATE
+    public void characterState(int code) {
+        if(code == KeyEvent.VK_E) {
+            gp.gameState = gp.playState;
+        }
+        if(code == KeyEvent.VK_W) {
+            if(gp.ui.slotCol != 0) {
+                gp.ui.slotCol--;
+            }
+        }
+        if(code == KeyEvent.VK_A) {
+            if(gp.ui.slotRow != 0) {
+                gp.ui.slotRow--;
+            }
+        }
+        if(code == KeyEvent.VK_S) {
+            if(gp.ui.slotCol != 3) {
+                gp.ui.slotCol++;
+            }
+        }
+        if(code == KeyEvent.VK_D) {
+            if(gp.ui.slotRow != 4) {
+                gp.ui.slotRow++;
             }
         }
     }
