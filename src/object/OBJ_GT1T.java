@@ -5,13 +5,13 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class OBJ_StairsBLL extends SuperObject{
+public class OBJ_GT1T extends SuperObject{
     
-    public OBJ_StairsBLL() {
+    public OBJ_GT1T() {
 
-        name = "StairsBLL";
+        name = "GT1T";
         try {
-            image = ImageIO.read(new FileInputStream("res/struct/StairsBLL.png"));
+            image = ImageIO.read(new FileInputStream("res/struct/StructGT1T.png"));
         }catch(IOException e) {
             e.printStackTrace();
         } 

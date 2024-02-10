@@ -89,8 +89,32 @@ public class SuperObject {
             if(name == "W22") {
                 g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
             }
+            if(name == "LM") {
+                g2.drawImage(image, screenX, screenY, 49 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "GT1B") {
+                g2.drawImage(image, screenX, screenY, 64 * gp.scale, 45 * gp.scale, null); 
+            }
+            if(name == "GT1T") {
+                g2.drawImage(image, screenX, screenY, 64 * gp.scale, 19 * gp.scale, null); 
+            }
+            if(name == "BLL") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "BLM") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "BLR") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "BML") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "BRR") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
 
-
+            
             if(name == "Door") {
                 g2.drawImage(image, screenX, screenY, 37 * gp.scale, 50 * gp.scale, null); 
             }
