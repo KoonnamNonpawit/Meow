@@ -264,7 +264,5 @@ public class Player extends Entity{
                 break;
         }
         g2.drawImage(image, screenX, screenY, playerTileSize, playerTileSize, null);
-        // Draw X,Y position
-        g2.drawString("X : " + ((worldX/gp.tileSize)+1) + " Y : " + ((worldY/gp.tileSize)+1), 1300, 40);
     }
 }
