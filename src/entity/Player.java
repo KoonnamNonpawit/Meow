@@ -5,11 +5,16 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.KeyHandler;
+import object.OBJ_Chest;
+import object.OBJ_Paper;
+import object.OBJ_W8;
+import object.SuperObject;
 
 public class Player extends Entity{
     
@@ -20,6 +25,9 @@ public class Player extends Entity{
     public final int screenX;
     public final int screenY;
     public int hasPaper = 0;
+
+    public ArrayList<SuperObject> inventory = new ArrayList<>();
+    public final int maxInventorySize = 20;
 
     public Player(GamePanel gp, KeyHandler keyH) {
 
@@ -41,6 +49,7 @@ public class Player extends Entity{
 
         setDefaultValues();
         getPlayerImage();
+        setItems();
     }
     public void setDefaultValues() {
 
@@ -48,6 +57,21 @@ public class Player extends Entity{
         worldY = (gp.tileSize * 23) - (5*gp.scale);
         speed = 10;
         direction = "down";
+    }
+
+    public void setItems() {
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
+        inventory.add(new OBJ_Paper());
     }
     public void getPlayerImage() {
 
