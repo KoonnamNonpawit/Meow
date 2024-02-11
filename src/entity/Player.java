@@ -24,6 +24,8 @@ public class Player extends Entity{
     public final int screenY;
     public int hasPaper = 0;
 
+    public boolean pz1Finished,pz2Finished,pz3Finished,pz4Finished,flowerFinished,brickFinished = false;
+
     public ArrayList<SuperObject> inventory = new ArrayList<>();
     public final int maxInventorySize = 20;
 
@@ -131,7 +133,7 @@ public class Player extends Entity{
             int objIndex = gp.cChecker.checkObject(this, true);
             pickUpObject(objIndex);
 
-            if(objIndex == 0) {
+            if(objIndex == 0 || objIndex == 2) {
                 interactOBJ(objIndex);
             }
 
@@ -189,10 +191,21 @@ public class Player extends Entity{
 
         if(i != 999) {
             if(gp.keyH.enterPressed == true) {
-                if(i == 0) {
-                    start = 0;
-                    speak(start);
+                if(pz1Finished == false) {
+                    if(i == 0) {
+                        start = 0;
+                        speak(start);
+                    }
+                    if(i == 2 && hasPaper == 0) {
+                        start = 1;
+                        speak(start);
+                    }  
+                    if(i == 2 && hasPaper == 1) {
+                        start = 2;
+                        speak(start);
+                    }
                 }
+                
             }
             
         }
@@ -297,11 +310,18 @@ public class Player extends Entity{
         dialogues[0][2] = "And West, where shadows stretch and bend, In twilight's embrace, where journeys end. \nYet in the dusk, a new beginning's glow, Hope's gentle whisper, softly aglow. \nThus, as the four directions shine, A symphony of life, a grand design.";
         dialogues[0][3] = "In birth, designation, adherence, and end, Hope's eternal dance, forever penned.";
 
+        dialogues[1][0] = "Meow : What language is this?";
+
+        dialogues[2][0] = "Which line of the included Java program is being used to print text to the console? \npublic static void main(String[] args) { \n    String message1 = \"Meow\";";
     }
 
     public void speak(int start) {
 
         startDialogue(this,start);
+        if(start == 2) {
+            gp.gameState = gp.puzzleState;
+            
+        }
     }   
 
     public void startDialogue(Entity entity, int setNum) {

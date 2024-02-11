@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
+import entity.Entity;
 import entity.Player;
 import object.OBJ_Paper;
 
@@ -26,7 +27,6 @@ public class UI {
     public int slotRow = 0;
 
     public Player p;
-
 
     public UI(GamePanel gp) {
         this.gp = gp;
@@ -74,6 +74,11 @@ public class UI {
         // CHARACTER STATE
         if(gp.gameState == gp.characterState) {
             drawInventory();
+        }
+
+        // PUZZLE STATE
+        if(gp.gameState == gp.puzzleState) {
+            drawPuzzleScreen();
         }
     }
 
@@ -492,6 +497,29 @@ public class UI {
         int length = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         int x = gp.screenWidth/2 - length/2;
         return x;
+    }
+
+    public void drawPuzzleScreen() {
+
+        switch (subState) {
+            case 0: puzzle_select(); break;
+        }
+
+        gp.keyH.enterPressed = false;
+    }
+
+    public void puzzle_select() {
+
+        p.dialoguesSet = p.start;
+        drawDialogueScreen();
+ 
+        // DRAW WiNDOW
+        int x = gp.tileSize*10;
+        int y = gp.tileSize*7;
+        int width = gp.screenWidth - (x*4);
+        int height = gp.tileSize;
+
+        drawSubWindow(x, y, width, height);
     }
 }
 
