@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
+import entity.Player;
 import object.OBJ_Paper;
 
 public class UI {
@@ -23,6 +24,8 @@ public class UI {
     public int commandNum = 0;
     public int slotCol = 0;
     public int slotRow = 0;
+
+    public Player p;
 
 
     public UI(GamePanel gp) {
@@ -155,6 +158,26 @@ public class UI {
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN,30));
         x += 32*2;
         y += 32*2;
+
+        if(p.dialogues[p.dialoguesSet][p.dialoguesIndex] != null) {
+            currentDialogue = p.dialogues[p.dialoguesSet][p.dialoguesIndex];
+
+            if(gp.keyH.enterPressed == true) {
+
+                if(gp.gameState == gp.dialogueState) {
+
+                    p.dialoguesIndex++;
+                    gp.keyH.enterPressed = false;
+                }
+            }
+        }
+        else {
+            p.dialoguesIndex = p.start;
+
+            if(gp.gameState == gp.dialogueState) {
+                gp.gameState = gp.playState;
+            }
+        }
 
         for(String line : currentDialogue.split("\n")) {
             g2.drawString(line, x, y);

@@ -133,7 +133,7 @@ public class KeyHandler implements KeyListener {
     public void dialogueState(int code) {
         if(gp.gameState == gp.dialogueState) {
             if(code == KeyEvent.VK_ENTER) {
-                gp.gameState = gp.playState;
+                enterPressed = true;
             }
         }
     } 
