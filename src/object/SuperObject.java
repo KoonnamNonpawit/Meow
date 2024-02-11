@@ -133,6 +133,43 @@ public class SuperObject {
             if(name == "Paper") {
                 g2.drawImage(image, screenX, screenY, 53 , 55, null); 
             }
+
+            if(name == "BT1") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+            if(name == "BT2") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+            if(name == "C") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+            if(name == "GA") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+            if(name == "GB") {
+                g2.drawImage(image, screenX, screenY, 49 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "GC") {
+                g2.drawImage(image, screenX, screenY, 64 * gp.scale, 45 * gp.scale, null); 
+            }
+            if(name == "P") {
+                g2.drawImage(image, screenX, screenY, 64 * gp.scale, 19 * gp.scale, null); 
+            }
+            if(name == "PB") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "PoC") {
+                g2.drawImage(image, screenX, screenY, 49 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "SBS") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "SL") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
+            if(name == "W") {
+                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+            }
             
         }
 
