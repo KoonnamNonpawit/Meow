@@ -15,5 +15,12 @@ public class OBJ_RPX3 extends SuperObject{
         }catch(IOException e) {
             e.printStackTrace();
         } 
+        solidArea.x = 0;
+        solidArea.y = 47*3;
+        solidArea.width = 26*3;
+        solidArea.height = 19*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

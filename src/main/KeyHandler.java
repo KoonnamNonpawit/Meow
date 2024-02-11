@@ -43,6 +43,9 @@ public class KeyHandler implements KeyListener {
         else if(gp.gameState == gp.characterState) {
             characterState(code);
         }
+        else if(gp.gameState == gp.puzzleState) {
+            puzzleState(code);
+        }
     }
 
     // PLAY STATE
@@ -211,6 +214,15 @@ public class KeyHandler implements KeyListener {
         if(code == KeyEvent.VK_D) {
             if(gp.ui.slotRow != 4) {
                 gp.ui.slotRow++;
+            }
+        }
+    }
+
+    // PUZZLE STATE
+    public void puzzleState(int code) {
+        if(gp.gameState == gp.puzzleState) {
+            if(code == KeyEvent.VK_ENTER) {
+                enterPressed = true;
             }
         }
     }

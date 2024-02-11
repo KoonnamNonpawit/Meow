@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
+import entity.Entity;
 import entity.Player;
 import object.OBJ_Paper;
 
@@ -26,7 +27,6 @@ public class UI {
     public int slotRow = 0;
 
     public Player p;
-
 
     public UI(GamePanel gp) {
         this.gp = gp;
@@ -74,6 +74,11 @@ public class UI {
         // CHARACTER STATE
         if(gp.gameState == gp.characterState) {
             drawInventory();
+        }
+
+        // PUZZLE STATE
+        if(gp.gameState == gp.puzzleState) {
+            drawPuzzleScreen();
         }
     }
 
@@ -134,7 +139,6 @@ public class UI {
             g2.drawString(">", x-gp.tileSize, y);
         }
     }
-
     
     public void drawPauseScreen() {
 
@@ -145,6 +149,7 @@ public class UI {
 
         g2.drawString(text, x, y);
     }
+
     public void drawDialogueScreen() {
 
         // WINDOW
@@ -152,6 +157,46 @@ public class UI {
         int y = gp.tileSize*6;
         int width = gp.screenWidth - (x*2);
         int height = gp.tileSize*2;
+
+        drawSubWindow(x, y, width, height);
+
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN,30));
+        x += 32*2;
+        y += 32*2;
+
+        if(p.dialogues[p.dialoguesSet][p.dialoguesIndex] != null) {
+            currentDialogue = p.dialogues[p.dialoguesSet][p.dialoguesIndex];
+
+            if(gp.keyH.enterPressed == true) {
+
+                if(gp.gameState == gp.dialogueState) {
+
+                    p.dialoguesIndex++;
+                    gp.keyH.enterPressed = false;
+                }
+            }
+        }
+        else {
+            p.dialoguesIndex = p.start;
+
+            if(gp.gameState == gp.dialogueState) {
+                gp.gameState = gp.playState;
+            }
+        }
+
+        for(String line : currentDialogue.split("\n")) {
+            g2.drawString(line, x, y);
+            y += 40;
+        }
+    }
+
+    public void drawDialogueScreen_Resizable(int posi_x, int posi_y, int screen_width, int screen_height) {
+
+        // WINDOW
+        int x = posi_x;
+        int y = posi_y;
+        int width = screen_width;
+        int height = screen_height;
 
         drawSubWindow(x, y, width, height);
 
@@ -337,8 +382,6 @@ public class UI {
             }
         }
 
-
-
     }
 
     public void option_control(int frameX, int frameY) {
@@ -482,6 +525,27 @@ public class UI {
 
     }
 
+    public void drawPuzzleScreen() {
+
+        switch (subState) {
+            case 0: puzzle_select(); break;
+        }
+
+        gp.keyH.enterPressed = false;
+    }
+
+    public void puzzle_select() {
+
+        p.dialoguesSet = p.start;
+        drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
+
+        int frameX = (gp.tileSize) + (10*gp.scale);
+        int frameY = (gp.tileSize*6) - (10*gp.scale);
+        int frameWidth = (gp.tileSize*14) - (2*10*gp.scale);
+        int frameHeight = gp.tileSize*2;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+    }
+
     public int getItemIndexOnSlot() {
         int itemIndex = slotRow + (slotCol*5);
         return itemIndex;
@@ -493,5 +557,6 @@ public class UI {
         int x = gp.screenWidth/2 - length/2;
         return x;
     }
+
 }
 
