@@ -536,15 +536,14 @@ public class UI {
 
     public void puzzle_select() {
 
-        int frameX = gp.tileSize*9;
-        int frameY = gp.tileSize;
-        int frameWidth = gp.tileSize*6;
-        int frameHeight = gp.tileSize*5;
-        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
-
         p.dialoguesSet = p.start;
-        drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize*5, gp.tileSize*14, gp.tileSize*4);
- 
+        drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
+
+        int frameX = (gp.tileSize) + (10*gp.scale);
+        int frameY = (gp.tileSize*6) - (10*gp.scale);
+        int frameWidth = (gp.tileSize*14) - (2*10*gp.scale);
+        int frameHeight = gp.tileSize*2;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
     }
 
     public int getItemIndexOnSlot() {
