@@ -11,9 +11,7 @@ import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.KeyHandler;
-import object.OBJ_Chest;
 import object.OBJ_Paper;
-import object.OBJ_W8;
 import object.SuperObject;
 
 public class Player extends Entity{
@@ -50,6 +48,8 @@ public class Player extends Entity{
         setDefaultValues();
         getPlayerImage();
         setItems();
+
+        setDialogue();
     }
     public void setDefaultValues() {
 
@@ -189,9 +189,9 @@ public class Player extends Entity{
 
         if(i != 999) {
             if(gp.keyH.enterPressed == true) {
-                gp.gameState = gp.dialogueState;
                 if(i == 0) {
-                    gp.ui.currentDialogue = "Hello \nmewo";
+                    start = 0;
+                    speak(start);
                 }
             }
             
@@ -288,5 +288,26 @@ public class Player extends Entity{
                 break;
         }
         g2.drawImage(image, screenX, screenY, playerTileSize, playerTileSize, null);
+    }
+
+    public void setDialogue() {
+
+        dialogues[0][0] = "In the dawn's embrace, the path unfurls, As whispers of hope across the world. \nNorth, where dreams in birth arise, In innocence, beneath clear skies. \nEast, where aspirations find their name, In the golden glow of the morning flame.";
+        dialogues[0][1] = "Designation marks the way we tread, With purpose guiding each step ahead. \nSouth, where courage meets the soul's command, In the fervent grasp of steadfast hand. \nAdherence binds us, heart to heart, Through trials endured, we play our part.";
+        dialogues[0][2] = "And West, where shadows stretch and bend, In twilight's embrace, where journeys end. \nYet in the dusk, a new beginning's glow, Hope's gentle whisper, softly aglow. \nThus, as the four directions shine, A symphony of life, a grand design.";
+        dialogues[0][3] = "In birth, designation, adherence, and end, Hope's eternal dance, forever penned.";
+
+    }
+
+    public void speak(int start) {
+
+        startDialogue(this,start);
+    }   
+
+    public void startDialogue(Entity entity, int setNum) {
+
+        gp.gameState = gp.dialogueState;
+        gp.ui.p = (Player)entity;
+        dialoguesSet = setNum;
     }
 }
