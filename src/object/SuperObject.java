@@ -167,6 +167,15 @@ public class SuperObject {
             if(name == "W") {
                 g2.drawImage(image, screenX, screenY, 58 * gp.scale, 49 * gp.scale, null); 
             }
+            if(name == "FW1") {
+                g2.drawImage(image, screenX, screenY, (int)(1138/20), (int)(1451/20), null); 
+            }
+            if(name == "FW2") {
+                g2.drawImage(image, screenX, screenY, (int)(1021/20), (int)(1648/20), null); 
+            }
+            if(name == "FW3") {
+                g2.drawImage(image, screenX, screenY, (int)(1256/25), (int)(1648/25), null); 
+            }
             
         }
 
