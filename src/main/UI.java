@@ -310,6 +310,9 @@ public class UI {
         g2.drawRect(textX - 45, textY, 120, 24);
         volumeWidth = 24 * gp.se.volumeScale;
         g2.fillRect(textX -45, textY, volumeWidth, 24);
+
+        // save setting whenever this function were called
+        gp.config.saveConfig();
     }
 
     public void option_fullScreenNotification(int frameX, int frameY) {

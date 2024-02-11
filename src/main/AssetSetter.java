@@ -448,324 +448,324 @@ public class AssetSetter {
         gp.obj[115].worldX = 6 * gp.tileSize - (2 * gp.scale);
         gp.obj[115].worldY = 22 * gp.tileSize;
 
-        gp.obj[116] = new OBJ_W7();
-        gp.obj[116].worldX = 6 * gp.tileSize - (2 * gp.scale);
-        gp.obj[116].worldY = 21 * gp.tileSize;
-
-        gp.obj[117] = new OBJ_W8();
-        gp.obj[117].worldX = 5 * gp.tileSize - (2 * gp.scale);
-        gp.obj[117].worldY = 20 * gp.tileSize;
-
-        gp.obj[118] = new OBJ_W7();
-        gp.obj[118].worldX = 5 * gp.tileSize - (2 * gp.scale);
-        gp.obj[118].worldY = 19 * gp.tileSize;
-
-        gp.obj[119] = new OBJ_W7();
-        gp.obj[119].worldX = 4 * gp.tileSize - (2 * gp.scale);
-        gp.obj[119].worldY = 18 * gp.tileSize;
-
-        gp.obj[120] = new OBJ_W15();
-        gp.obj[120].worldX = (20 * gp.tileSize) - (2 * gp.scale);
-        gp.obj[120].worldY = 47 * gp.tileSize;
-        gp.obj[121] = new OBJ_W23();
-        gp.obj[121].worldX = (20 * gp.tileSize) - (2 * gp.scale);
-        gp.obj[121].worldY = 48 * gp.tileSize;
-
-        gp.obj[122] = new OBJ_W7();
-        gp.obj[122].worldX = 20 * gp.tileSize - (2 * gp.scale);
-        gp.obj[122].worldY = 46 * gp.tileSize;
-
-        gp.obj[123] = new OBJ_W8();
-        gp.obj[123].worldX = 18 * gp.tileSize;
-        gp.obj[123].worldY = 45 * gp.tileSize;
-
-        gp.obj[124] = new OBJ_W8();
-        gp.obj[124].worldX = 18 * gp.tileSize;
-        gp.obj[124].worldY = 44 * gp.tileSize;
-
-        gp.obj[125] = new OBJ_W8();
-        gp.obj[125].worldX = 18 * gp.tileSize;
-        gp.obj[125].worldY = 43 * gp.tileSize;
-
-        gp.obj[126] = new OBJ_W8();
-        gp.obj[126].worldX = 18 * gp.tileSize;
-        gp.obj[126].worldY = 42 * gp.tileSize;
-
-        gp.obj[127] = new OBJ_W7();
-        gp.obj[127].worldX = 18 * gp.tileSize;
-        gp.obj[127].worldY = 41 * gp.tileSize;
-
-        gp.obj[128] = new OBJ_W7();
-        gp.obj[128].worldX = 8 * gp.tileSize - (2 * gp.scale);
-        gp.obj[128].worldY = 40 * gp.tileSize;
-
-        gp.obj[129] = new OBJ_W8();
-        gp.obj[129].worldX = 7 * gp.tileSize;
-        gp.obj[129].worldY = 39 * gp.tileSize;
-
-        gp.obj[130] = new OBJ_W8();
-        gp.obj[130].worldX = 7 * gp.tileSize;
-        gp.obj[130].worldY = 37 * gp.tileSize;
-
-        gp.obj[131] = new OBJ_W8();
-        gp.obj[131].worldX = 7 * gp.tileSize;
-        gp.obj[131].worldY = 36 * gp.tileSize;
-
-        gp.obj[132] = new OBJ_W7();
-        gp.obj[132].worldX = 7 * gp.tileSize - (3 * gp.scale);
-        gp.obj[132].worldY = 33 * gp.tileSize;
-
-        gp.obj[133] = new OBJ_W7();
-        gp.obj[133].worldX = 6 * gp.tileSize - (2 * gp.scale);
-        gp.obj[133].worldY = 32 * gp.tileSize;
-
-        gp.obj[134] = new OBJ_W8();
-        gp.obj[134].worldX = 5 * gp.tileSize - (2 * gp.scale);
-        gp.obj[134].worldY = 31 * gp.tileSize;
-
-        gp.obj[135] = new OBJ_W7();
-        gp.obj[135].worldX = 5 * gp.tileSize - (2 * gp.scale);
-        gp.obj[135].worldY = 30 * gp.tileSize;
-
-        gp.obj[136] = new OBJ_W7();
-        gp.obj[136].worldX = 4 * gp.tileSize - (2 * gp.scale);
-        gp.obj[136].worldY = 29 * gp.tileSize;
-
-        gp.obj[137] = new OBJ_W8();
-        gp.obj[137].worldX = 7 * gp.tileSize;
-        gp.obj[137].worldY = 38 * gp.tileSize;
-
-        gp.obj[138] = new OBJ_W8();
-        gp.obj[138].worldX = 16 * gp.tileSize - (2 * gp.scale);
-        gp.obj[138].worldY = 29 * gp.tileSize;
-
-        gp.obj[139] = new OBJ_W8();
-        gp.obj[139].worldX = 16 * gp.tileSize - (2 * gp.scale);
-        gp.obj[139].worldY = 28 * gp.tileSize;
-
-        gp.obj[140] = new OBJ_W7();
-        gp.obj[140].worldX = 16 * gp.tileSize - (2 * gp.scale);
-        gp.obj[140].worldY = 26 * gp.tileSize;
-
-        gp.obj[141] = new OBJ_W8();
-        gp.obj[141].worldX = 6 * gp.tileSize - (2 * gp.scale);
-        gp.obj[141].worldY = 7 * gp.tileSize;
-
-        gp.obj[142] = new OBJ_W8();
-        gp.obj[142].worldX = 6 * gp.tileSize - (2 * gp.scale);
-        gp.obj[142].worldY = 6 * gp.tileSize;
-
-        gp.obj[143] = new OBJ_W8();
-        gp.obj[143].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[143].worldY = 30 * gp.tileSize;
-
-        gp.obj[144] = new OBJ_W8();
-        gp.obj[144].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[144].worldY = 31 * gp.tileSize;
-
-        gp.obj[145] = new OBJ_W8();
-        gp.obj[145].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[145].worldY = 32 * gp.tileSize;
-
-        gp.obj[146] = new OBJ_W7();
-        gp.obj[146].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[146].worldY = 23 * gp.tileSize;
-
-        gp.obj[147] = new OBJ_W8();
-        gp.obj[147].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[147].worldY = 24 * gp.tileSize;
-
-        gp.obj[148] = new OBJ_W8();
-        gp.obj[148].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[148].worldY = 25 * gp.tileSize;
-
-        gp.obj[149] = new OBJ_W8();
-        gp.obj[149].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[149].worldY = 26 * gp.tileSize;
-
-        gp.obj[150] = new OBJ_W8();
-        gp.obj[150].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[150].worldY = 27 * gp.tileSize;
-
-        gp.obj[151] = new OBJ_W8();
-        gp.obj[151].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[151].worldY = 28 * gp.tileSize;
-
-        gp.obj[152] = new OBJ_W8();
-        gp.obj[152].worldX = 38 * gp.tileSize - (2 * gp.scale);
-        gp.obj[152].worldY = 29 * gp.tileSize;
-
-        gp.obj[153] = new OBJ_BLL();
-        gp.obj[153].worldX = 36 * gp.tileSize;
-        gp.obj[153].worldY = 23 * gp.tileSize;
-
-        gp.obj[154] = new OBJ_W8();
-        gp.obj[154].worldX = 36 * gp.tileSize;
-        gp.obj[154].worldY = 22 * gp.tileSize;
-
-        gp.obj[155] = new OBJ_W8();
-        gp.obj[155].worldX = 36 * gp.tileSize;
-        gp.obj[155].worldY = 21 * gp.tileSize;
-
-        gp.obj[156] = new OBJ_W8();
-        gp.obj[156].worldX = 36 * gp.tileSize;
-        gp.obj[156].worldY = 20 * gp.tileSize;
-
-        gp.obj[157] = new OBJ_W8();
-        gp.obj[157].worldX = 36 * gp.tileSize;
-        gp.obj[157].worldY = 19 * gp.tileSize;
-
-        gp.obj[158] = new OBJ_W7();
-        gp.obj[158].worldX = 36 * gp.tileSize;
-        gp.obj[158].worldY = 18 * gp.tileSize;
-
-        gp.obj[159] = new OBJ_BLR();
-        gp.obj[159].worldX = 37 * gp.tileSize + (22 * gp.scale);
-        gp.obj[159].worldY = 23 * gp.tileSize;
-
-        gp.obj[160] = new OBJ_W8();
-        gp.obj[160].worldX = 31 * gp.tileSize - (2 * gp.scale);
-        gp.obj[160].worldY = 18 * gp.tileSize;
-
-        gp.obj[161] = new OBJ_W7();
-        gp.obj[161].worldX = 42 * gp.tileSize;
-        gp.obj[161].worldY = 10 * gp.tileSize;
-
-        gp.obj[162] = new OBJ_W7();
-        gp.obj[162].worldX = 43 * gp.tileSize;
-        gp.obj[162].worldY = 11 * gp.tileSize;
-
-        gp.obj[163] = new OBJ_W8();
-        gp.obj[163].worldX = 16 * gp.tileSize - (2 * gp.scale);
-        gp.obj[163].worldY = 27 * gp.tileSize;
-
-        gp.obj[164] = new OBJ_W0();
-        gp.obj[164].worldX = 3 * gp.tileSize - (2 * gp.scale);
-        gp.obj[164].worldY = 9 * gp.tileSize;
-
-        gp.obj[165] = new OBJ_W22();
-        gp.obj[165].worldX = 4 * gp.tileSize - (2 * gp.scale);
-        gp.obj[165].worldY = 9 * gp.tileSize;
-
-        gp.obj[166] = new OBJ_W0();
-        gp.obj[166].worldX = 4 * gp.tileSize - (2 * gp.scale);
-        gp.obj[166].worldY = 7 * gp.tileSize;
-
-        gp.obj[167] = new OBJ_W22();
-        gp.obj[167].worldX = 5 * gp.tileSize - (2 * gp.scale);
-        gp.obj[167].worldY = 7 * gp.tileSize;
-
-        gp.obj[168] = new OBJ_W0();
-        gp.obj[168].worldX = 5 * gp.tileSize - (2 * gp.scale);
-        gp.obj[168].worldY = 6 * gp.tileSize;
-
-        gp.obj[169] = new OBJ_W3();
-        gp.obj[169].worldX = 18 * gp.tileSize;
-        gp.obj[169].worldY = 19 * gp.tileSize;
-
-        gp.obj[170] = new OBJ_W9();
-        gp.obj[170].worldX = 18 * gp.tileSize;
-        gp.obj[170].worldY = 20 * gp.tileSize;
-
-        gp.obj[171] = new OBJ_W9();
-        gp.obj[171].worldX = 18 * gp.tileSize;
-        gp.obj[171].worldY = 21 * gp.tileSize;
-
-        gp.obj[172] = new OBJ_W9();
-        gp.obj[172].worldX = 18 * gp.tileSize;
-        gp.obj[172].worldY = 22 * gp.tileSize;
-
-        gp.obj[173] = new OBJ_W9();
-        gp.obj[173].worldX = 18 * gp.tileSize;
-        gp.obj[173].worldY = 23 * gp.tileSize;
-
-        gp.obj[174] = new OBJ_W9();
-        gp.obj[174].worldX = 18 * gp.tileSize;
-        gp.obj[174].worldY = 24 * gp.tileSize;
-
-        gp.obj[175] = new OBJ_W9();
-        gp.obj[175].worldX = 18 * gp.tileSize;
-        gp.obj[175].worldY = 25 * gp.tileSize;
-
-        gp.obj[176] = new OBJ_W9();
-        gp.obj[176].worldX = 18 * gp.tileSize;
-        gp.obj[176].worldY = 26 * gp.tileSize;
-
-        gp.obj[177] = new OBJ_W9();
-        gp.obj[177].worldX = 18 * gp.tileSize;
-        gp.obj[177].worldY = 27 * gp.tileSize;
-
-        gp.obj[178] = new OBJ_W3();
-        gp.obj[178].worldX = 26 * gp.tileSize + (2 * gp.scale);
-        gp.obj[178].worldY = 17 * gp.tileSize;
-
-        gp.obj[179] = new OBJ_W9();
-        gp.obj[179].worldX = 26 * gp.tileSize + (2 * gp.scale);
-        gp.obj[179].worldY = 18 * gp.tileSize;
-
-        gp.obj[180] = new OBJ_W7();
-        gp.obj[180].worldX = 31 * gp.tileSize - (2 * gp.scale);
-        gp.obj[180].worldY = 17 * gp.tileSize;
-
-        gp.obj[181] = new OBJ_W3();
-        gp.obj[181].worldX = 32 * gp.tileSize + (2 * gp.scale);
-        gp.obj[181].worldY = 18 * gp.tileSize;
-
-        gp.obj[182] = new OBJ_W9();
-        gp.obj[182].worldX = 40 * gp.tileSize + (2 * gp.scale);
-        gp.obj[182].worldY = 30 * gp.tileSize;
-
-        gp.obj[183] = new OBJ_W9();
-        gp.obj[183].worldX = 40 * gp.tileSize + (2 * gp.scale);
-        gp.obj[183].worldY = 31 * gp.tileSize;
-
-        gp.obj[184] = new OBJ_W9();
-        gp.obj[184].worldX = 40 * gp.tileSize + (2 * gp.scale);
-        gp.obj[184].worldY = 32 * gp.tileSize;
-
-        gp.obj[185] = new OBJ_W3();
-        gp.obj[185].worldX = 40 * gp.tileSize + (2 * gp.scale);
-        gp.obj[185].worldY = 29 * gp.tileSize;
-
-        gp.obj[186] = new OBJ_W3();
-        gp.obj[186].worldX = 40 * gp.tileSize + (2 * gp.scale);
-        gp.obj[186].worldY = 19 * gp.tileSize;
-
-        gp.obj[187] = new OBJ_W9();
-        gp.obj[187].worldX = 40 * gp.tileSize + (2 * gp.scale);
-        gp.obj[187].worldY = 20 * gp.tileSize;
-
-        gp.obj[188] = new OBJ_W9();
-        gp.obj[188].worldX = 40 * gp.tileSize + (2 * gp.scale);
-        gp.obj[188].worldY = 21 * gp.tileSize;
-
-        gp.obj[189] = new OBJ_W1();
-        gp.obj[189].worldX = 41 * gp.tileSize ;
-        gp.obj[189].worldY = 22 * gp.tileSize;
-
-        gp.obj[190] = new OBJ_W18();
-        gp.obj[190].worldX = 40 * gp.tileSize + (2 * gp.scale) ;
-        gp.obj[190].worldY = 22 * gp.tileSize;
-
-        gp.obj[191] = new OBJ_W1();
-        gp.obj[191].worldX = 42 * gp.tileSize ;
-        gp.obj[191].worldY = 22 * gp.tileSize;
-
-        gp.obj[192] = new OBJ_W1();
-        gp.obj[192].worldX = 43 * gp.tileSize ;
-        gp.obj[192].worldY = 22 * gp.tileSize;
-
-        gp.obj[193] = new OBJ_W1();
-        gp.obj[193].worldX = 44 * gp.tileSize ;
-        gp.obj[193].worldY = 22 * gp.tileSize;
-
-        gp.obj[194] = new OBJ_W1();
-        gp.obj[194].worldX = 45 * gp.tileSize ;
-        gp.obj[194].worldY = 22 * gp.tileSize;
-
-        gp.obj[195] = new OBJ_W1();
-        gp.obj[195].worldX = 46 * gp.tileSize ;
-        gp.obj[195].worldY = 22 * gp.tileSize;
+        // gp.obj[116] = new OBJ_W7();
+        // gp.obj[116].worldX = 6 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[116].worldY = 21 * gp.tileSize;
+
+        // gp.obj[117] = new OBJ_W8();
+        // gp.obj[117].worldX = 5 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[117].worldY = 20 * gp.tileSize;
+
+        // gp.obj[118] = new OBJ_W7();
+        // gp.obj[118].worldX = 5 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[118].worldY = 19 * gp.tileSize;
+
+        // gp.obj[119] = new OBJ_W7();
+        // gp.obj[119].worldX = 4 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[119].worldY = 18 * gp.tileSize;
+
+        // gp.obj[120] = new OBJ_W15();
+        // gp.obj[120].worldX = (20 * gp.tileSize) - (2 * gp.scale);
+        // gp.obj[120].worldY = 47 * gp.tileSize;
+        // gp.obj[121] = new OBJ_W23();
+        // gp.obj[121].worldX = (20 * gp.tileSize) - (2 * gp.scale);
+        // gp.obj[121].worldY = 48 * gp.tileSize;
+
+        // gp.obj[122] = new OBJ_W7();
+        // gp.obj[122].worldX = 20 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[122].worldY = 46 * gp.tileSize;
+
+        // gp.obj[123] = new OBJ_W8();
+        // gp.obj[123].worldX = 18 * gp.tileSize;
+        // gp.obj[123].worldY = 45 * gp.tileSize;
+
+        // gp.obj[124] = new OBJ_W8();
+        // gp.obj[124].worldX = 18 * gp.tileSize;
+        // gp.obj[124].worldY = 44 * gp.tileSize;
+
+        // gp.obj[125] = new OBJ_W8();
+        // gp.obj[125].worldX = 18 * gp.tileSize;
+        // gp.obj[125].worldY = 43 * gp.tileSize;
+
+        // gp.obj[126] = new OBJ_W8();
+        // gp.obj[126].worldX = 18 * gp.tileSize;
+        // gp.obj[126].worldY = 42 * gp.tileSize;
+
+        // gp.obj[127] = new OBJ_W7();
+        // gp.obj[127].worldX = 18 * gp.tileSize;
+        // gp.obj[127].worldY = 41 * gp.tileSize;
+
+        // gp.obj[128] = new OBJ_W7();
+        // gp.obj[128].worldX = 8 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[128].worldY = 40 * gp.tileSize;
+
+        // gp.obj[129] = new OBJ_W8();
+        // gp.obj[129].worldX = 7 * gp.tileSize;
+        // gp.obj[129].worldY = 39 * gp.tileSize;
+
+        // gp.obj[130] = new OBJ_W8();
+        // gp.obj[130].worldX = 7 * gp.tileSize;
+        // gp.obj[130].worldY = 37 * gp.tileSize;
+
+        // gp.obj[131] = new OBJ_W8();
+        // gp.obj[131].worldX = 7 * gp.tileSize;
+        // gp.obj[131].worldY = 36 * gp.tileSize;
+
+        // gp.obj[132] = new OBJ_W7();
+        // gp.obj[132].worldX = 7 * gp.tileSize - (3 * gp.scale);
+        // gp.obj[132].worldY = 33 * gp.tileSize;
+
+        // gp.obj[133] = new OBJ_W7();
+        // gp.obj[133].worldX = 6 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[133].worldY = 32 * gp.tileSize;
+
+        // gp.obj[134] = new OBJ_W8();
+        // gp.obj[134].worldX = 5 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[134].worldY = 31 * gp.tileSize;
+
+        // gp.obj[135] = new OBJ_W7();
+        // gp.obj[135].worldX = 5 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[135].worldY = 30 * gp.tileSize;
+
+        // gp.obj[136] = new OBJ_W7();
+        // gp.obj[136].worldX = 4 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[136].worldY = 29 * gp.tileSize;
+
+        // gp.obj[137] = new OBJ_W8();
+        // gp.obj[137].worldX = 7 * gp.tileSize;
+        // gp.obj[137].worldY = 38 * gp.tileSize;
+
+        // gp.obj[138] = new OBJ_W8();
+        // gp.obj[138].worldX = 16 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[138].worldY = 29 * gp.tileSize;
+
+        // gp.obj[139] = new OBJ_W8();
+        // gp.obj[139].worldX = 16 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[139].worldY = 28 * gp.tileSize;
+
+        // gp.obj[140] = new OBJ_W7();
+        // gp.obj[140].worldX = 16 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[140].worldY = 26 * gp.tileSize;
+
+        // gp.obj[141] = new OBJ_W8();
+        // gp.obj[141].worldX = 6 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[141].worldY = 7 * gp.tileSize;
+
+        // gp.obj[142] = new OBJ_W8();
+        // gp.obj[142].worldX = 6 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[142].worldY = 6 * gp.tileSize;
+
+        // gp.obj[143] = new OBJ_W8();
+        // gp.obj[143].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[143].worldY = 30 * gp.tileSize;
+
+        // gp.obj[144] = new OBJ_W8();
+        // gp.obj[144].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[144].worldY = 31 * gp.tileSize;
+
+        // gp.obj[145] = new OBJ_W8();
+        // gp.obj[145].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[145].worldY = 32 * gp.tileSize;
+
+        // gp.obj[146] = new OBJ_W7();
+        // gp.obj[146].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[146].worldY = 23 * gp.tileSize;
+
+        // gp.obj[147] = new OBJ_W8();
+        // gp.obj[147].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[147].worldY = 24 * gp.tileSize;
+
+        // gp.obj[148] = new OBJ_W8();
+        // gp.obj[148].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[148].worldY = 25 * gp.tileSize;
+
+        // gp.obj[149] = new OBJ_W8();
+        // gp.obj[149].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[149].worldY = 26 * gp.tileSize;
+
+        // gp.obj[150] = new OBJ_W8();
+        // gp.obj[150].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[150].worldY = 27 * gp.tileSize;
+
+        // gp.obj[151] = new OBJ_W8();
+        // gp.obj[151].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[151].worldY = 28 * gp.tileSize;
+
+        // gp.obj[152] = new OBJ_W8();
+        // gp.obj[152].worldX = 38 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[152].worldY = 29 * gp.tileSize;
+
+        // gp.obj[153] = new OBJ_BLL();
+        // gp.obj[153].worldX = 36 * gp.tileSize;
+        // gp.obj[153].worldY = 23 * gp.tileSize;
+
+        // gp.obj[154] = new OBJ_W8();
+        // gp.obj[154].worldX = 36 * gp.tileSize;
+        // gp.obj[154].worldY = 22 * gp.tileSize;
+
+        // gp.obj[155] = new OBJ_W8();
+        // gp.obj[155].worldX = 36 * gp.tileSize;
+        // gp.obj[155].worldY = 21 * gp.tileSize;
+
+        // gp.obj[156] = new OBJ_W8();
+        // gp.obj[156].worldX = 36 * gp.tileSize;
+        // gp.obj[156].worldY = 20 * gp.tileSize;
+
+        // gp.obj[157] = new OBJ_W8();
+        // gp.obj[157].worldX = 36 * gp.tileSize;
+        // gp.obj[157].worldY = 19 * gp.tileSize;
+
+        // gp.obj[158] = new OBJ_W7();
+        // gp.obj[158].worldX = 36 * gp.tileSize;
+        // gp.obj[158].worldY = 18 * gp.tileSize;
+
+        // gp.obj[159] = new OBJ_BLR();
+        // gp.obj[159].worldX = 37 * gp.tileSize + (22 * gp.scale);
+        // gp.obj[159].worldY = 23 * gp.tileSize;
+
+        // gp.obj[160] = new OBJ_W8();
+        // gp.obj[160].worldX = 31 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[160].worldY = 18 * gp.tileSize;
+
+        // gp.obj[161] = new OBJ_W7();
+        // gp.obj[161].worldX = 42 * gp.tileSize;
+        // gp.obj[161].worldY = 10 * gp.tileSize;
+
+        // gp.obj[162] = new OBJ_W7();
+        // gp.obj[162].worldX = 43 * gp.tileSize;
+        // gp.obj[162].worldY = 11 * gp.tileSize;
+
+        // gp.obj[163] = new OBJ_W8();
+        // gp.obj[163].worldX = 16 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[163].worldY = 27 * gp.tileSize;
+
+        // gp.obj[164] = new OBJ_W0();
+        // gp.obj[164].worldX = 3 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[164].worldY = 9 * gp.tileSize;
+
+        // gp.obj[165] = new OBJ_W22();
+        // gp.obj[165].worldX = 4 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[165].worldY = 9 * gp.tileSize;
+
+        // gp.obj[166] = new OBJ_W0();
+        // gp.obj[166].worldX = 4 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[166].worldY = 7 * gp.tileSize;
+
+        // gp.obj[167] = new OBJ_W22();
+        // gp.obj[167].worldX = 5 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[167].worldY = 7 * gp.tileSize;
+
+        // gp.obj[168] = new OBJ_W0();
+        // gp.obj[168].worldX = 5 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[168].worldY = 6 * gp.tileSize;
+
+        // gp.obj[169] = new OBJ_W3();
+        // gp.obj[169].worldX = 18 * gp.tileSize;
+        // gp.obj[169].worldY = 19 * gp.tileSize;
+
+        // gp.obj[170] = new OBJ_W9();
+        // gp.obj[170].worldX = 18 * gp.tileSize;
+        // gp.obj[170].worldY = 20 * gp.tileSize;
+
+        // gp.obj[171] = new OBJ_W9();
+        // gp.obj[171].worldX = 18 * gp.tileSize;
+        // gp.obj[171].worldY = 21 * gp.tileSize;
+
+        // gp.obj[172] = new OBJ_W9();
+        // gp.obj[172].worldX = 18 * gp.tileSize;
+        // gp.obj[172].worldY = 22 * gp.tileSize;
+
+        // gp.obj[173] = new OBJ_W9();
+        // gp.obj[173].worldX = 18 * gp.tileSize;
+        // gp.obj[173].worldY = 23 * gp.tileSize;
+
+        // gp.obj[174] = new OBJ_W9();
+        // gp.obj[174].worldX = 18 * gp.tileSize;
+        // gp.obj[174].worldY = 24 * gp.tileSize;
+
+        // gp.obj[175] = new OBJ_W9();
+        // gp.obj[175].worldX = 18 * gp.tileSize;
+        // gp.obj[175].worldY = 25 * gp.tileSize;
+
+        // gp.obj[176] = new OBJ_W9();
+        // gp.obj[176].worldX = 18 * gp.tileSize;
+        // gp.obj[176].worldY = 26 * gp.tileSize;
+
+        // gp.obj[177] = new OBJ_W9();
+        // gp.obj[177].worldX = 18 * gp.tileSize;
+        // gp.obj[177].worldY = 27 * gp.tileSize;
+
+        // gp.obj[178] = new OBJ_W3();
+        // gp.obj[178].worldX = 26 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[178].worldY = 17 * gp.tileSize;
+
+        // gp.obj[179] = new OBJ_W9();
+        // gp.obj[179].worldX = 26 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[179].worldY = 18 * gp.tileSize;
+
+        // gp.obj[180] = new OBJ_W7();
+        // gp.obj[180].worldX = 31 * gp.tileSize - (2 * gp.scale);
+        // gp.obj[180].worldY = 17 * gp.tileSize;
+
+        // gp.obj[181] = new OBJ_W3();
+        // gp.obj[181].worldX = 32 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[181].worldY = 18 * gp.tileSize;
+
+        // gp.obj[182] = new OBJ_W9();
+        // gp.obj[182].worldX = 40 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[182].worldY = 30 * gp.tileSize;
+
+        // gp.obj[183] = new OBJ_W9();
+        // gp.obj[183].worldX = 40 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[183].worldY = 31 * gp.tileSize;
+
+        // gp.obj[184] = new OBJ_W9();
+        // gp.obj[184].worldX = 40 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[184].worldY = 32 * gp.tileSize;
+
+        // gp.obj[185] = new OBJ_W3();
+        // gp.obj[185].worldX = 40 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[185].worldY = 29 * gp.tileSize;
+
+        // gp.obj[186] = new OBJ_W3();
+        // gp.obj[186].worldX = 40 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[186].worldY = 19 * gp.tileSize;
+
+        // gp.obj[187] = new OBJ_W9();
+        // gp.obj[187].worldX = 40 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[187].worldY = 20 * gp.tileSize;
+
+        // gp.obj[188] = new OBJ_W9();
+        // gp.obj[188].worldX = 40 * gp.tileSize + (2 * gp.scale);
+        // gp.obj[188].worldY = 21 * gp.tileSize;
+
+        // gp.obj[189] = new OBJ_W1();
+        // gp.obj[189].worldX = 41 * gp.tileSize ;
+        // gp.obj[189].worldY = 22 * gp.tileSize;
+
+        // gp.obj[190] = new OBJ_W18();
+        // gp.obj[190].worldX = 40 * gp.tileSize + (2 * gp.scale) ;
+        // gp.obj[190].worldY = 22 * gp.tileSize;
+
+        // gp.obj[191] = new OBJ_W1();
+        // gp.obj[191].worldX = 42 * gp.tileSize ;
+        // gp.obj[191].worldY = 22 * gp.tileSize;
+
+        // gp.obj[192] = new OBJ_W1();
+        // gp.obj[192].worldX = 43 * gp.tileSize ;
+        // gp.obj[192].worldY = 22 * gp.tileSize;
+
+        // gp.obj[193] = new OBJ_W1();
+        // gp.obj[193].worldX = 44 * gp.tileSize ;
+        // gp.obj[193].worldY = 22 * gp.tileSize;
+
+        // gp.obj[194] = new OBJ_W1();
+        // gp.obj[194].worldX = 45 * gp.tileSize ;
+        // gp.obj[194].worldY = 22 * gp.tileSize;
+
+        // gp.obj[195] = new OBJ_W1();
+        // gp.obj[195].worldX = 46 * gp.tileSize ;
+        // gp.obj[195].worldY = 22 * gp.tileSize;
 
         
 
