@@ -5,13 +5,13 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class OBJ_P extends SuperObject{
+public class OBJ_FW2 extends SuperObject{
     
-    public OBJ_P() {
+    public OBJ_FW2() {
 
-        name = "P";
+        name = "FW2";
         try {
-            image = ImageIO.read(new FileInputStream("res/props/PropsP.png"));
+            image = ImageIO.read(new FileInputStream("res/object/Flower2.png"));
         }catch(IOException e) {
             e.printStackTrace();
         } 

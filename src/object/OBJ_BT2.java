@@ -11,7 +11,7 @@ public class OBJ_BT2 extends SuperObject{
 
         name = "BT2";
         try {
-            image = ImageIO.read(new FileInputStream("res/struct/StairsBRR.png"));
+            image = ImageIO.read(new FileInputStream("res/props/PropsBT2.png"));
         }catch(IOException e) {
             e.printStackTrace();
         } 

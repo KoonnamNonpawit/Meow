@@ -11,7 +11,7 @@ public class OBJ_PoC extends SuperObject{
 
         name = "PoC";
         try {
-            image = ImageIO.read(new FileInputStream("res/struct/StairsBRR.png"));
+            image = ImageIO.read(new FileInputStream("res/props/PropsPoC.png"));
         }catch(IOException e) {
             e.printStackTrace();
         } 

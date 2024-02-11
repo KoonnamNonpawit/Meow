@@ -11,7 +11,7 @@ public class OBJ_GC extends SuperObject{
 
         name = "GC";
         try {
-            image = ImageIO.read(new FileInputStream("res/struct/StairsBRR.png"));
+            image = ImageIO.read(new FileInputStream("res/props/PropsGC.png"));
         }catch(IOException e) {
             e.printStackTrace();
         } 
