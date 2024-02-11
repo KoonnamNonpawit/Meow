@@ -6,7 +6,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import main.GamePanel;
+
 public class OBJ_Paper extends SuperObject{
+
+    GamePanel gp;
+    public int paperNumber;
     
     public OBJ_Paper() {
 
@@ -34,7 +39,27 @@ public class OBJ_Paper extends SuperObject{
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
-        description = "[" + name + "]\nCollect to solve the puzzles.";
+        description = "[" + name + "]\nCollect to solve the puzzles.\n \n Press [R] to read";
 
+    }
+
+    public String readThePaper() {
+
+        String messageInPage = "";
+
+        switch (paperNumber) {
+            case 1:
+                messageInPage =  "123456789";
+                break;
+        
+            case 2:
+                messageInPage = "qwertyuiop[]";
+                break;
+
+            case 3:
+                messageInPage = "asdfghjkl;";
+                break;
+        }
+        return messageInPage;
     }
 }

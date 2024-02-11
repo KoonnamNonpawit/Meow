@@ -5,6 +5,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import entity.Entity;
 import entity.Player;
@@ -16,7 +21,6 @@ public class UI {
     Graphics2D g2;
     Font arial_40;
     BufferedImage paperImage;
-    public boolean messageOn = false;
     public String message = "";
     int messageCounter = 0;
     public boolean gameFinished = false;
@@ -38,8 +42,11 @@ public class UI {
 
     public void showMessage(String text) {
 
+        //show message on the left of the screen
         message = text;
-        messageOn = true;
+        g2.setColor(Color.white);
+        g2.drawString(text, 1000, 100);
+        
     }
 
     public void draw(Graphics2D g2) {
@@ -53,7 +60,7 @@ public class UI {
 
         // PLAY STATE
         if(gp.gameState == gp.playState) {
-            // Do playState Stuff later
+            showMessage(message);
         }
 
         // PAUSE STATE
@@ -228,6 +235,20 @@ public class UI {
             g2.drawString(line, x, y);
             y += 40;
         }
+    }
+
+    public void drawReadPaperScreen() {
+
+        BufferedImage img;
+        try {
+            img = ImageIO.read(new FileInputStream("res/object/ObjPE.png"));
+            g2.drawImage(img,40, 40, null);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void drawSubWindow(int x, int y, int width, int height) {
@@ -508,7 +529,6 @@ public class UI {
         int dFrameY = frameY + frameHeight;
         int dFrameWidth = frameWidth;
         int dFrameHeight = gp.tileSize*2;
-        drawSubWindow(dFrameX, dFrameY, dFrameWidth, dFrameHeight);
 
         // DRAW DESCRIPTION TEXT
         int textX = dFrameX + 20;
@@ -516,6 +536,8 @@ public class UI {
         g2.setFont(g2.getFont().deriveFont(28F));
         int itemIndex = getItemIndexOnSlot();
         if(itemIndex < gp.player.inventory.size()) {
+
+            drawSubWindow(dFrameX, dFrameY, dFrameWidth, dFrameHeight);
 
             for(String line: gp.player.inventory.get(itemIndex).description.split("\n")) {
                 g2.drawString(line, textX, textY);
@@ -537,6 +559,8 @@ public class UI {
     public void puzzle_select() {
 
         p.dialoguesSet = p.start;
+        drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize*5, gp.tileSize*14, gp.tileSize*3);
+ 
         drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
 
         int frameX = (gp.tileSize) + (10*gp.scale);

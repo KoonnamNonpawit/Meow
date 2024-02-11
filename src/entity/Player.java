@@ -62,19 +62,9 @@ public class Player extends Entity{
     }
 
     public void setItems() {
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
-        inventory.add(new OBJ_Paper());
+
     }
+
     public void getPlayerImage() {
 
         try {
@@ -180,7 +170,7 @@ public class Player extends Entity{
 
             switch (objectName) {
                 case "Paper":
-                    hasPaper++;
+                    inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a paper!");
                     break;

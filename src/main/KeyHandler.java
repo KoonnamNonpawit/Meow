@@ -7,7 +7,7 @@ public class KeyHandler implements KeyListener {
 
     GamePanel gp;
     public boolean upPressed, downPressed, leftPressed,
-                    rightPressed,enterPressed;
+                    rightPressed, enterPressed, rPressed;
 
     // DEBUG
     boolean showDebugText = false;
@@ -193,6 +193,7 @@ public class KeyHandler implements KeyListener {
 
     // CHARACTER STATE
     public void characterState(int code) {
+
         if(code == KeyEvent.VK_E) {
             gp.gameState = gp.playState;
         }
@@ -215,6 +216,9 @@ public class KeyHandler implements KeyListener {
             if(gp.ui.slotRow != 4) {
                 gp.ui.slotRow++;
             }
+        }
+        if(code == KeyEvent.VK_R) {
+            rPressed = true;
         }
     }
 
@@ -244,6 +248,10 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_D) {
             rightPressed = false;
         }
+        if (code == KeyEvent.VK_ENTER) {
+            rightPressed = false;
+        }
+
     }
     
 }
