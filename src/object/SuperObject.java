@@ -135,40 +135,37 @@ public class SuperObject {
             }
 
             if(name == "BT1") {
-                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+                g2.drawImage(image, screenX, screenY, 18 * gp.scale, 16 * gp.scale, null); 
             }
             if(name == "BT2") {
-                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
-            }
-            if(name == "C") {
-                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+                g2.drawImage(image, screenX, screenY, 19 * gp.scale, 16 * gp.scale, null); 
             }
             if(name == "GA") {
-                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+                g2.drawImage(image, screenX, screenY, 30 * gp.scale, 41 * gp.scale, null); 
             }
             if(name == "GB") {
-                g2.drawImage(image, screenX, screenY, 49 * gp.scale, 96 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 26 * gp.scale, 40 * gp.scale, null); 
             }
             if(name == "GC") {
-                g2.drawImage(image, screenX, screenY, 64 * gp.scale, 45 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 30 * gp.scale, 29 * gp.scale, null); 
             }
             if(name == "P") {
-                g2.drawImage(image, screenX, screenY, 64 * gp.scale, 19 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 32 * gp.scale, 77 * gp.scale, null); 
             }
             if(name == "PB") {
-                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 32 * gp.scale, 57 * gp.scale, null); 
             }
             if(name == "PoC") {
-                g2.drawImage(image, screenX, screenY, 49 * gp.scale, 96 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 21 * gp.scale, 32 * gp.scale, null); 
             }
             if(name == "SBS") {
-                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 56 * gp.scale, 41 * gp.scale, null); 
             }
             if(name == "SL") {
-                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 22 * gp.scale, 38 * gp.scale, null); 
             }
             if(name == "W") {
-                g2.drawImage(image, screenX, screenY, 8 * gp.scale, 96 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 58 * gp.scale, 49 * gp.scale, null); 
             }
             
         }
