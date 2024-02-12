@@ -170,6 +170,7 @@ public class Player extends Entity{
 
             switch (objectName) {
                 case "Paper":
+                    hasPaper++;
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a paper!");

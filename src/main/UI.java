@@ -22,6 +22,7 @@ public class UI {
     Font arial_40;
     BufferedImage paperImage;
     public String message = "";
+    boolean messageOn = false;
     int messageCounter = 0;
     public boolean gameFinished = false;
     public String currentDialogue = "";
@@ -44,8 +45,7 @@ public class UI {
 
         //show message on the left of the screen
         message = text;
-        g2.setColor(Color.white);
-        g2.drawString(text, 1000, 100);
+        messageOn = true;
         
     }
 
@@ -60,7 +60,17 @@ public class UI {
 
         // PLAY STATE
         if(gp.gameState == gp.playState) {
-            showMessage(message);
+            if(messageOn == true) {
+                g2.setColor(Color.white);
+                g2.drawString(message, 20 * gp.scale, 20 * gp.scale);
+
+                messageCounter++;
+
+                if(messageCounter > 120) {
+                    messageCounter = 0;
+                    messageOn = false;
+                }
+            }
         }
 
         // PAUSE STATE
