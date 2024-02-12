@@ -194,7 +194,7 @@ public class UI {
             }
         }
         else {
-            p.dialoguesIndex = p.start;
+            p.dialoguesIndex = 0;
 
             if(gp.gameState == gp.dialogueState) {
                 gp.gameState = gp.playState;
@@ -234,7 +234,7 @@ public class UI {
             }
         }
         else {
-            p.dialoguesIndex = p.start;
+            p.dialoguesIndex = 0;
 
             if(gp.gameState == gp.dialogueState) {
                 gp.gameState = gp.playState;
@@ -569,7 +569,7 @@ public class UI {
     public void puzzle_select() {
 
         p.dialoguesSet = p.start;
-        drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize*5, gp.tileSize*14, gp.tileSize*3);
+        drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
  
         //drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
 

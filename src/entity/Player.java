@@ -123,7 +123,7 @@ public class Player extends Entity{
             int objIndex = gp.cChecker.checkObject(this, true);
             pickUpObject(objIndex);
 
-            if(objIndex == 0 || objIndex == 2) {
+            if(objIndex == 0 || objIndex == 351) {
                 interactOBJ(objIndex);
             }
 
@@ -170,7 +170,7 @@ public class Player extends Entity{
 
             switch (objectName) {
                 case "Paper":
-                    hasPaper++;
+                    hasPaper += 1;
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a paper!");
@@ -187,11 +187,11 @@ public class Player extends Entity{
                         start = 0;
                         speak(start);
                     }
-                    if(i == 2 && hasPaper == 0) {
+                    if(i == 351 && hasPaper == 0) {
                         start = 1;
                         speak(start);
                     }  
-                    if(i == 2 && hasPaper == 1) {
+                    if(i == 351 && hasPaper == 1) {
                         start = 2;
                         speak(start);
                     }
@@ -308,10 +308,10 @@ public class Player extends Entity{
 
     public void speak(int start) {
 
+        
         startDialogue(this,start);
         if(start == 2) {
             gp.gameState = gp.puzzleState;
-            
         }
     }   
 
