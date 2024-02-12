@@ -561,7 +561,7 @@ public class UI {
         p.dialoguesSet = p.start;
         drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize*5, gp.tileSize*14, gp.tileSize*3);
  
-        drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
+        //drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
 
         int frameX = (gp.tileSize) + (10*gp.scale);
         int frameY = (gp.tileSize*6) - (10*gp.scale);
