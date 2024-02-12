@@ -628,11 +628,11 @@ public class AssetSetter {
         gp.obj[160].worldY = 18 * gp.tileSize;
 
         gp.obj[161] = new OBJ_W7();
-        gp.obj[161].worldX = 42 * gp.tileSize;
+        gp.obj[161].worldX = 42 * gp.tileSize - (2 * gp.scale);
         gp.obj[161].worldY = 10 * gp.tileSize;
 
         gp.obj[162] = new OBJ_W7();
-        gp.obj[162].worldX = 43 * gp.tileSize;
+        gp.obj[162].worldX = 43 * gp.tileSize - (2 * gp.scale);
         gp.obj[162].worldY = 11 * gp.tileSize;
 
         gp.obj[163] = new OBJ_W8();
@@ -768,43 +768,43 @@ public class AssetSetter {
         gp.obj[195].worldY = 22 * gp.tileSize;
 
         gp.obj[196] = new OBJ_W3();
-        gp.obj[196].worldX = 8 * gp.tileSize;
+        gp.obj[196].worldX = 8 * gp.tileSize + (2 * gp.scale);
         gp.obj[196].worldY = 12 * gp.tileSize;
 
         gp.obj[197] = new OBJ_W9();
-        gp.obj[197].worldX = 12 * gp.tileSize;
+        gp.obj[197].worldX = 12 * gp.tileSize + (2 * gp.scale);
         gp.obj[197].worldY = 11 * gp.tileSize;
 
         gp.obj[198] = new OBJ_W9();
-        gp.obj[198].worldX = 12 * gp.tileSize;
+        gp.obj[198].worldX = 12 * gp.tileSize + (2 * gp.scale);
         gp.obj[198].worldY = 10 * gp.tileSize;
 
         gp.obj[199] = new OBJ_W9();
-        gp.obj[199].worldX = 12 * gp.tileSize;
+        gp.obj[199].worldX = 12 * gp.tileSize + (2 * gp.scale);
         gp.obj[199].worldY = 9 * gp.tileSize;
 
         gp.obj[200] = new OBJ_W9();
-        gp.obj[200].worldX = 12 * gp.tileSize;
+        gp.obj[200].worldX = 12 * gp.tileSize + (2 * gp.scale);
         gp.obj[200].worldY = 8 * gp.tileSize;
 
         gp.obj[201] = new OBJ_W9();
-        gp.obj[201].worldX = 12 * gp.tileSize;
+        gp.obj[201].worldX = 12 * gp.tileSize + (2 * gp.scale);
         gp.obj[201].worldY = 7 * gp.tileSize;
 
         gp.obj[202] = new OBJ_W2();
-        gp.obj[202].worldX = 12 * gp.tileSize;
+        gp.obj[202].worldX = 12 * gp.tileSize + (2 * gp.scale);
         gp.obj[202].worldY = 6 * gp.tileSize;
 
         gp.obj[203] = new OBJ_W9();
-        gp.obj[203].worldX = 11 * gp.tileSize;
+        gp.obj[203].worldX = 11 * gp.tileSize + (2 * gp.scale);
         gp.obj[203].worldY = 7 * gp.tileSize;
 
         gp.obj[204] = new OBJ_W9();
-        gp.obj[204].worldX = 11 * gp.tileSize;
+        gp.obj[204].worldX = 11 * gp.tileSize + (2 * gp.scale);
         gp.obj[204].worldY = 6 * gp.tileSize;
 
         gp.obj[205] = new OBJ_W2();
-        gp.obj[205].worldX = 11 * gp.tileSize;
+        gp.obj[205].worldX = 11 * gp.tileSize + (2 * gp.scale);
         gp.obj[205].worldY = 5 * gp.tileSize;
 
         gp.obj[206] = new OBJ_W2();
@@ -1119,19 +1119,19 @@ public class AssetSetter {
         gp.obj[283].worldY = 21 * gp.tileSize;
 
         gp.obj[284] = new OBJ_W18();
-        gp.obj[284].worldX = (44 * gp.tileSize);
+        gp.obj[284].worldX = (44 * gp.tileSize) + (2 * gp.scale);
         gp.obj[284].worldY = 21 * gp.tileSize;
 
         gp.obj[285] = new OBJ_W9();
-        gp.obj[285].worldX = (44 * gp.tileSize);
+        gp.obj[285].worldX = (44 * gp.tileSize) + (2 * gp.scale);
         gp.obj[285].worldY = 20 * gp.tileSize;
 
         gp.obj[286] = new OBJ_W3();
-        gp.obj[286].worldX = (44 * gp.tileSize);
+        gp.obj[286].worldX = (44 * gp.tileSize) + (2 * gp.scale);
         gp.obj[286].worldY = 19 * gp.tileSize;
 
         gp.obj[287] = new OBJ_W3();
-        gp.obj[287].worldX = (45 * gp.tileSize);
+        gp.obj[287].worldX = (45 * gp.tileSize) + (2 * gp.scale);
         gp.obj[287].worldY = 18 * gp.tileSize;
 
         gp.obj[288] = new OBJ_W9();
@@ -1175,15 +1175,15 @@ public class AssetSetter {
         gp.obj[297].worldY = 28 * gp.tileSize;
 
         gp.obj[298] = new OBJ_W3();
-        gp.obj[298].worldX = (42 * gp.tileSize);
+        gp.obj[298].worldX = (42 * gp.tileSize) + (6 * gp.scale);
         gp.obj[298].worldY = 33 * gp.tileSize;
 
         gp.obj[299] = new OBJ_W3();
-        gp.obj[299].worldX = (43 * gp.tileSize);
+        gp.obj[299].worldX = (43 * gp.tileSize) + (3 * gp.scale);
         gp.obj[299].worldY = 32 * gp.tileSize;
 
         gp.obj[300] = new OBJ_W3();
-        gp.obj[300].worldX = (44 * gp.tileSize);
+        gp.obj[300].worldX = (44 * gp.tileSize) + (2 * gp.scale);
         gp.obj[300].worldY = 31 * gp.tileSize;
 
         gp.obj[301] = new OBJ_W9();
@@ -1203,67 +1203,67 @@ public class AssetSetter {
         gp.obj[304].worldY = 39 * gp.tileSize;
 
         gp.obj[305] = new OBJ_W3();
-        gp.obj[305].worldX = (31 * gp.tileSize);
+        gp.obj[305].worldX = (31 * gp.tileSize) + (2 * gp.scale);
         gp.obj[305].worldY = 41 * gp.tileSize;
 
         gp.obj[306] = new OBJ_W9();
-        gp.obj[306].worldX = (31 * gp.tileSize);
+        gp.obj[306].worldX = (31 * gp.tileSize) + (2 * gp.scale);
         gp.obj[306].worldY = 42 * gp.tileSize;
 
         gp.obj[307] = new OBJ_W9();
-        gp.obj[307].worldX = (31 * gp.tileSize);
+        gp.obj[307].worldX = (31 * gp.tileSize) + (2 * gp.scale);
         gp.obj[307].worldY = 43 * gp.tileSize;
 
         gp.obj[308] = new OBJ_W9();
-        gp.obj[308].worldX = (31 * gp.tileSize);
+        gp.obj[308].worldX = (31 * gp.tileSize) + (2 * gp.scale);
         gp.obj[308].worldY = 44 * gp.tileSize;
 
         gp.obj[309] = new OBJ_W9();
-        gp.obj[309].worldX = (31 * gp.tileSize);
+        gp.obj[309].worldX = (31 * gp.tileSize) + (2 * gp.scale);
         gp.obj[309].worldY = 45 * gp.tileSize;
 
         gp.obj[310] = new OBJ_W3();
-        gp.obj[310].worldX = (29 * gp.tileSize);
+        gp.obj[310].worldX = (29 * gp.tileSize) + (2 * gp.scale);
         gp.obj[310].worldY = 46 * gp.tileSize;
 
         gp.obj[311] = new OBJ_W3();
-        gp.obj[311].worldX = (41 * gp.tileSize);
+        gp.obj[311].worldX = (41 * gp.tileSize) + (2 * gp.scale);
         gp.obj[311].worldY = 40 * gp.tileSize;
 
         gp.obj[312] = new OBJ_W9();
-        gp.obj[312].worldX = (46 * gp.tileSize);
+        gp.obj[312].worldX = (46 * gp.tileSize) + (2 * gp.scale);
         gp.obj[312].worldY = 11 * gp.tileSize;
 
         gp.obj[313] = new OBJ_W9();
-        gp.obj[313].worldX = (46 * gp.tileSize);
+        gp.obj[313].worldX = (46 * gp.tileSize) + (2 * gp.scale);
         gp.obj[313].worldY = 10 * gp.tileSize;
 
         gp.obj[314] = new OBJ_W9();
-        gp.obj[314].worldX = (45 * gp.tileSize);
+        gp.obj[314].worldX = (45 * gp.tileSize) + (2 * gp.scale);
         gp.obj[314].worldY = 8 * gp.tileSize;
 
         gp.obj[315] = new OBJ_W9();
-        gp.obj[315].worldX = (43 * gp.tileSize);
+        gp.obj[315].worldX = (43 * gp.tileSize) + (2 * gp.scale);
         gp.obj[315].worldY = 5 * gp.tileSize;
 
         gp.obj[316] = new OBJ_W2();
-        gp.obj[316].worldX = (46 * gp.tileSize);
+        gp.obj[316].worldX = (46 * gp.tileSize) + (2 * gp.scale);
         gp.obj[316].worldY = 9 * gp.tileSize;
 
         gp.obj[317] = new OBJ_W2();
-        gp.obj[317].worldX = (45 * gp.tileSize);
+        gp.obj[317].worldX = (45 * gp.tileSize) + (2 * gp.scale);
         gp.obj[317].worldY = 7 * gp.tileSize;
 
         gp.obj[318] = new OBJ_W2();
-        gp.obj[318].worldX = (44 * gp.tileSize);
+        gp.obj[318].worldX = (44 * gp.tileSize) + (2 * gp.scale);
         gp.obj[318].worldY = 6 * gp.tileSize;
 
         gp.obj[319] = new OBJ_W2();
-        gp.obj[319].worldX = (43 * gp.tileSize);
+        gp.obj[319].worldX = (43 * gp.tileSize) + (2 * gp.scale);
         gp.obj[319].worldY = 4 * gp.tileSize;
 
         gp.obj[320] = new OBJ_W2();
-        gp.obj[320].worldX = (42 * gp.tileSize);
+        gp.obj[320].worldX = (42 * gp.tileSize) + (2 * gp.scale);
         gp.obj[320].worldY = 3 * gp.tileSize;
 
         gp.obj[321] = new OBJ_W0();
@@ -1271,83 +1271,83 @@ public class AssetSetter {
         gp.obj[321].worldY = 2 * gp.tileSize;
 
         gp.obj[322] = new OBJ_W18();
-        gp.obj[322].worldX = (45 * gp.tileSize);
+        gp.obj[322].worldX = (45 * gp.tileSize) + (2 * gp.scale);
         gp.obj[322].worldY = 9 * gp.tileSize;
 
         gp.obj[323] = new OBJ_W18();
-        gp.obj[323].worldX = (44 * gp.tileSize);
+        gp.obj[323].worldX = (44 * gp.tileSize) + (2 * gp.scale);
         gp.obj[323].worldY = 7 * gp.tileSize;
 
         gp.obj[324] = new OBJ_W18();
-        gp.obj[324].worldX = (43 * gp.tileSize);
+        gp.obj[324].worldX = (43 * gp.tileSize) + (2 * gp.scale);
         gp.obj[324].worldY = 6 * gp.tileSize;
 
         gp.obj[325] = new OBJ_W18();
-        gp.obj[325].worldX = (42 * gp.tileSize);
+        gp.obj[325].worldX = (42 * gp.tileSize) + (2 * gp.scale);
         gp.obj[325].worldY = 4 * gp.tileSize;
 
         gp.obj[326] = new OBJ_W18();
-        gp.obj[326].worldX = (41 * gp.tileSize);
+        gp.obj[326].worldX = (41 * gp.tileSize) + (2 * gp.scale);
         gp.obj[326].worldY = 3 * gp.tileSize;
 
         gp.obj[327] = new OBJ_W2();
-        gp.obj[327].worldX = (41 * gp.tileSize);
+        gp.obj[327].worldX = (41 * gp.tileSize) + (2 * gp.scale);
         gp.obj[327].worldY = 2 * gp.tileSize;
 
         gp.obj[328] = new OBJ_W22();
-        gp.obj[328].worldX = (41 * gp.tileSize);
+        gp.obj[328].worldX = (41 * gp.tileSize) - (2 * gp.scale);
         gp.obj[328].worldY = 3 * gp.tileSize;
 
         gp.obj[329] = new OBJ_W0();
-        gp.obj[329].worldX = (40 * gp.tileSize);
+        gp.obj[329].worldX = (40 * gp.tileSize) - (2 * gp.scale);
         gp.obj[329].worldY = 3 * gp.tileSize;
 
         gp.obj[330] = new OBJ_W22();
-        gp.obj[330].worldX = (40 * gp.tileSize);
+        gp.obj[330].worldX = (40 * gp.tileSize) - (2 * gp.scale);
         gp.obj[330].worldY = 4 * gp.tileSize;
 
         gp.obj[331] = new OBJ_W0();
-        gp.obj[331].worldX = (39 * gp.tileSize);
+        gp.obj[331].worldX = (39 * gp.tileSize) - (2 * gp.scale);
         gp.obj[331].worldY = 4 * gp.tileSize;
 
         gp.obj[332] = new OBJ_W22();
-        gp.obj[332].worldX = (39 * gp.tileSize);
+        gp.obj[332].worldX = (39 * gp.tileSize) - (2 * gp.scale);
         gp.obj[332].worldY = 5 * gp.tileSize;
 
         gp.obj[333] = new OBJ_W22();
-        gp.obj[333].worldX = (38 * gp.tileSize);
+        gp.obj[333].worldX = (38 * gp.tileSize) - (2 * gp.scale);
         gp.obj[333].worldY = 6 * gp.tileSize;
 
         gp.obj[334] = new OBJ_W22();
-        gp.obj[334].worldX = (37 * gp.tileSize);
+        gp.obj[334].worldX = (37 * gp.tileSize) - (2 * gp.scale);
         gp.obj[334].worldY = 7 * gp.tileSize;
 
         gp.obj[335] = new OBJ_W22();
-        gp.obj[335].worldX = (36 * gp.tileSize);
+        gp.obj[335].worldX = (36 * gp.tileSize) - (2 * gp.scale);
         gp.obj[335].worldY = 8 * gp.tileSize;
 
         gp.obj[336] = new OBJ_W22();
-        gp.obj[336].worldX = (35 * gp.tileSize);
+        gp.obj[336].worldX = (35 * gp.tileSize) - (2 * gp.scale);
         gp.obj[336].worldY = 9 * gp.tileSize;
 
         gp.obj[337] = new OBJ_W0();
-        gp.obj[337].worldX = (38 * gp.tileSize);
+        gp.obj[337].worldX = (38 * gp.tileSize) - (2 * gp.scale);
         gp.obj[337].worldY = 5 * gp.tileSize;
 
         gp.obj[338] = new OBJ_W0();
-        gp.obj[338].worldX = (37 * gp.tileSize);
+        gp.obj[338].worldX = (37 * gp.tileSize) - (2 * gp.scale);
         gp.obj[338].worldY = 6 * gp.tileSize;
 
         gp.obj[339] = new OBJ_W0();
-        gp.obj[339].worldX = (36 * gp.tileSize);
+        gp.obj[339].worldX = (36 * gp.tileSize) - (2 * gp.scale);
         gp.obj[339].worldY = 7 * gp.tileSize;
 
         gp.obj[340] = new OBJ_W0();
-        gp.obj[340].worldX = (35 * gp.tileSize);
+        gp.obj[340].worldX = (35 * gp.tileSize) - (2 * gp.scale);
         gp.obj[340].worldY = 8 * gp.tileSize;
 
         gp.obj[341] = new OBJ_W0();
-        gp.obj[341].worldX = (34 * gp.tileSize);
+        gp.obj[341].worldX = (34 * gp.tileSize) - (2 * gp.scale);
         gp.obj[341].worldY = 9 * gp.tileSize;
 
         gp.obj[342] = new OBJ_W1();
@@ -1494,7 +1494,7 @@ public class AssetSetter {
 
         gp.obj[378] = new OBJ_GC();
         gp.obj[378].worldX = 43 * gp.tileSize;
-        gp.obj[378].worldY = 6 * gp.tileSize;
+        gp.obj[378].worldY = 6 * gp.tileSize + (13 * gp.scale);
 
         gp.obj[379] = new OBJ_Chest();
         gp.obj[379].worldX = 41 * gp.tileSize;
@@ -1505,12 +1505,12 @@ public class AssetSetter {
         gp.obj[380].worldY = 20 * gp.tileSize;
 
         gp.obj[381] = new OBJ_SL();
-        gp.obj[381].worldX = 36 * gp.tileSize;
-        gp.obj[381].worldY = 29 * gp.tileSize;
+        gp.obj[381].worldX = 36 * gp.tileSize ;
+        gp.obj[381].worldY = 29 * gp.tileSize - (7 * gp.scale);
 
         gp.obj[382] = new OBJ_PB();
-        gp.obj[382].worldX = 31 * gp.tileSize;
-        gp.obj[382].worldY = 17 * gp.tileSize;
+        gp.obj[382].worldX = 32 * gp.tileSize - (9 * gp.scale);
+        gp.obj[382].worldY = 13 * gp.tileSize - (21 * gp.scale);
 
         gp.obj[383] = new OBJ_FW2();
         gp.obj[383].worldX = 41 * gp.tileSize;
@@ -1525,25 +1525,52 @@ public class AssetSetter {
         gp.obj[385].worldY = 20 * gp.tileSize;
 
         // gp.obj[386] = new OBJ_FW2();
-        // gp.obj[386].worldX = 41 * gp.tileSize;
-        // gp.obj[386].worldY = 21 * gp.tileSize;
+        // gp.obj[386].worldX = 12 * gp.tileSize;
+        // gp.obj[386].worldY = 11 * gp.tileSize;
 
         // gp.obj[387] = new OBJ_PoC();
         // gp.obj[387].worldX = 41 * gp.tileSize;
         // gp.obj[387].worldY = 21 * gp.tileSize;
-        
+
         gp.obj[388] = new OBJ_BT2();
-        gp.obj[388].worldX = 11 * gp.tileSize;
-        gp.obj[388].worldY = 19 * gp.tileSize;
+        gp.obj[388].worldX = 11 * gp.tileSize - (4 * gp.scale);
+        gp.obj[388].worldY = 19 * gp.tileSize + (18 * gp.scale);
 
         gp.obj[389] = new OBJ_BT2();
-        gp.obj[389].worldX = 35 * gp.tileSize;
-        gp.obj[389].worldY = 29 * gp.tileSize;
+        gp.obj[389].worldX = 35 * gp.tileSize + (5 * gp.scale);
+        gp.obj[389].worldY = 29 * gp.tileSize + (10 * gp.scale);
 
         gp.obj[390] = new OBJ_BT1();
-        gp.obj[390].worldX = 32 * gp.tileSize;
-        gp.obj[390].worldY = 18 * gp.tileSize;
+        gp.obj[390].worldX = 31 * gp.tileSize + (8 * gp.scale);
+        gp.obj[390].worldY = 14 * gp.tileSize + (6 * gp.scale);
 
+        gp.obj[391] = new OBJ_W15();
+        gp.obj[391].worldX = (43 * gp.tileSize) - (2 * gp.scale);
+        gp.obj[391].worldY = 12 * gp.tileSize;
+        gp.obj[392] = new OBJ_W23();
+        gp.obj[392].worldX = (43 * gp.tileSize) - (2 * gp.scale);
+        gp.obj[392].worldY = 13 * gp.tileSize;
+
+        gp.obj[393] = new OBJ_W15();
+        gp.obj[393].worldX = (42 * gp.tileSize) - (2 * gp.scale);
+        gp.obj[393].worldY = 11 * gp.tileSize;
+        gp.obj[394] = new OBJ_W23();
+        gp.obj[394].worldX = (42 * gp.tileSize) - (2 * gp.scale);
+        gp.obj[394].worldY = 12 * gp.tileSize;
+
+        gp.obj[395] = new OBJ_W17();
+        gp.obj[395].worldX = (29 * gp.tileSize) + (2 * gp.scale);
+        gp.obj[395].worldY = 47 * gp.tileSize;
+        gp.obj[396] = new OBJ_W25();
+        gp.obj[396].worldX = (29 * gp.tileSize) + (2 * gp.scale);
+        gp.obj[396].worldY = 48 * gp.tileSize;
+
+        gp.obj[397] = new OBJ_W17();
+        gp.obj[397].worldX = (46 * gp.tileSize);
+        gp.obj[397].worldY = 29 * gp.tileSize;
+        gp.obj[398] = new OBJ_W25();
+        gp.obj[398].worldX = (46 * gp.tileSize);
+        gp.obj[398].worldY = 30 * gp.tileSize;
 
     }
 }
