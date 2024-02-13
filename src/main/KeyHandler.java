@@ -307,7 +307,7 @@ public class KeyHandler implements KeyListener {
             rightPressed = false;
         }
         if (code == KeyEvent.VK_ENTER) {
-            rightPressed = false;
+            enterPressed = false;
         }
 
     }
