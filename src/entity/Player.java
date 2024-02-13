@@ -25,6 +25,8 @@ public class Player extends Entity{
     public int hasPaper = 0;
 
     public boolean pz1Finished,pz2Finished,pz3Finished,pz4Finished,flowerFinished,brickFinished = false;
+    public int correctChoice = 0;
+    public String text1,text2,text3,text4 = "";
 
     public ArrayList<SuperObject> inventory = new ArrayList<>();
     public final int maxInventorySize = 20;
@@ -52,6 +54,8 @@ public class Player extends Entity{
         setItems();
 
         setDialogue();
+
+        ifFinished();
     }
     public void setDefaultValues() {
 
@@ -303,7 +307,7 @@ public class Player extends Entity{
 
         dialogues[1][0] = "Meow : What language is this?";
 
-        dialogues[2][0] = "Which line of the included Java program is being used to print text to the console? \npublic static void main(String[] args) { \n    String message1 = \"Meow\";";
+        dialogues[2][0] = "Which line of the included Java program is being used to print text to the console? \npublic static void main(String[] args) { \n    String message1 = \"Meow\"; \n    String message2 = \"CS\"; \n    System.out.println(message2); \n}";
     }
 
     public void speak(int start) {
@@ -312,6 +316,11 @@ public class Player extends Entity{
         startDialogue(this,start);
         if(start == 2) {
             gp.gameState = gp.puzzleState;
+            text1 = "public static void main(String[] args) {";
+            text2 = "String message2 = \"CS\";";
+            text3 = "String message1 = \"Meow\";";
+            text4 = "System.out.println(message2);";
+            correctChoice = 4;
         }
     }   
 
@@ -320,5 +329,15 @@ public class Player extends Entity{
         gp.gameState = gp.dialogueState;
         gp.ui.p = (Player)entity;
         dialoguesSet = setNum;
+    }
+
+    public void ifFinished() {
+        if(pz1Finished == true) {
+            try {
+                gp.obj[351].image = ImageIO.read(new FileInputStream("res/props/PropsRPX36.png")); 
+            }catch(IOException e) {
+                e.printStackTrace();
+            } 
+        }
     }
 }

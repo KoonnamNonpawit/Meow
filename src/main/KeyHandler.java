@@ -2,10 +2,18 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.FileInputStream;
+
+import javax.imageio.ImageIO;
+
+import entity.Entity;
+import entity.Player;
 
 public class KeyHandler implements KeyListener {
 
     GamePanel gp;
+    Player p;
+    Entity entity;
     public boolean upPressed, downPressed, leftPressed,
                     rightPressed, enterPressed, rPressed;
 
@@ -228,6 +236,56 @@ public class KeyHandler implements KeyListener {
             if(code == KeyEvent.VK_ENTER) {
                 enterPressed = true;
             }
+            if (code == KeyEvent.VK_W) {
+                gp.ui.commandPRNum--;
+                if(gp.ui.commandPRNum < 0) {
+                gp.ui.commandPRNum = 1;
+                }
+            }
+            if (code == KeyEvent.VK_S) {
+                gp.ui.commandPRNum++;
+                if(gp.ui.commandPRNum > 1) {
+                    gp.ui.commandPRNum = 0;
+                }
+            }
+            if (code == KeyEvent.VK_D) {
+                gp.ui.commandPCNum++;
+                if(gp.ui.commandPCNum > 1) {
+                    gp.ui.commandPCNum = 0;
+                }
+            }
+            if (code == KeyEvent.VK_A) {
+                gp.ui.commandPCNum--;
+                if(gp.ui.commandPCNum < 0) {
+                    gp.ui.commandPCNum = 1;
+                }
+            }
+            if (code == KeyEvent.VK_ENTER) {
+                if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 0) {
+                    gp.gameState = gp.playState;
+                    if(gp.ui.p.correctChoice == 1) {
+
+                    }
+                }
+                if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 1) {
+                    gp.gameState = gp.playState;
+                    if(gp.ui.p.correctChoice == 2) {
+
+                    }
+                }
+                if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 0) {
+                    gp.gameState = gp.playState;
+                    if(gp.ui.p.correctChoice == 3) {
+
+                    }
+                }
+                if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 1) {
+                    gp.gameState = gp.playState;
+                    if(gp.ui.p.correctChoice == 4) {
+                        gp.ui.p.pz1Finished = true;
+                    }
+                }
+            }        
         }
     }
 

@@ -28,6 +28,8 @@ public class UI {
     public String currentDialogue = "";
     int subState = 0;
     public int commandNum = 0;
+    public int commandPCNum = 0;
+    public int commandPRNum = 0;
     public int slotCol = 0;
     public int slotRow = 0;
 
@@ -578,6 +580,27 @@ public class UI {
         int frameWidth = (gp.tileSize*14) - (2*10*gp.scale);
         int frameHeight = gp.tileSize*2;
         drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+
+        g2.drawString(p.text1, frameX + (30 * gp.scale), frameY + (20 * gp.scale));
+        if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 0) {
+            g2.drawString(">", frameX + (20 * gp.scale), frameY + (20 * gp.scale));
+        }
+
+        g2.drawString(p.text2, frameX + (225 * gp.scale), frameY + (20 * gp.scale));
+        if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 1) {
+            g2.drawString(">", frameX + (215 * gp.scale), frameY + (20 * gp.scale));
+        }
+
+        g2.drawString(p.text3, frameX + (30 * gp.scale), frameY + (50 * gp.scale));
+        if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 0) {
+            g2.drawString(">", frameX + (20 * gp.scale), frameY + (50 * gp.scale));
+        }
+
+        g2.drawString(p.text4, frameX + (225 * gp.scale), frameY + (50 * gp.scale));
+        if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 1) {
+            g2.drawString(">", frameX + (215 * gp.scale), frameY + (50 * gp.scale));
+        }
     }
 
     public int getItemIndexOnSlot() {
