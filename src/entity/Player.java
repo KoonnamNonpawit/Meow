@@ -55,7 +55,7 @@ public class Player extends Entity{
 
         setDialogue();
 
-        ifFinished();
+        // ifFinished();
     }
     public void setDefaultValues() {
 
@@ -71,6 +71,8 @@ public class Player extends Entity{
 
     public void getPlayerImage() {
 
+        name = "player";
+        
         try {
 
             up1 = ImageIO.read(new FileInputStream("res/player/PlayerU1.png"));
@@ -175,7 +177,7 @@ public class Player extends Entity{
             switch (objectName) {
                 case "Paper":
                     hasPaper += 1;
-                    inventory.add(gp.obj[i]);
+                    // inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a paper!");
                     break;
@@ -207,96 +209,104 @@ public class Player extends Entity{
         gp.keyH.enterPressed = false;
     }
 
-    public void draw(Graphics2D g2) {
+    // public void draw(Graphics2D g2) {
 
-        int playerTileSize = 48 * gp.scale;
+    //     int playerTileSize = 48 * gp.scale;
 
-        BufferedImage image = null;
+    //     BufferedImage image = null;
 
-        switch (direction) {
-            case "up": 
-                if(spriteNum == 1) {
-                    image = up1;
-                }
-                if(spriteNum == 2) {
-                    image = up2;
-                }
-                if(spriteNum == 3) {
-                    image = up3;
-                }
-                if(spriteNum == 4) {
-                    image = up4;
-                }
-                if(spriteNum == 5) {
-                    image = up5;
-                }
-                if(spriteNum == 6) {
-                    image = up6;
-                }
-                break;
-            case "down":
-                if(spriteNum == 1) {
-                    image = down1;
-                }
-                if(spriteNum == 2) {
-                    image = down2;
-                }
-                if(spriteNum == 3) {
-                    image = down3;
-                }
-                if(spriteNum == 4) {
-                    image = down4;
-                }
-                if(spriteNum == 5) {
-                    image = down5;
-                }
-                if(spriteNum == 6) {
-                    image = down6;
-                }
-                break; 
-            case "left":
-                if(spriteNum == 1) {
-                    image = left1;
-                }
-                if(spriteNum == 2) {
-                    image = left2;
-                }
-                if(spriteNum == 3) {
-                    image = left3;
-                }
-                if(spriteNum == 4) {
-                    image = left4;
-                }
-                if(spriteNum == 5) {
-                    image = left5;
-                }
-                if(spriteNum == 6) {
-                    image = left6;
-                }
-                break;
-            case "right":
-                if(spriteNum == 1) {
-                    image = right1;
-                }
-                if(spriteNum == 2) {
-                    image = right2;
-                }
-                if(spriteNum == 3) {
-                    image = right3;
-                }
-                if(spriteNum == 4) {
-                    image = right4;
-                }
-                if(spriteNum == 5) {
-                    image = right5;
-                }
-                if(spriteNum == 6) {
-                    image = right6;
-                }
-                break;
-        }
-        g2.drawImage(image, screenX, screenY, playerTileSize, playerTileSize, null);
-    }
+    //     int screenX = worldX - gp.player.worldX + gp.player.screenX;
+    //     int screenY = worldY - gp.player.worldY + gp.player.screenY;
+
+    //     if(worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
+    //        worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
+    //        worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
+    //        worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
+    //         switch (direction) {
+    //             case "up": 
+    //                 if(spriteNum == 1) {
+    //                     image = up1;
+    //                 }
+    //                 if(spriteNum == 2) {
+    //                     image = up2;
+    //                 }
+    //                 if(spriteNum == 3) {
+    //                     image = up3;
+    //                 }
+    //                 if(spriteNum == 4) {
+    //                     image = up4;
+    //                 }
+    //                 if(spriteNum == 5) {
+    //                     image = up5;
+    //                 }
+    //                 if(spriteNum == 6) {
+    //                     image = up6;
+    //                 }
+    //                 break;
+    //             case "down":
+    //                 if(spriteNum == 1) {
+    //                     image = down1;
+    //                 }
+    //                 if(spriteNum == 2) {
+    //                     image = down2;
+    //                 }
+    //                 if(spriteNum == 3) {
+    //                     image = down3;
+    //                 }
+    //                 if(spriteNum == 4) {
+    //                     image = down4;
+    //                 }
+    //                 if(spriteNum == 5) {
+    //                     image = down5;
+    //                 }
+    //                 if(spriteNum == 6) {
+    //                     image = down6;
+    //                 }
+    //                 break; 
+    //             case "left":
+    //                 if(spriteNum == 1) {
+    //                     image = left1;
+    //                 }
+    //                 if(spriteNum == 2) {
+    //                     image = left2;
+    //                 }
+    //                 if(spriteNum == 3) {
+    //                     image = left3;
+    //                 }
+    //                 if(spriteNum == 4) {
+    //                     image = left4;
+    //                 }
+    //                 if(spriteNum == 5) {
+    //                     image = left5;
+    //                 }
+    //                 if(spriteNum == 6) {
+    //                     image = left6;
+    //                 }
+    //                 break;
+    //             case "right":
+    //                 if(spriteNum == 1) {
+    //                     image = right1;
+    //                 }
+    //                 if(spriteNum == 2) {
+    //                     image = right2;
+    //                 }
+    //                 if(spriteNum == 3) {
+    //                     image = right3;
+    //                 }
+    //                 if(spriteNum == 4) {
+    //                     image = right4;
+    //                 }
+    //                 if(spriteNum == 5) {
+    //                     image = right5;
+    //                 }
+    //                 if(spriteNum == 6) {
+    //                     image = right6;
+    //                 }
+    //                 break;
+    //         }
+    //         g2.drawImage(image, screenX, screenY, playerTileSize, playerTileSize, null);
+    //     }
+    // }
 
     public void setDialogue() {
 
@@ -331,13 +341,13 @@ public class Player extends Entity{
         dialoguesSet = setNum;
     }
 
-    public void ifFinished() {
-        if(pz1Finished == true) {
-            try {
-                gp.obj[351].image = ImageIO.read(new FileInputStream("res/props/PropsRPX36.png")); 
-            }catch(IOException e) {
-                e.printStackTrace();
-            } 
-        }
-    }
+    // public void ifFinished() {
+    //     if(pz1Finished == true) {
+    //         try {
+    //             gp.obj[351].image = ImageIO.read(new FileInputStream("res/props/PropsRPX36.png")); 
+    //         }catch(IOException e) {
+    //             e.printStackTrace();
+    //         } 
+    //     }
+    // }
 }

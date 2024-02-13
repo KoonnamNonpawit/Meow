@@ -8,11 +8,15 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import tile.TileManager;
 
 import javax.swing.JPanel;
 
+import entity.Entity;
 import entity.Player;
 import object.SuperObject;
 
@@ -58,7 +62,8 @@ public class GamePanel extends JPanel implements Runnable {
     // ENTITY AND OBJECT
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player = new Player(this,keyH);
-    public SuperObject obj[] = new SuperObject[400];
+    public Entity obj[] = new Entity[400];
+    ArrayList<Entity> entityList = new ArrayList<>();
 
 
     // GAME STATE
@@ -185,15 +190,59 @@ public class GamePanel extends JPanel implements Runnable {
             // TILE
             tileM.draw(g2);
         
-            // OBJECT
+            // // OBJECT
+            // for(int i = 0; i < obj.length; i++) {
+            //     if(obj[i] != null) {
+            //         obj[i].draw(g2, this);
+            //     }
+            // }
+                
+            // // PLAYER
+            // player.draw(g2);
+
+            // ADD ENTITIES TO THE LIST
+            entityList.add(player);
+
             for(int i = 0; i < obj.length; i++) {
                 if(obj[i] != null) {
-                    obj[i].draw(g2, this);
+                    entityList.add(obj[i]);
                 }
             }
+
+            // SORT
+            // Collections.sort(entityList, new Comparator<Entity>() {
+
+            //     @Override
+            //     public int compare(Entity e1, Entity e2) {
+                    
+            //         int result = Integer.compare(e1.worldX, e2.worldY);
+            //         return result;
+            //     }
                 
-            // PLAYER
-            player.draw(g2);
+            // });
+            Collections.sort(entityList, new Comparator<Entity>() {
+                @Override
+                public int compare(Entity e1, Entity e2) {
+                    // Compare by X value
+                    return Integer.compare(e1.worldY, e2.worldY);
+                }
+            });
+
+            // DRAW ENTITIES
+            for (int i = 0; i < entityList.size(); i++) {
+                entityList.get(i).draw(g2,this);
+                // if(entityList.get(i) == player) {
+                //     player.draw(g2);
+                // }
+                // else {
+                //     SuperObject s = (SuperObject)(entityList.get(i));
+                //     s.draw(g2);
+                // }
+            }
+            // EMPTY ENTITY LIST
+            for (int i = 0; i < entityList.size(); i++) {
+                entityList.remove(i);
+            }
         
             // UI
             ui.draw(g2);

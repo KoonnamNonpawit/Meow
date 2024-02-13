@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import entity.Entity;
+
 public class OBJ_A extends SuperObject{
     
     public OBJ_A() {
@@ -16,4 +18,8 @@ public class OBJ_A extends SuperObject{
             e.printStackTrace();
         } 
     }
+    // super(gp);
+
+    //  name = "A";
+    //  down1 = setup("dres/props/PropsA");
 }
