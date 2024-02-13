@@ -24,6 +24,9 @@ public class Player extends Entity{
     public final int screenY;
     public int hasPaper = 0;
 
+    // Game Over occurs when player get a question wrong
+    public boolean isGameOver = false;
+
     public boolean pz1Finished,pz2Finished,pz3Finished,pz4Finished,flowerFinished,brickFinished = false;
     public int correctChoice = 0;
     public String text1,text2,text3,text4 = "";
@@ -67,6 +70,7 @@ public class Player extends Entity{
 
     public void setItems() {
 
+        inventory.clear();
     }
 
     public void getPlayerImage() {
@@ -166,6 +170,11 @@ public class Player extends Entity{
             }
             spriteCounter = 0;
 
+        }
+
+        // check game over
+        if(isGameOver == true) {
+            gp.gameState = gp.gameOverState;
         }
     }
     public void pickUpObject(int i) {

@@ -73,6 +73,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int dialogueState = 3;
     public final int optionsState = 4;
     public final int characterState = 5;
+    public final int gameOverState = 6;
     public final int puzzleState = 8;
 
     public GamePanel() {
@@ -101,6 +102,13 @@ public class GamePanel extends JPanel implements Runnable {
             setFullScreen();
         }
 
+    }
+
+    public void startOver() {
+        player.setDefaultValues();
+        player.setItems();
+        aSetter.setObject();
+        // restart puzzle progress
     }
 
     public void setFullScreen() {

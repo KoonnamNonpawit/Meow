@@ -116,6 +116,11 @@ public class UI {
         if(gp.gameState == gp.puzzleState) {
             drawPuzzleScreen();
         }
+
+        // GAME OVER STATE
+        if(gp.gameState == gp.gameOverState) {
+            drawGameOverScreen();
+        }
     }
 
     public void drawTitleScreen() {
@@ -650,6 +655,47 @@ public class UI {
         if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 1) {
             g2.drawString(">", frameX + (215 * gp.scale), frameY + (50 * gp.scale));
         }
+    }
+
+    public void drawGameOverScreen() {
+
+        g2.setColor(new Color(0, 0, 0, 100));
+        g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+
+        int x;
+        int y;
+        String text;
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 1100));
+
+        text = "Game Over";
+        // Shadow
+        g2.setColor(Color.black);
+        x = getXforCenteredText(text);
+        y = gp.tileSize*4;
+        g2.drawString(text, x, y);
+        // Main
+        g2.setColor(Color.white);
+        g2.drawString(text, x-5, y-5);
+
+        // Start over
+        g2.setFont(g2.getFont().deriveFont(50F));
+        text = "Start Over Again";
+        x = getXforCenteredText(text);
+        y += gp.tileSize*4;
+        g2.drawString(text, x, y);
+        if(commandNum == 0) {
+            g2.drawString(">", x-40, y);
+        }
+
+        // Back to the title screen
+        text = "Quit";
+        x = getXforCenteredText(text);
+        y += 55;
+        g2.drawString(text, x, y);
+        if(commandNum == 1) {
+            g2.drawString(">", x-40, y);
+        }
+
     }
 
     public int getItemIndexOnSlot() {
