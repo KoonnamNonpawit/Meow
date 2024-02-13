@@ -6,9 +6,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import entity.Entity;
 import main.GamePanel;
 
-public class OBJ_Paper extends SuperObject{
+public class OBJ_Paper extends Entity{
 
     GamePanel gp;
     public int paperNumber;

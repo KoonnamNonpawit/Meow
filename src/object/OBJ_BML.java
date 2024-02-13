@@ -5,7 +5,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class OBJ_BML extends SuperObject{
+import entity.Entity;
+
+public class OBJ_BML extends Entity{
     
     public OBJ_BML() {
 

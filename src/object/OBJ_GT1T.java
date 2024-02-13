@@ -5,7 +5,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class OBJ_GT1T extends SuperObject{
+import entity.Entity;
+
+public class OBJ_GT1T extends Entity{
     
     public OBJ_GT1T() {
 

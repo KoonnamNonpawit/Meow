@@ -5,7 +5,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class OBJ_Door extends SuperObject{
+import entity.Entity;
+
+public class OBJ_Door extends Entity{
     
     public OBJ_Door() {
 

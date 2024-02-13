@@ -36,6 +36,7 @@ public class Entity {
     public BufferedImage image;
     public String name;
     public boolean collision = false;
+    public String description;
 
     public Entity() {
         
@@ -140,11 +141,9 @@ public class Entity {
             }
             
             if(name == "Angel") {
-                image = gp.obj[0].image;
                 g2.drawImage(image, screenX, screenY, 37 * gp.scale, 73 * gp.scale, null); 
             }
             if(name == "A") {
-                image = gp.obj[1].image;
                 g2.drawImage(image, screenX, screenY, 94 * gp.scale, 72 * gp.scale, null); 
             }
             if(name == "RPX3") {
@@ -295,17 +294,17 @@ public class Entity {
         }
     }
 
-    // public BufferedImage setup(String imagePath) {
+    public BufferedImage setup(String imagePath) {
 
-    //     BufferedImage image = null;
+        BufferedImage image = null;
 
-    //     try {
-    //         image = ImageIO.read(new FileInputStream(imagePath + ".png"));
+        try {
+            image = ImageIO.read(new FileInputStream(imagePath + ".png"));
 
             
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
-    //     return image;
-    // }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return image;
+    }
 }

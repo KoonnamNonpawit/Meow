@@ -5,7 +5,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class OBJ_LM extends SuperObject{
+import entity.Entity;
+
+public class OBJ_LM extends Entity{
     
     public OBJ_LM() {
 

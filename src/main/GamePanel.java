@@ -18,7 +18,6 @@ import javax.swing.JPanel;
 
 import entity.Entity;
 import entity.Player;
-import object.SuperObject;
 
 public class GamePanel extends JPanel implements Runnable {
 

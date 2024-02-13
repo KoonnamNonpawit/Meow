@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 import main.GamePanel;
 import main.KeyHandler;
 import object.OBJ_Paper;
-import object.SuperObject;
+
 
 public class Player extends Entity{
     
@@ -28,7 +28,7 @@ public class Player extends Entity{
     public int correctChoice = 0;
     public String text1,text2,text3,text4 = "";
 
-    public ArrayList<SuperObject> inventory = new ArrayList<>();
+    public ArrayList<Entity> inventory = new ArrayList<>();
     public final int maxInventorySize = 20;
 
     public Player(GamePanel gp, KeyHandler keyH) {
@@ -72,7 +72,7 @@ public class Player extends Entity{
     public void getPlayerImage() {
 
         name = "player";
-        
+
         try {
 
             up1 = ImageIO.read(new FileInputStream("res/player/PlayerU1.png"));

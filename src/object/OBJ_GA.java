@@ -5,7 +5,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class OBJ_GA extends SuperObject{
+import entity.Entity;
+
+public class OBJ_GA extends Entity{
     
     public OBJ_GA() {
 
