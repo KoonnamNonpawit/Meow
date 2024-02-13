@@ -103,6 +103,7 @@ public class UI {
                 
                 case 1:
                     drawReadPaperScreen();
+                    drawTextPaperScreen();
                     drawInventory();
                     if(gp.keyH.rPressed == true) {
                         subState = 0;
@@ -280,6 +281,30 @@ public class UI {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+    }
+
+    public void drawTextPaperScreen() {
+        int textX = gp.tileSize;
+        int textY = gp.tileSize*3;
+
+        String text = "Once upon a time, in a quaint little village nestled among rolling hills,\n" +
+                        "there lived a curious cat named Whiskers.\n" +
+                        "Whiskers was known throughout the village for\n" +
+                        "his mischievous antics and insatiable curiosity.\n" +
+                        "One day, while exploring the forest, he stumbled upon a hidden cave.\n" +
+                        "Inside, he found a dusty old book filled with ancient spells.\n" +
+                        "Ignoring the warning inscribed on its cover, he began to chant one of the spells aloud.\n" +
+                        "Suddenly, a puff of smoke enveloped him, and when it cleared,\n" +
+                        "Whiskers had transformed into a mighty lion! Shocked and amazed,\n" +
+                        "he roared with delight, ready to embark on a grand adventure in his newfound form.";
+
+        for(String line : text.split("\n")) {
+            Color c = new Color(100,65,23);
+            g2.setColor(c);
+            g2.drawString(line, textX, textY);
+            textY += 40;
         }
 
     }
