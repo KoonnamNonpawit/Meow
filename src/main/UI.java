@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -92,7 +93,22 @@ public class UI {
 
         // CHARACTER STATE
         if(gp.gameState == gp.characterState) {
-            drawInventory();
+            switch (subState) {
+                case 0:
+                    drawInventory();
+                    if(gp.keyH.rPressed == true) {
+                        subState = 1;
+                        gp.keyH.rPressed = false;
+                    } break;
+                
+                case 1:
+                    drawReadPaperScreen();
+                    drawInventory();
+                    if(gp.keyH.rPressed == true) {
+                        subState = 0;
+                        gp.keyH.rPressed = false;
+                    } break;
+            }
         }
 
         // PUZZLE STATE
@@ -252,9 +268,14 @@ public class UI {
     public void drawReadPaperScreen() {
 
         BufferedImage img;
+      
         try {
+
             img = ImageIO.read(new FileInputStream("res/object/ObjPE.png"));
-            g2.drawImage(img,40, 40, null);
+            int newWidth = 800;
+            int newHeight = 780;
+            Image newImage = img.getScaledInstance(newWidth, newHeight, Image.SCALE_DEFAULT);
+            g2.drawImage(newImage,40, 40, null);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -352,7 +373,7 @@ public class UI {
 
         // QUIT
         textY += gp.tileSize*0.5;
-        g2.drawString("QUIT", textX, textY);
+        g2.drawString("Back to Title", textX, textY);
         if(commandNum == 4) {
             g2.drawString(">", textX-25, textY);
             if(gp.keyH.enterPressed == true) {
@@ -366,6 +387,9 @@ public class UI {
         g2.drawString("Back", textX, textY);
         if(commandNum == 5) {
             g2.drawString(">", textX-25, textY);
+            if(gp.keyH.enterPressed == true) {
+                gp.gameState = gp.playState;
+            }
         }
 
         // FULL SCREEN CHECK BOX
