@@ -58,7 +58,7 @@ public class UI {
 
         // TITLE STATE
         if(gp.gameState == gp.titleState) {
-            drawTitleScreen();
+            drawTitleScreen();  
         }
 
         // PLAY STATE
@@ -164,19 +164,11 @@ public class UI {
             g2.drawString(">", x-gp.tileSize, y);
         }
 
-        text = "OPTION";
-        x = getXforCenteredText(text);
-        y += gp.tileSize;
-        g2.drawString(text, x, y);
-        if(commandNum == 2) {
-            g2.drawString(">", x-gp.tileSize, y);
-        }
-
         text = "QUIT";
         x = getXforCenteredText(text);
         y += gp.tileSize;
         g2.drawString(text, x, y);
-        if(commandNum == 3) {
+        if(commandNum == 2) {
             g2.drawString(">", x-gp.tileSize, y);
         }
     }

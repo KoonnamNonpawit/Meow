@@ -16,6 +16,7 @@ import tile.TileManager;
 
 import javax.swing.JPanel;
 
+import data.SaveLoad;
 import entity.Entity;
 import entity.Player;
 
@@ -57,6 +58,7 @@ public class GamePanel extends JPanel implements Runnable {
     Thread gameThread;
     public CollisionChecker cChecker = new CollisionChecker(this);
     Config config = new Config(this);
+    SaveLoad saveLoad = new SaveLoad(this);
 
     // ENTITY AND OBJECT
     public AssetSetter aSetter = new AssetSetter(this);

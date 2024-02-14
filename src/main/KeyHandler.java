@@ -126,9 +126,6 @@ public class KeyHandler implements KeyListener {
                 // LOAD GAME add later
             }
             if(gp.ui.commandNum == 2) {
-                // OPTION add later
-            }
-            if(gp.ui.commandNum == 3) {
                 System.exit(0);
             }
         }        
