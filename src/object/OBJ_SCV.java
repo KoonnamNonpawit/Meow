@@ -1,22 +1,15 @@
 package object;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import entity.Entity;
+import main.GamePanel;
 
 public class OBJ_SCV extends Entity{
-    
+    static GamePanel gp;
     public OBJ_SCV() {
-
+        super(gp);
         name = "SCV";
-        try {
-            image = ImageIO.read(new FileInputStream("res/props/PropsSCV.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
-        } 
+        down1 = setup("res/props/PropsSCV");
+        
         solidArea.x = 0;
         solidArea.y = 0;
         solidArea.width = 32*3;

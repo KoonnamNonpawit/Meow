@@ -1,21 +1,14 @@
 package object;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import entity.Entity;
+import main.GamePanel;
 
 public class OBJ_FW2 extends Entity{
-    
+    static GamePanel gp;
     public OBJ_FW2() {
-
+        super(gp);
         name = "FW2";
-        try {
-            image = ImageIO.read(new FileInputStream("res/object/Flower2.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
+        down1 = setup("res/object/Flower2");
         } 
     }
-}
+

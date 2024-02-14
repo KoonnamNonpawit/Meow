@@ -1,21 +1,15 @@
 package object;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import entity.Entity;
+import main.GamePanel;
 
-public class OBJ_GC extends Entity{
-    
+public class OBJ_GC extends Entity {
+    static GamePanel gp;
+
     public OBJ_GC() {
-
+        super(gp);
         name = "GC";
-        try {
-            image = ImageIO.read(new FileInputStream("res/props/PropsGC.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
-        } 
+        down1 = setup("res/props/PropsGC");
+        
     }
 }

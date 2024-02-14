@@ -1,21 +1,15 @@
 package object;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import entity.Entity;
+import main.GamePanel;
 
 public class OBJ_W22 extends Entity{
-    
+    static GamePanel gp;
     public OBJ_W22() {
-
+        super(gp);
         name = "W22";
-        try {
-            image = ImageIO.read(new FileInputStream("res/tiles/TilesetW22.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
-        } 
+        down1 = setup("res/tiles/TilesetW22");
+       
     }
 }

@@ -11,12 +11,13 @@ import main.GamePanel;
 
 public class OBJ_Paper extends Entity{
 
-    GamePanel gp;
+    static GamePanel gp;
     public int paperNumber;
     
     public OBJ_Paper() {
-
+        super(gp);
         name = "Paper";
+        down1 = setup("res/object/ObjectP");
         try {
             BufferedImage originalImage = ImageIO.read(new FileInputStream("res/object/ObjectP.png"));
 

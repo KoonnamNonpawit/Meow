@@ -1,21 +1,14 @@
 package object;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import entity.Entity;
+import main.GamePanel;
 
 public class OBJ_T3L extends Entity{
-    
+    static GamePanel gp;
     public OBJ_T3L() {
-
+        super(gp);
         name = "T3L";
-        try {
-            image = ImageIO.read(new FileInputStream("res/plant/PlantT3L.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
-        } 
+        down1 = setup("res/plant/PlantT3L");
+        
     }
 }

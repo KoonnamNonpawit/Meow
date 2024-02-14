@@ -1,21 +1,14 @@
 package object;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import entity.Entity;
+import main.GamePanel;
 
 public class OBJ_BT2 extends Entity{
-    
+    static GamePanel gp;
     public OBJ_BT2() {
-
+        super(gp);
         name = "BT2";
-        try {
-            image = ImageIO.read(new FileInputStream("res/props/PropsBT2.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
-        } 
+        down1 = setup("res/props/PropsBT2");
+       
     }
 }

@@ -1,22 +1,16 @@
 package object;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import entity.Entity;
+import main.GamePanel;
 
 public class OBJ_Door extends Entity{
-    
+    static GamePanel gp;
     public OBJ_Door() {
-
+        super(gp);
         name = "Door";
-        try {
-            image = ImageIO.read(new FileInputStream("res/props/PropsWG.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
-        } 
+        down1 = setup("res/props/PropsWG");
+      
         solidArea.x = 0;
         solidArea.y = 0;
         solidArea.width = 37*3;

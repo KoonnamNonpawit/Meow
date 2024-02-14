@@ -1,22 +1,16 @@
 package object;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import entity.Entity;
+import main.GamePanel;
 
 public class OBJ_RPX3 extends Entity{
-    
+    static GamePanel gp;
     public OBJ_RPX3() {
-
+        super(gp);
         name = "RPX3";
-        try {
-            image = ImageIO.read(new FileInputStream("res/props/PropsRPX3.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
-        } 
+        down1 = setup("res/props/PropsRPX3");
+        
         solidArea.x = 0;
         solidArea.y = 47*3;
         solidArea.width = 26*3;
