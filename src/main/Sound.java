@@ -18,6 +18,11 @@ public class Sound {
         sound[0] = "res/sound/best-adventure-ever-122726.wav";
         sound[1] = "res/sound/let-the-mystery-unfold-122118.wav";
         sound[2] = "res/sound/secrets-of-the-old-library-140000.wav";
+        sound[3] = "res/sound/oh-disappointed-89251.wav"; // se
+        sound[4] = "res/sound/success_bell-6776.wav"; // se
+        sound[5] = "res/sound/success-fanfare-trumpets-6185.wav"; // se
+        sound[6] = "res/sound/switch-button-106349.wav"; // button
+        sound[7] = "res/sound/pause-89443.wav"; // pause
     }
 
     public void setFile(int i) {
