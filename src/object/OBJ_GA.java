@@ -11,5 +11,12 @@ public class OBJ_GA extends Entity{
         name = "GA";
         down1 = setup("res/props/PropsGA");
          
+        solidArea.x = 0;
+        solidArea.y = 24*3;
+        solidArea.width = 30*3;
+        solidArea.height = 17*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

@@ -40,6 +40,7 @@ public class OBJ_Paper extends Entity{
         solidArea.height = 55;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
+        collision = true;
 
         description = "[" + name + "]\nCollect to solve the puzzles.\n \n Press [R] to read";
 

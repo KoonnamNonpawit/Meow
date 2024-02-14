@@ -62,7 +62,10 @@ public class GamePanel extends JPanel implements Runnable {
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player = new Player(this,keyH);
     public Entity obj[] = new Entity[400];
-    ArrayList<Entity> entityList = new ArrayList<>();
+    public ArrayList<Entity> entityList = new ArrayList<>();
+
+    public Entity entity;
+    public Player p;
 
 
     // GAME STATE
@@ -230,7 +233,6 @@ public class GamePanel extends JPanel implements Runnable {
             Collections.sort(entityList, new Comparator<Entity>() {
                 @Override
                 public int compare(Entity e1, Entity e2) {
-                    // Compare by X value
                     return Integer.compare(e1.worldY, e2.worldY);
                 }
             });

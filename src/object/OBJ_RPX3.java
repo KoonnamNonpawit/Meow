@@ -1,15 +1,17 @@
 package object;
 
-
 import entity.Entity;
 import main.GamePanel;
 
 public class OBJ_RPX3 extends Entity{
     static GamePanel gp;
+
     public OBJ_RPX3() {
         super(gp);
         name = "RPX3";
+
         down1 = setup("res/props/PropsRPX3");
+        down2 = setup("res/props/PropsRPX36");
         
         solidArea.x = 0;
         solidArea.y = 47*3;

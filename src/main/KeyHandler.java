@@ -2,18 +2,11 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.FileInputStream;
-
-import javax.imageio.ImageIO;
-
-import entity.Entity;
-import entity.Player;
 
 public class KeyHandler implements KeyListener {
 
     GamePanel gp;
-    Player p;
-    Entity entity;
+
     public boolean upPressed, downPressed, leftPressed,
                     rightPressed, enterPressed, rPressed;
 
@@ -273,7 +266,7 @@ public class KeyHandler implements KeyListener {
                 if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 1) {
                     gp.gameState = gp.playState;
                     if(gp.ui.p.correctChoice == 2) {
-
+                        gp.ui.p.pz2Finished = true;
                     }
                 }
                 if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 0) {

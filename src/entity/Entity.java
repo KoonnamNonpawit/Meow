@@ -9,12 +9,11 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import main.GamePanel;
-import main.KeyHandler;
-import object.OBJ_Angel;
 
 public class Entity {
     
     GamePanel gp;
+    Player p;
 
     public int worldX, worldY;
     public int speed;
@@ -33,7 +32,7 @@ public class Entity {
 
     public int start;
 
-    public BufferedImage image;
+    public BufferedImage image,image1,image2,image3,image4,image5,image6;
     public String name;
     public boolean collision = false;
     public String description;
@@ -239,9 +238,9 @@ public class Entity {
                 g2.drawImage(image, screenX, screenY, 37 * gp.scale, 50 * gp.scale, null); 
             }
             if(name == "Chest") {
-                g2.drawImage(image, screenX, screenY, 32 * gp.scale, 31 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 32 * gp.scale, 49 * gp.scale, null); 
             }
-            if(name == "Paper") {
+            if(name == "Paper" && gp.obj[22] != null) {
                 g2.drawImage(image, screenX, screenY, 53 , 55, null); 
             }
 
@@ -278,13 +277,13 @@ public class Entity {
             if(name == "W") {
                 g2.drawImage(image, screenX, screenY, 58 * gp.scale, 49 * gp.scale, null); 
             }
-            if(name == "FW1") {
+            if(name == "FW1" && gp.obj[384] != null) {
                 g2.drawImage(image, screenX, screenY, (int)(1138/20), (int)(1451/20), null); 
             }
-            if(name == "FW2") {
+            if(name == "FW2" && gp.obj[383] != null) {
                 g2.drawImage(image, screenX, screenY, (int)(1021/20), (int)(1648/20), null); 
             }
-            if(name == "FW3") {
+            if(name == "FW3" && gp.obj[385] != null) {
                 g2.drawImage(image, screenX, screenY, (int)(1256/25), (int)(1648/25), null); 
             }
 
