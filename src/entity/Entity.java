@@ -287,6 +287,42 @@ public class Entity {
             if(name == "FW3") {
                 g2.drawImage(image, screenX, screenY, (int)(1256/25), (int)(1648/25), null); 
             }
+            if(name == "B") {
+                g2.drawImage(image, screenX, screenY, 28 * gp.scale, 36 * gp.scale, null); 
+            }
+            if(name == "Cr") {
+                g2.drawImage(image, screenX, screenY, 32 * gp.scale, 46 * gp.scale, null); 
+            }
+            if(name == "PBT4") {
+                g2.drawImage(image, screenX, screenY, 47 * gp.scale, 42 * gp.scale, null); 
+            }
+            if(name == "PBT6") {
+                g2.drawImage(image, screenX, screenY, 40 * gp.scale, 35 * gp.scale, null); 
+            }
+            if(name == "RSE") {
+                g2.drawImage(image, screenX, screenY, 27 * gp.scale, 32 * gp.scale, null); 
+            }
+            if(name == "RSW") {
+                g2.drawImage(image, screenX, screenY, 27 * gp.scale, 32 * gp.scale, null); 
+            }
+            if(name == "SBE") {
+                g2.drawImage(image, screenX, screenY, 27 * gp.scale, 61 * gp.scale, null); 
+            }
+            if(name == "SBW") {
+                g2.drawImage(image, screenX, screenY, 27 * gp.scale, 61 * gp.scale, null); 
+            }
+            if(name == "ST2") {
+                g2.drawImage(image, screenX, screenY, 16 * gp.scale, 14 * gp.scale, null); 
+            }
+            if(name == "ST6") {
+                g2.drawImage(image, screenX, screenY, 27 * gp.scale, 27 * gp.scale, null); 
+            }
+            if(name == "ST7") {
+                g2.drawImage(image, screenX, screenY, 57 * gp.scale, 42 * gp.scale, null); 
+            }
+            if(name == "ST4") {
+                g2.drawImage(image, screenX, screenY, 24 * gp.scale, 19 * gp.scale, null); 
+            }
 
             if(name == "player") {
                 g2.drawImage(image, screenX, screenY, playerTileSize, playerTileSize, null);
