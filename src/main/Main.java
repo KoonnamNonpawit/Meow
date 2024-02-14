@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 public class Main {
 
     public static JFrame window;
+    public static BackgroundImage Pic = new BackgroundImage();
 
     public static void main(String[] args) {
 
@@ -23,6 +24,7 @@ public class Main {
 
         window.pack();
 
+        window.add(Pic);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
 
