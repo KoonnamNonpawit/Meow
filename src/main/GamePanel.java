@@ -8,14 +8,20 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 import tile.TileManager;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+import data.SaveLoad;
 import entity.Entity;
 import entity.Player;
 
@@ -57,11 +63,12 @@ public class GamePanel extends JPanel implements Runnable {
     Thread gameThread;
     public CollisionChecker cChecker = new CollisionChecker(this);
     Config config = new Config(this);
+    SaveLoad saveLoad = new SaveLoad(this);
 
     // ENTITY AND OBJECT
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player = new Player(this,keyH);
-    public Entity obj[] = new Entity[400];
+    public Entity obj[] = new Entity[500];
     public ArrayList<Entity> entityList = new ArrayList<>();
 
     public Entity entity;
@@ -186,6 +193,8 @@ public class GamePanel extends JPanel implements Runnable {
         // Except super.paintComponent(g);
         // Graphics2D g2 = (Graphics2D)g;
         // g2.dispose();
+
+        // BACKGROUND
 
         // DEBUG
         long drawStart = 0;
