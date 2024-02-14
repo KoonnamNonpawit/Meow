@@ -35,6 +35,7 @@ public class UI {
     public int slotRow = 0;
 
     public Player p;
+    public Entity entity;
 
     public UI(GamePanel gp) {
         this.gp = gp;
@@ -286,16 +287,16 @@ public class UI {
         int textX = gp.tileSize;
         int textY = gp.tileSize*3;
 
-        String text = "Once upon a time, in a quaint little village nestled among rolling hills,\n" +
-                        "there lived a curious cat named Whiskers.\n" +
-                        "Whiskers was known throughout the village for\n" +
-                        "his mischievous antics and insatiable curiosity.\n" +
-                        "One day, while exploring the forest, he stumbled upon a hidden cave.\n" +
-                        "Inside, he found a dusty old book filled with ancient spells.\n" +
-                        "Ignoring the warning inscribed on its cover, he began to chant one of the spells aloud.\n" +
-                        "Suddenly, a puff of smoke enveloped him, and when it cleared,\n" +
-                        "Whiskers had transformed into a mighty lion! Shocked and amazed,\n" +
-                        "he roared with delight, ready to embark on a grand adventure in his newfound form.";
+        String text = "Date xx Month xx Year xxxx \n" +
+                        "Hello to future generations. My name is Monthira Thandharavachot and I am an archaeologist.\n" +
+                        "I have slipped into this dimension for unknown reasons, and have been stuck here for a long time.\n" +
+                        "It made me realize that we had to make the four pillars weave light to be able to get out of here.\n" +
+                        "I learned the language of ancient civilization until I was able to decipher the four pillars almost completely,\n" +
+                        "but unfortunately it took me too long. My life expectancy is almost over.\n" +
+                        "Even if I can't get out of here, at least I hope you People who have read this note will be able to get out of here.\n" +
+                        " And here is all the knowledge about the ancient languages that I have studied.\n" +
+                        "" +
+                        "";
 
         for(String line : text.split("\n")) {
             Color c = new Color(100,65,23);

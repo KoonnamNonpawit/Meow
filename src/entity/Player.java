@@ -23,11 +23,14 @@ public class Player extends Entity{
     public final int screenX;
     public final int screenY;
     public int hasPaper = 0;
+    public int hasFlower = 0;
+    public int hasBrick = 0;
+    public int giveFlower = 0;
 
     // Game Over occurs when player get a question wrong
     public boolean isGameOver = false;
-
     public boolean pz1Finished,pz2Finished,pz3Finished,pz4Finished,flowerFinished,brickFinished = false;
+
     public int correctChoice = 0;
     public String text1,text2,text3,text4 = "";
 
@@ -57,8 +60,6 @@ public class Player extends Entity{
         setItems();
 
         setDialogue();
-
-        // ifFinished();
     }
     public void setDefaultValues() {
 
@@ -133,8 +134,21 @@ public class Player extends Entity{
             int objIndex = gp.cChecker.checkObject(this, true);
             pickUpObject(objIndex);
 
-            if(objIndex == 0 || objIndex == 351) {
+            if(objIndex == 0 || objIndex == 351 || objIndex == 3 || objIndex == 4 || objIndex == 5 || objIndex == 376 || objIndex == 377 || objIndex == 378 || objIndex == 379) {
                 interactOBJ(objIndex);
+            }
+
+            if(giveFlower == 3) {
+                gp.obj[379].spriteNum = 2;
+            }
+
+            if(pz1Finished == true) {
+                gp.obj[351].spriteNum = 2;
+                gp.obj[1].spriteNum = 2;
+            }
+            if(pz2Finished == true) {
+                gp.obj[3].spriteNum = 2;
+                gp.obj[1].spriteNum = 3;
             }
 
             // IF COLLISION IS FALSE, PLAYER CAN MOVE
@@ -186,9 +200,31 @@ public class Player extends Entity{
             switch (objectName) {
                 case "Paper":
                     hasPaper += 1;
+                    inventory.add(gp.obj[i]);
+                    gp.obj[i] = null;
+                    gp.entityList.remove(i);
+                    gp.ui.showMessage("You got a paper!");
+                    break;
+                case "FW1":
+                    hasFlower += 1;
                     // inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
-                    gp.ui.showMessage("You got a paper!");
+                    gp.entityList.remove(i);
+                    gp.ui.showMessage("You got a flower!");
+                    break;
+                case "FW2":
+                    hasFlower += 1;
+                    // inventory.add(gp.obj[i]);
+                    gp.obj[i] = null;
+                    gp.entityList.remove(i);
+                    gp.ui.showMessage("You got a flower!");
+                    break;
+                case "FW3":
+                    hasFlower += 1;
+                    // inventory.add(gp.obj[i]);
+                    gp.obj[i] = null;
+                    gp.entityList.remove(i);
+                    gp.ui.showMessage("You got a flower!");
                     break;
             }
         }
@@ -211,7 +247,38 @@ public class Player extends Entity{
                         speak(start);
                     }
                 }
-                
+                if(pz1Finished == true && pz2Finished == false) {
+                    if(i == 351) {
+                        start = 3;
+                        speak(start);
+                    }
+                    if(i == 3 && hasFlower != 3) {
+                        start = 3;
+                        speak(start);
+                    }
+                    if(i == 0 && hasFlower != 3) {
+                        start = 4;
+                        speak(start);
+                    }
+                    if(i == 3 && hasFlower == 3 && hasPaper == 2) {
+                        start = 5;
+                        speak(start);
+                    }
+                    if(i == 376 || i == 377 || i == 378 && hasFlower != 3) {
+                        start = 6;
+                        speak(start);
+                    }
+                    if(i == 376 || i == 377 || i == 378 && giveFlower != 3) {
+                        giveFlower += 1;
+                        start = 7;
+                        speak(start);
+                    }
+                    if(i == 379 && giveFlower == 3) {
+                        hasPaper += 1;
+                        // inventory.add(gp.obj[i]);
+                        gp.ui.showMessage("You got a paper!");
+                    }
+                }
             }
             
         }
@@ -327,6 +394,20 @@ public class Player extends Entity{
         dialogues[1][0] = "Meow : What language is this?";
 
         dialogues[2][0] = "Which line of the included Java program is being used to print text to the console? \npublic static void main(String[] args) { \n    String message1 = \"Meow\"; \n    String message2 = \"CS\"; \n    System.out.println(message2); \n}";
+        
+        dialogues[3][0] = "Pilgrims tread with lanterns bright, Guiding lost lambs through darkest night. \nTheir journey's purpose, noble and grand, To lead the way with outstretched hand. \nThrough rugged paths and valleys low, They walk with faith, their spirits aglow.";
+        dialogues[3][1] = "Each step a beacon, each word a hymn, In search of solace, through shadows dim. \nTheir hearts ablaze with compassion's fire, They offer hope, lifting souls higher. \nNo lamb too lost, no path too steep, In their embrace, all find solace deep.";
+        dialogues[3][2] = "So let the pilgrims' light shine bright, Dispelling darkness, igniting sight. \n For in their journey, a sacred dance, Bringing light and hope, with every chance.";
+        
+        dialogues[4][0] = "Eternal peace, a gentle breeze, Amidst the fields where flowers tease. \nThe fallen rest in sacred ground, Where grace and solace can be found. \nIn the Lord's garden, they find repose, Amidst the petals, where love flows.";
+        dialogues[4][1] = "Their souls take flight on wings of grace, In the embrace of heaven's embrace. \nNo more pain, no more sorrow's sting, In the eternal bloom, they softly sing. \nAmongst the blossoms, their spirits soar, In the tranquil garden forevermore.";
+        dialogues[4][2] = "So let us pause and gently yield, To the peace that blossoms in this field. \nFor in the Lord's embrace, they find release, Eternal rest among His flowers, in peace.";
+        
+        dialogues[5][0] = "Fill in the blank in order to create a single line comment in java. \npublic class Main { \n    public static void main(String[] args) { \n        ____ I am main method \n        System.out.println(\"Meow\"); \n    } \n}";
+
+        dialogues[6][0] = "...";
+
+        dialogues[7][0] = "Thank you...";
     }
 
     public void speak(int start) {
@@ -341,6 +422,14 @@ public class Player extends Entity{
             text4 = "System.out.println(message2);";
             correctChoice = 4;
         }
+        if(start == 5) {
+            gp.gameState = gp.puzzleState;
+            text1 = "/";
+            text2 = "//";
+            text3 = "*/";
+            text4 = "/*";
+            correctChoice = 2;
+        }
     }   
 
     public void startDialogue(Entity entity, int setNum) {
@@ -349,14 +438,4 @@ public class Player extends Entity{
         gp.ui.p = (Player)entity;
         dialoguesSet = setNum;
     }
-
-    // public void ifFinished() {
-    //     if(pz1Finished == true) {
-    //         try {
-    //             gp.obj[351].image = ImageIO.read(new FileInputStream("res/props/PropsRPX36.png")); 
-    //         }catch(IOException e) {
-    //             e.printStackTrace();
-    //         } 
-    //     }
-    // }
 }

@@ -8,12 +8,17 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 import tile.TileManager;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import data.SaveLoad;
@@ -64,7 +69,10 @@ public class GamePanel extends JPanel implements Runnable {
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player = new Player(this,keyH);
     public Entity obj[] = new Entity[500];
-    ArrayList<Entity> entityList = new ArrayList<>();
+    public ArrayList<Entity> entityList = new ArrayList<>();
+
+    public Entity entity;
+    public Player p;
 
 
     // GAME STATE
@@ -186,6 +194,8 @@ public class GamePanel extends JPanel implements Runnable {
         // Graphics2D g2 = (Graphics2D)g;
         // g2.dispose();
 
+        // BACKGROUND
+
         // DEBUG
         long drawStart = 0;
         if(keyH.showDebugText == true) {
@@ -232,7 +242,6 @@ public class GamePanel extends JPanel implements Runnable {
             Collections.sort(entityList, new Comparator<Entity>() {
                 @Override
                 public int compare(Entity e1, Entity e2) {
-                    // Compare by X value
                     return Integer.compare(e1.worldY, e2.worldY);
                 }
             });

@@ -2,15 +2,23 @@ package main;
 
 import object.*;
 
+import entity.*;
+
 public class AssetSetter {
 
     GamePanel gp;
+    Entity entity;
+    Player p;
+    KeyHandler keyH;
+    
 
     public AssetSetter(GamePanel gp) {
         this.gp = gp;
     }
 
     public void setObject() {
+
+        // p = new Player(gp, keyH);
 
         gp.obj[0] = new OBJ_Angel();
         gp.obj[0].worldX = (24 * gp.tileSize) - (3 * gp.scale);
