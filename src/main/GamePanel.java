@@ -8,12 +8,17 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 import tile.TileManager;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import data.SaveLoad;
@@ -185,6 +190,8 @@ public class GamePanel extends JPanel implements Runnable {
         // Except super.paintComponent(g);
         // Graphics2D g2 = (Graphics2D)g;
         // g2.dispose();
+
+        // BACKGROUND
 
         // DEBUG
         long drawStart = 0;
