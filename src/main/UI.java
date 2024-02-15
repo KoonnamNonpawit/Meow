@@ -271,8 +271,8 @@ public class UI {
         try {
 
             img = ImageIO.read(new FileInputStream("res/object/ObjPE.png"));
-            int newWidth = 800;
-            int newHeight = 780;
+            int newWidth = 53*14;
+            int newHeight = 55*14;
             Image newImage = img.getScaledInstance(newWidth, newHeight, Image.SCALE_DEFAULT);
             g2.drawImage(newImage,40, 40, null);
         } catch (FileNotFoundException e) {

@@ -149,7 +149,7 @@ public class Entity {
                 g2.drawImage(image, screenX, screenY, 26 * gp.scale, 66 * gp.scale, null); 
             }
             if(name == "RPB") {
-                g2.drawImage(image, screenX, screenY, 26 * gp.scale, 38 * gp.scale, null); 
+                g2.drawImage(image, screenX, screenY, 26 * gp.scale, 66 * gp.scale, null); 
             }
             if(name == "SCV") {
                 g2.drawImage(image, screenX, screenY, 32 * gp.scale, 57 * gp.scale, null); 
@@ -244,10 +244,10 @@ public class Entity {
                 g2.drawImage(image, screenX, screenY, 53 , 55, null); 
             }
 
-            if(name == "BT1") {
+            if(name == "BT1" && gp.obj[390] != null) {
                 g2.drawImage(image, screenX, screenY, 18 * gp.scale, 16 * gp.scale, null); 
             }
-            if(name == "BT2") {
+            if(name == "BT2" && (gp.obj[388] != null || gp.obj[389] != null)) {
                 g2.drawImage(image, screenX, screenY, 19 * gp.scale, 16 * gp.scale, null); 
             }
             if(name == "GA") {

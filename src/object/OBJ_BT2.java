@@ -10,5 +10,12 @@ public class OBJ_BT2 extends Entity{
         name = "BT2";
         down1 = setup("res/props/PropsBT2");
        
+        solidArea.x = 0;
+        solidArea.y = 0;
+        solidArea.width = 19*3;
+        solidArea.height = 16*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

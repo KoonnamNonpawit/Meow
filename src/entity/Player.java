@@ -1,5 +1,6 @@
 package entity;
 
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -26,6 +27,8 @@ public class Player extends Entity{
     public int hasFlower = 0;
     public int hasBrick = 0;
     public int giveFlower = 0;
+    public int giveBrick = 0;
+    public int correct = 0;
 
     // Game Over occurs when player get a question wrong
     public boolean isGameOver = false;
@@ -141,6 +144,9 @@ public class Player extends Entity{
             if(giveFlower == 3) {
                 gp.obj[379].spriteNum = 2;
             }
+            if(giveBrick == 3) {
+                gp.obj[5].spriteNum = 2;
+            }
 
             if(pz1Finished == true) {
                 gp.obj[351].spriteNum = 2;
@@ -149,6 +155,14 @@ public class Player extends Entity{
             if(pz2Finished == true) {
                 gp.obj[3].spriteNum = 2;
                 gp.obj[1].spriteNum = 3;
+            }
+            if(pz3Finished == true) {
+                gp.obj[5].spriteNum = 3;
+                gp.obj[1].spriteNum = 4;
+            }
+            if(pz4Finished == true) {
+                gp.obj[4].spriteNum = 2;
+                gp.obj[1].spriteNum = 5;
             }
 
             // IF COLLISION IS FALSE, PLAYER CAN MOVE
@@ -226,6 +240,20 @@ public class Player extends Entity{
                     gp.entityList.remove(i);
                     gp.ui.showMessage("You got a flower!");
                     break;
+                case "BT1":
+                    hasBrick += 1;
+                    // inventory.add(gp.obj[i]);
+                    gp.obj[i] = null;
+                    gp.entityList.remove(i);
+                    gp.ui.showMessage("You got a Brick!");
+                    break;
+                case "BT2":
+                    hasBrick += 1;
+                    // inventory.add(gp.obj[i]);
+                    gp.obj[i] = null;
+                    gp.entityList.remove(i);
+                    gp.ui.showMessage("You got a Brick!");
+                    break;
             }
         }
     }
@@ -252,31 +280,82 @@ public class Player extends Entity{
                         start = 3;
                         speak(start);
                     }
-                    if(i == 3 && hasFlower != 3) {
+                    if(i == 3 && hasFlower != 3 && hasPaper < 2) {
                         start = 3;
                         speak(start);
                     }
-                    if(i == 0 && hasFlower != 3) {
+                    if(i == 0) {
                         start = 4;
                         speak(start);
                     }
-                    if(i == 3 && hasFlower == 3 && hasPaper == 2) {
+                    if(i == 3 && hasPaper == 2) {
                         start = 5;
                         speak(start);
                     }
-                    if(i == 376 || i == 377 || i == 378 && hasFlower != 3) {
+                    if((i == 376 || i == 377 || i == 378) && hasFlower < 3) {
                         start = 6;
                         speak(start);
                     }
-                    if(i == 376 || i == 377 || i == 378 && giveFlower != 3) {
-                        giveFlower += 1;
+                    if((i == 376 || i == 377 || i == 378) && hasFlower == 3 && giveFlower < 3) {
+                        giveFlower = 3;
+                        hasFlower = 0;
                         start = 7;
                         speak(start);
                     }
                     if(i == 379 && giveFlower == 3) {
+                        giveFlower = 0;
                         hasPaper += 1;
                         // inventory.add(gp.obj[i]);
                         gp.ui.showMessage("You got a paper!");
+                    }
+                }
+                if (pz2Finished == true && pz3Finished == false) {
+                    if(i == 351 || i == 3) {
+                        start = 3;
+                        speak(start);
+                    }
+                    if(i == 0) {
+                        start = 8;
+                        speak(start);
+                    }
+                    if(i == 5 && hasBrick == 3) {
+                        giveBrick = 3;
+                        hasBrick = 0;
+                        start = 6;
+                        speak(start);
+                    }
+                    else if(i == 5 && giveBrick == 3 && hasPaper < 3) {
+                        hasPaper+=1;
+                        // inventory.add(gp.obj[i]);
+                        gp.ui.showMessage("You got a paper!");
+                    }
+                    else if(i == 5 && giveBrick == 3 && hasPaper == 3) {
+                        start = 9;
+                        speak(start);
+                    }
+                }
+                if (pz3Finished == true && pz4Finished == false) {
+                    if(i == 351 || i == 3 || i == 5) {
+                        start = 3;
+                        speak(start);
+                    }
+                    if(i == 0) {
+                        start = 10;
+                        speak(start);
+                    }
+                    if(i == 4 && correct == 0) {
+                        start = 11;
+                        speak(start);
+                    }
+                    else if(i == 4 && correct == 1) {
+                        start = 12;
+                        speak(start);
+                    }
+                }
+                if (pz3Finished == true && pz4Finished == true) {
+                    if(i == 0) {
+                        start = 13;
+                        speak(start);
                     }
                 }
             }
@@ -408,6 +487,26 @@ public class Player extends Entity{
         dialogues[6][0] = "...";
 
         dialogues[7][0] = "Thank you...";
+
+        dialogues[8][0] = "In the dance of time, all things must fade, Born in brilliance, yet destined to degrade. \nFor where life blooms, so too does decay, A cycle eternal in its winding way. \nFrom ashes rise new forms, unseen, Destruction's touch, a creative sheen.";
+        dialogues[8][1] = "In every end, a beginning's seed, A testament to life's cyclical creed. \nThe sun sets low, yet dawn shall break, In every loss, a chance to remake. \nFor in impermanence, lies beauty's art, A perpetual rhythm, a beating heart.";
+        dialogues[8][2] = "So let us embrace this ebb and flow, In the ceaseless dance, let's learn and grow. \nFor in destruction's wake, new life shall rise, An eternal cycle beneath the boundless skies.";
+
+        dialogues[9][0] = "Select the line of Java code that has NOT ended correctly. \nint counter = 10; \ndouble num = 5.5 \nSystem.out.println(\"Meow\"); \nString str = \"Java\";";
+
+        dialogues[10][0] = "To be a noble creature, wise and kind, Requires a blend of wisdom and mind. \nFor wisdom guides with gentle grace, While intellect sets a swift pace. \nIn the depths of thought, the mind does dwell, Exploring truths that words can tell.";
+        dialogues[10][1] = "But wisdom, deeper, from experience grown, In silent whispers, its truths are shown. \nA noble animal, with eyes that see, The beauty of life's vast tapestry. \nWith wisdom's compass and mind's keen sight, Navigating paths through day and night.";
+        dialogues[10][2] = "In harmony, they dance and play, Guiding the steps along life's way. \nFor to be noble is to understand, The union of heart, head, and hand. \nSo let us strive, with wisdom's might, To walk with grace and inner light.";
+        dialogues[10][3] = "For in the noble animal, we find, A reflection of the noblest kind.";
+
+        dialogues[11][0] = "What is missing from this Java program? \npublic class LanguageFacts { \n \n    // Covers the history of the Java programming language \n \n}";
+
+        dialogues[12][0] = "In Java, what is the purpose of leaving comments in code?";
+
+        dialogues[13][0] = "In this moment, you've proven your worth, O Noble One, with wisdom's birth. \nYour mind, a fortress, strong and true, Envelops you in its golden hue. \nWith wisdom's cloak, you tread the path, Guided by hope, through shadow's wrath.";
+        dialogues[13][1] = "Each step you take, with purpose clear, Brings you closer, ever near. \nThe light that shines within your soul, Leads you to your destined goal. \nThrough trials faced and battles won, You emerge as the chosen one.";
+        dialogues[13][2] = "For in your heart, the flame burns bright, Illuminating the darkest night. \nWith wisdom's touch and mind's embrace, You journey forth with steadfast grace. \nSo onward, Noble One, with pride, Your destiny awaits, untied.";
+        dialogues[13][3] = "May hope's sweet song forever sing, As you soar on wisdom's wing.";
     }
 
     public void speak(int start) {
@@ -429,6 +528,30 @@ public class Player extends Entity{
             text3 = "*/";
             text4 = "/*";
             correctChoice = 2;
+        }
+        if(start == 9) {
+            gp.gameState = gp.puzzleState;
+            text1 = "double num = 5.5";
+            text2 = "String str = \"Java\";";
+            text3 = "int counter = 10;";
+            text4 = "System.out.println(\"Meow\")";
+            correctChoice = 1;
+        }
+        if(start == 11) {
+            gp.gameState = gp.puzzleState;
+            text1 = "javac LanguageFacts.java";
+            text2 = "The curly braces.";
+            text3 = "A single-line comment.";
+            text4 = "The main() method.";
+            correctChoice = 4;
+        }
+        if(start == 12) {
+            gp.gameState = gp.puzzleState;
+            text1 = "They are how words are printed.";
+            text2 = "They are only present in complied code.";
+            text3 = "They provide human readable notes.";
+            text4 = "Checks that the compiler must pass.";
+            correctChoice = 3;
         }
     }   
 
