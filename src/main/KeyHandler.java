@@ -202,7 +202,7 @@ public class KeyHandler implements KeyListener {
         }
     }
 
-    // CHARACTER STATE
+    // CHARACTER STATE (INVENTORY)
     public void characterState(int code) {
 
         if(code == KeyEvent.VK_E) {
@@ -267,7 +267,7 @@ public class KeyHandler implements KeyListener {
                 if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 0) {
                     gp.gameState = gp.playState;
                     if(gp.ui.p.correctChoice == 1) {
-
+                        gp.ui.p.pz3Finished = true;
                     }
                 }
                 if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 1) {
@@ -279,13 +279,16 @@ public class KeyHandler implements KeyListener {
                 if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 0) {
                     gp.gameState = gp.playState;
                     if(gp.ui.p.correctChoice == 3) {
-
+                        gp.ui.p.pz4Finished = true;
                     }
                 }
                 if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 1) {
                     gp.gameState = gp.playState;
                     if(gp.ui.p.correctChoice == 4) {
                         gp.ui.p.pz1Finished = true;
+                        if(gp.ui.p.pz3Finished == true) {
+                            gp.ui.p.correct = 1;
+                        }
                     }
                 }
             }        

@@ -12,7 +12,6 @@ import main.GamePanel;
 public class OBJ_Paper extends Entity{
 
     static GamePanel gp;
-    public int paperNumber;
     
     public OBJ_Paper() {
         super(gp);
@@ -33,7 +32,8 @@ public class OBJ_Paper extends Entity{
             g2d.dispose();
         }catch(IOException e) {
             e.printStackTrace();
-        } 
+        }
+        paperNumber = 0;
         solidArea.x = 0;
         solidArea.y = 0;
         solidArea.width = 53;
@@ -44,25 +44,5 @@ public class OBJ_Paper extends Entity{
 
         description = "[" + name + "]\nCollect to solve the puzzles.\n \n Press [R] to read";
 
-    }
-
-    public String readThePaper() {
-
-        String messageInPage = "";
-
-        switch (paperNumber) {
-            case 1:
-                messageInPage =  "123456789";
-                break;
-        
-            case 2:
-                messageInPage = "qwertyuiop[]";
-                break;
-
-            case 3:
-                messageInPage = "asdfghjkl;";
-                break;
-        }
-        return messageInPage;
     }
 }

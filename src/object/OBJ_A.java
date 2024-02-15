@@ -15,6 +15,8 @@ public class OBJ_A extends Entity {
         down1 = setup("res/props/PropsA");
         down2 = setup("res/props/PropsA1");
         down3 = setup("res/props/PropsA2");
+        down4 = setup("res/props/PropsA3");
+        down5 = setup("res/props/PropsA4");
     }
     
 }
