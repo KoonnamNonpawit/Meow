@@ -221,21 +221,21 @@ public class Player extends Entity{
                     break;
                 case "FW1":
                     hasFlower += 1;
-                    // inventory.add(gp.obj[i]);
+                    inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.entityList.remove(i);
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "FW2":
                     hasFlower += 1;
-                    // inventory.add(gp.obj[i]);
+                    inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.entityList.remove(i);
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "FW3":
                     hasFlower += 1;
-                    // inventory.add(gp.obj[i]);
+                    inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.entityList.remove(i);
                     gp.ui.showMessage("You got a flower!");

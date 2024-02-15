@@ -202,7 +202,7 @@ public class KeyHandler implements KeyListener {
         }
     }
 
-    // CHARACTER STATE
+    // CHARACTER STATE (INVENTORY)
     public void characterState(int code) {
 
         if(code == KeyEvent.VK_E) {

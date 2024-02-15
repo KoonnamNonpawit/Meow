@@ -35,13 +35,16 @@ public class UI {
     public int slotRow = 0;
 
     public Player p;
-    public Entity entity;
+    Entity paperNumber;
+    public Entity entity = new Entity();
+    public OBJ_Paper paper;
+    int index;
 
     public UI(GamePanel gp) {
         this.gp = gp;
 
         arial_40 = new Font("Arial", Font.PLAIN, 40);
-        OBJ_Paper paper = new OBJ_Paper();
+        paper = new OBJ_Paper();
         paperImage = paper.image;
     }
 
@@ -104,7 +107,7 @@ public class UI {
                 
                 case 1:
                     drawReadPaperScreen();
-                    drawTextPaperScreen();
+                    drawTextPaperScreen(gp.player.inventory.get(index).paperNumber);
                     drawInventory();
                     if(gp.keyH.rPressed == true) {
                         subState = 0;
@@ -283,20 +286,25 @@ public class UI {
 
     }
 
-    public void drawTextPaperScreen() {
+    public void drawTextPaperScreen(int paperNumber) {
         int textX = gp.tileSize;
         int textY = gp.tileSize*3;
 
-        String text = "Date xx Month xx Year xxxx \n" +
-                        "Hello to future generations. My name is Monthira Thandharavachot and I am an archaeologist.\n" +
-                        "I have slipped into this dimension for unknown reasons, and have been stuck here for a long time.\n" +
-                        "It made me realize that we had to make the four pillars weave light to be able to get out of here.\n" +
-                        "I learned the language of ancient civilization until I was able to decipher the four pillars almost completely,\n" +
-                        "but unfortunately it took me too long. My life expectancy is almost over.\n" +
-                        "Even if I can't get out of here, at least I hope you People who have read this note will be able to get out of here.\n" +
-                        " And here is all the knowledge about the ancient languages that I have studied.\n" +
-                        "" +
-                        "";
+        String text = "";
+
+        switch (paperNumber) {
+            case 1:
+                text =  "123456789";
+                break;
+        
+            case 2:
+                text = "qwertyuiop[]";
+                break;
+
+            case 3:
+                text = "asdfghjkl;";
+                break;
+        }
 
         for(String line : text.split("\n")) {
             Color c = new Color(100,65,23);
@@ -561,6 +569,7 @@ public class UI {
         // DRAW PLAYER'S ITEMS
         for(int i = 0; i < gp.player.inventory.size(); i++) {
 
+            index = i;
             g2.drawImage(gp.player.inventory.get(i).image, slotX, slotY, null);
 
             slotX += slotSize;

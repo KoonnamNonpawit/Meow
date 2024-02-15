@@ -36,6 +36,7 @@ public class Entity {
     public String name;
     public boolean collision = false;
     public String description;
+    public int paperNumber;
 
     public Entity() {
         
@@ -43,6 +44,7 @@ public class Entity {
 
     public Entity(GamePanel gp) {
         this.gp = gp;
+
     }
 
     public void draw (Graphics2D g2, GamePanel gp) {
