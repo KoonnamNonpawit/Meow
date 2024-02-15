@@ -35,7 +35,7 @@ public class UI {
     public int slotRow = 0;
 
     public Player p;
-    Entity paperNumber;
+    //Entity paperNumber;
     public Entity entity = new Entity();
     public OBJ_Paper paper;
     int index;
@@ -106,22 +106,14 @@ public class UI {
                     } break;
                 
                 case 1:
-                    drawReadPaperScreen();
-                    
-                    if (gp.player.inventory.get(index).paperNumber1 == "One") {
-                        drawTextPaperScreen(gp.player.inventory.get(index).paperNumber1);
-                    }
-                    if (gp.player.inventory.get(index).paperNumber2 == "Two") {
-                        drawTextPaperScreen(gp.player.inventory.get(index).paperNumber2);
-                    }
-                    if (gp.player.inventory.get(index).paperNumber3 == "Three") {
-                        drawTextPaperScreen(gp.player.inventory.get(index).paperNumber3);
-                    }
-
                     drawInventory();
-                    if(gp.keyH.rPressed == true) {
+                    if(gp.player.inventory.get(index).name == "Paper") {
+                        drawReadPaperScreen();                        
+                        drawTextPaperScreen(paper.getPaperNumber());
+                        if(gp.keyH.rPressed == true) {
                         subState = 0;
                         gp.keyH.rPressed = false;
+                        }
                     } break;
             }
         }
@@ -296,20 +288,16 @@ public class UI {
 
     }
 
-    public void drawTextPaperScreen(String paperNumber) {
+    public void drawTextPaperScreen(int paperNumber) {
         int textX = gp.tileSize;
         int textY = gp.tileSize*3;
 
         String text = "";
 
-        if(paperNumber == "One") {
-            text = "qwertyuiop[]";
-        }
-        if(paperNumber == "Two") {
-            text = "asdfghjkl";
-        }
-        if(paperNumber == "Three") {
-            text = "zxcvbnm,./";
+        switch (paperNumber) {
+            case 1: text = "qwertyuiop[] no.1"; break;
+            case 2: text = "asdfghjkl; no.2"; break;
+            case 3: text = "zxcvbnm,./ no.3"; break;   
         }
 
         for(String line : text.split("\n")) {
