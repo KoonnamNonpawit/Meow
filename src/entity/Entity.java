@@ -268,6 +268,12 @@ public class Entity {
             if(name == "PoC") {
                 g2.drawImage(image, screenX, screenY, 21 * gp.scale, 32 * gp.scale, null); 
             }
+            if(name == "PoA") {
+                g2.drawImage(image, screenX, screenY, 21 * gp.scale, 34 * gp.scale, null); 
+            }
+            if(name == "PoB") {
+                g2.drawImage(image, screenX, screenY, 25 * gp.scale, 27 * gp.scale, null); 
+            }
             if(name == "SBS") {
                 g2.drawImage(image, screenX, screenY, 56 * gp.scale, 41 * gp.scale, null); 
             }
@@ -309,6 +315,9 @@ public class Entity {
             }
             if(name == "SBW") {
                 g2.drawImage(image, screenX, screenY, 27 * gp.scale, 61 * gp.scale, null); 
+            }
+            if(name == "SCH") {
+                g2.drawImage(image, screenX, screenY, 64 * gp.scale, 36 * gp.scale, null); 
             }
             if(name == "ST2") {
                 g2.drawImage(image, screenX, screenY, 16 * gp.scale, 14 * gp.scale, null); 
