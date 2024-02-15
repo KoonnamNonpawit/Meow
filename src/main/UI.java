@@ -107,7 +107,17 @@ public class UI {
                 
                 case 1:
                     drawReadPaperScreen();
-                    drawTextPaperScreen(gp.player.inventory.get(index).paperNumber);
+                    
+                    if (gp.player.inventory.get(index).paperNumber1 == "One") {
+                        drawTextPaperScreen(gp.player.inventory.get(index).paperNumber1);
+                    }
+                    if (gp.player.inventory.get(index).paperNumber2 == "Two") {
+                        drawTextPaperScreen(gp.player.inventory.get(index).paperNumber2);
+                    }
+                    if (gp.player.inventory.get(index).paperNumber3 == "Three") {
+                        drawTextPaperScreen(gp.player.inventory.get(index).paperNumber3);
+                    }
+
                     drawInventory();
                     if(gp.keyH.rPressed == true) {
                         subState = 0;
@@ -286,24 +296,20 @@ public class UI {
 
     }
 
-    public void drawTextPaperScreen(int paperNumber) {
+    public void drawTextPaperScreen(String paperNumber) {
         int textX = gp.tileSize;
         int textY = gp.tileSize*3;
 
         String text = "";
 
-        switch (paperNumber) {
-            case 1:
-                text =  "123456789";
-                break;
-        
-            case 2:
-                text = "qwertyuiop[]";
-                break;
-
-            case 3:
-                text = "asdfghjkl;";
-                break;
+        if(paperNumber == "One") {
+            text = "qwertyuiop[]";
+        }
+        if(paperNumber == "Two") {
+            text = "asdfghjkl";
+        }
+        if(paperNumber == "Three") {
+            text = "zxcvbnm,./";
         }
 
         for(String line : text.split("\n")) {

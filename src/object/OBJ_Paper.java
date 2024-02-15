@@ -33,7 +33,9 @@ public class OBJ_Paper extends Entity{
         }catch(IOException e) {
             e.printStackTrace();
         }
-        paperNumber = 0;
+        paperNumber1 = "";
+        paperNumber2 = "";
+        paperNumber3 = "";
         solidArea.x = 0;
         solidArea.y = 0;
         solidArea.width = 53;
@@ -42,7 +44,7 @@ public class OBJ_Paper extends Entity{
         solidAreaDefaultY = solidArea.y;
         collision = true;
 
-        description = "[" + name + "]\nCollect to solve the puzzles.\n \n Press [R] to read";
+        description = "[" + name  + "]\nCollect to solve the puzzles.\n \n Press [R] to read";
 
     }
 }

@@ -108,7 +108,7 @@ public class AssetSetter {
         gp.obj[21].worldY = 14 * gp.tileSize;
 
         gp.obj[22] = new OBJ_Paper();
-        gp.obj[22].paperNumber = 1;
+        gp.obj[22].paperNumber1 = "One";
         gp.obj[22].worldX = (9 * gp.tileSize) + (8 * gp.scale);
         gp.obj[22].worldY = (6 * gp.tileSize) - (14 * gp.scale);
         gp.obj[22].solidArea.x = 0;

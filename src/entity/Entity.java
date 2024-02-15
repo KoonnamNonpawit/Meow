@@ -36,7 +36,9 @@ public class Entity {
     public String name;
     public boolean collision = false;
     public String description;
-    public int paperNumber;
+    public String paperNumber1;
+    public String paperNumber2;
+    public String paperNumber3;
 
     public Entity() {
         
