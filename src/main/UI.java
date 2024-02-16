@@ -38,7 +38,9 @@ public class UI {
     //Entity paperNumber;
     public Entity entity = new Entity();
     public OBJ_Paper paper;
+
     int index;
+    int j;
 
     public UI(GamePanel gp) {
         this.gp = gp;
@@ -107,12 +109,16 @@ public class UI {
                 
                 case 1:
                     drawInventory();
-                    if(gp.player.inventory.get(index).name == "Paper") {
-                        drawReadPaperScreen();                        
-                        drawTextPaperScreen(paper.getPaperNumber());
+                    if(gp.player.inventory.get(index).name == "Paper") { //.name == "Paper"
+                        drawReadPaperScreen();                     
+                        drawTextPaperScreen((gp.player.inventory.get(index)).getPaperNumber());
                         if(gp.keyH.rPressed == true) {
-                        subState = 0;
-                        gp.keyH.rPressed = false;
+                            subState = 0;
+                            gp.keyH.rPressed = false;
+                            j = 0;
+                        }
+                        if(gp.keyH.enterPressed == true) {
+                            j++;
                         }
                     } break;
             }
@@ -229,6 +235,34 @@ public class UI {
         }
     }
 
+    public void drawDialogueScreenForPaper(int i) {
+        p = new Player(gp, null);
+        // WINDOW
+        int x = gp.tileSize;
+        int y = gp.tileSize*6;
+        int width = gp.screenWidth - (x*2);
+        int height = gp.tileSize*2;
+
+        drawSubWindow(x, y, width, height);
+
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN,30));
+        x += 32*2;
+        y += 32*2;
+
+        if(p.dialogues[i][j] != null) {
+            currentDialogue = p.dialogues[i][j];
+        }
+        else {
+            j = 0;
+        }
+        
+
+        for(String line : currentDialogue.split("\n")) {
+            g2.drawString(line, x, y);
+            y += 40;
+        }
+    }
+
     public void drawDialogueScreen_Resizable(int posi_x, int posi_y, int screen_width, int screen_height) {
 
         // WINDOW
@@ -289,22 +323,11 @@ public class UI {
     }
 
     public void drawTextPaperScreen(int paperNumber) {
-        int textX = gp.tileSize;
-        int textY = gp.tileSize*3;
-
-        String text = "";
 
         switch (paperNumber) {
-            case 1: text = "qwertyuiop[] no.1"; break;
-            case 2: text = "asdfghjkl; no.2"; break;
-            case 3: text = "zxcvbnm,./ no.3"; break;   
-        }
-
-        for(String line : text.split("\n")) {
-            Color c = new Color(100,65,23);
-            g2.setColor(c);
-            g2.drawString(line, textX, textY);
-            textY += 40;
+            case 1: drawDialogueScreenForPaper(15); break;
+            case 2: drawDialogueScreenForPaper(16); break;
+            case 3: drawDialogueScreenForPaper(17); break;   
         }
 
     }
@@ -594,7 +617,7 @@ public class UI {
 
         // DRAW DESCRIPTION TEXT
         int textX = dFrameX + 20;
-        int textY = dFrameY + gp.tileSize;
+        int textY = dFrameY + 40;
         g2.setFont(g2.getFont().deriveFont(28F));
         int itemIndex = getItemIndexOnSlot();
         if(itemIndex < gp.player.inventory.size()) {

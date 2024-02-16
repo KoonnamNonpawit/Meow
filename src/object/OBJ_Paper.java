@@ -4,6 +4,8 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.imageio.ImageIO;
 
 import entity.Entity;
@@ -12,7 +14,7 @@ import main.GamePanel;
 public class OBJ_Paper extends Entity{
 
     static GamePanel gp;
-    public static int paperNumber;
+    public ArrayList<OBJ_Paper> folder = new ArrayList<>();
 
     public OBJ_Paper() {
         super(gp, paperNumber);
@@ -74,7 +76,7 @@ public class OBJ_Paper extends Entity{
         solidAreaDefaultY = solidArea.y;
         collision = true;
 
-        description = "[" + name  + "]\nCollect to solve the puzzles.\n \n Press [R] to read";
+        description = "[" + name  + " #" + paperNumber + "]\nCollect to solve the puzzles.\n \n Press [R] to read";
 
     }
 

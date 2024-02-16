@@ -42,6 +42,8 @@ public class Player extends Entity{
     public ArrayList<Entity> inventory = new ArrayList<>();
     public final int maxInventorySize = 20;
 
+    OBJ_Paper paper = new OBJ_Paper();
+
     public Player(GamePanel gp, KeyHandler keyH) {
 
         this.gp = gp;
@@ -66,6 +68,7 @@ public class Player extends Entity{
 
         setDialogue();
     }
+    
     public void setDefaultValues() {
 
         worldX = (gp.tileSize * 23) + (24*gp.scale);
@@ -216,7 +219,8 @@ public class Player extends Entity{
             switch (objectName) {
                 case "Paper":
                     hasPaper += 1;
-                    inventory.add(gp.obj[i]);
+                    inventory.add(new OBJ_Paper(1));
+                    //paper.folder.add(new OBJ_Paper(1));
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a paper!");
                     break;
@@ -319,8 +323,8 @@ public class Player extends Entity{
                     if(i == 379 && giveFlower == 3) {
                         giveFlower = 0;
                         hasPaper += 1;
-                        OBJ_Paper p2 = new OBJ_Paper(2);
-                        inventory.add(p2);
+                        //OBJ_Paper p2 = new OBJ_Paper(2);
+                        inventory.add(new OBJ_Paper(2));
                         gp.ui.showMessage("You got a paper!");
                     }
                 }
@@ -341,8 +345,8 @@ public class Player extends Entity{
                     }
                     else if(i == 5 && giveBrick == 3 && hasPaper < 3) {
                         hasPaper+=1;
-                        OBJ_Paper p3 = new OBJ_Paper(3);
-                        inventory.add(p3);
+                        //OBJ_Paper p3 = new OBJ_Paper(3);
+                        inventory.add(new OBJ_Paper(3));
                         gp.ui.showMessage("You got a paper!");
                     }
                     else if(i == 5 && giveBrick == 3 && hasPaper == 3) {
@@ -523,6 +527,85 @@ public class Player extends Entity{
         dialogues[13][1] = "Each step you take, with purpose clear, Brings you closer, ever near. \nThe light that shines within your soul, Leads you to your destined goal. \nThrough trials faced and battles won, You emerge as the chosen one.";
         dialogues[13][2] = "For in your heart, the flame burns bright, Illuminating the darkest night. \nWith wisdom's touch and mind's embrace, You journey forth with steadfast grace. \nSo onward, Noble One, with pride, Your destiny awaits, untied.";
         dialogues[13][3] = "May hope's sweet song forever sing, As you soar on wisdom's wing.";
+
+        // DIALOGUE THAT PLAYER WILL READ ON THE PAPER
+        dialogues[15][0] = "This language is called Java.\r\n" + //
+                        "\r\n" + //
+                        "Java started by the file HelloWorld.java. Java files have a .java extension. \r\n" + //
+                        "\r\n" + //
+                        "Inside HelloWorld.java, we had a class:\r\n" + //
+                        "\r\n" + //
+                        "public class HelloWorld {\r\n" + //
+                        "\r\n" + //
+                        "}";
+        dialogues[15][1] = "We marked the domain of this concept using curly braces: {}. Syntax inside the curly braces is part of the class.\r\n" + //
+                        "\r\n" + //
+                        "Each file has one primary class named after the file. Our class name: HelloWorld and our file name: HelloWorld. Every word is capitalized.\r\n" + //
+                        "\r\n" + //
+                        "Inside the class we had a main() method which lists our program tasks:\r\n" + //
+                        "\r\n" + //
+                        "public static void main(String[] args) {\r\n" + //
+                        "\r\n" + //
+                        "}";
+        dialogues[15][2] = "We marked the domain of this concept using curly braces: {}. Syntax inside the curly braces is part of the class.\r\n" + //
+                        "\r\n" + //
+                        "Each file has one primary class named after the file. Our class name: HelloWorld and our file name: HelloWorld. Every word is capitalized.\r\n" + //
+                        "\r\n" + //
+                        "Inside the class we had a main() method which lists our program tasks:\r\n" + //
+                        "\r\n" + //
+                        "public static void main(String[] args) {\r\n" + //
+                        "\r\n" + //
+                        "}";
+        dialogues[15][3] = "After \"Hello World\" is printed, the output terminal creates a new line for the next statement to be outputted. This program will print each statement on a new line like so:\r\n" + //
+                        "\r\n" + //
+                        "Hello World\r\n" + //
+                        "Today is a great day to code!\r\n" + //
+                        "\r\n" + //
+                        "We also can output information using System.out.print(). Notice that we’re using print(), not println(). Unlike System.out.println(), this type of print statement outputs everything on the same line. For example:\r\n" + //
+                        "\r\n" + //
+                        "System.out.print(\"Hello \");\r\n" + //
+                        "System.out.print(\"World\");\r\n" + //
+                        "\r\n" + //
+                        "The above code will have the following output:\r\n" + //
+                        "\r\n" + //
+                        "Hello World";
+        dialogues[16][0] = "Writing code is an exciting process of instructing the computer to complete fantastic tasks.\r\n" + //
+                        "\r\n" + //
+                        "Code is also read by people, and we want our intentions to be clear to humans just like we want our instructions to be clear to the computer.\r\n" + //
+                        "\r\n" + //
+                        "Fortunately, we’re not limited to writing syntax that performs a task. We can also write comments, notes to human readers of our code. These comments are not executed, so there’s no need for valid syntax within a comment.";
+        dialogues[16][1] = "When comments are short we use the single-line syntax: //.\r\n" + //
+                        "\r\n" + //
+                        "// calculate customer satisfaction rating\r\n" + //
+                        "\r\n" + //
+                        "When comments are long we use the multi-line syntax: /* and */.\r\n" + //
+                        "\r\n" + //
+                        "/*\r\n" + //
+                        "We chose to store information across multiple databases to\r\n" + //
+                        "minimize the possibility of data loss. We'll need to be careful\r\n" + //
+                        "to make sure it does not go out of sync!\r\n" + //
+                        "*/";
+        dialogues[17][0] = "As we saw with comments, reading code is just as important as writing code.\r\n" + //
+                        "\r\n" + //
+                        "We should write code that is easy for other people to read. Those people can be co-workers, friends, or even yourself!\r\n" + //
+                        "\r\n" + //
+                        "Java does not interpret whitespace, the areas of the code without syntax, but humans use whitespace to read code without difficulty.";
+        dialogues[17][1] = "Functionally, these two code samples are identical:\r\n" + //
+                        "\r\n" + //
+                        "System.out.println(\"Java\");System.out.println(\"Lava\");System.out.println(\"Guava\");\r\n" + //
+                        "\r\n" + //
+                        "System.out.println(\"Java\");\r\n" + //
+                        "\r\n" + //
+                        "System.out.println(\"Lava\");\r\n" + //
+                        "\r\n" + //
+                        "System.out.println(\"Guava\");";
+        dialogues[17][2] = "They will print the same text to the screen, but which would you prefer to read? Imagine if it was hundreds of instructions! Whitespace would be essential.\r\n" + //
+                        "\r\n" + //
+                        "Java does interpret semicolons. Semicolons are used to mark the end of a statement, one line of code that performs a single task.\r\n" + //
+                        "\r\n" + //
+                        "The only statements we’ve seen so far are System.out.println(\"My message!\");.\r\n" + //
+                        "\r\n" + //
+                        "Thank you for the information from Codecademy.";
     }
 
     public void speak(int start) {

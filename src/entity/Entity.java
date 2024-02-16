@@ -36,6 +36,7 @@ public class Entity {
     public String name;
     public boolean collision = false;
     public String description;
+    public static int paperNumber;
     //public int paperNumber;
     public Object entity;
 
@@ -353,6 +354,10 @@ public class Entity {
                 g2.drawImage(image, screenX, screenY, playerTileSize, playerTileSize, null);
             }
         }
+    }
+
+    public int getPaperNumber() {
+        return paperNumber;
     }
 
     public BufferedImage setup(String imagePath) {

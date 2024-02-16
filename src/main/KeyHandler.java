@@ -231,6 +231,9 @@ public class KeyHandler implements KeyListener {
         if(code == KeyEvent.VK_R) {
             rPressed = true;
         }
+        if(code == KeyEvent.VK_ENTER) {
+            enterPressed = true;
+        }
     }
 
     // PUZZLE STATE
