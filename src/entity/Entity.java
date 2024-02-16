@@ -37,6 +37,7 @@ public class Entity {
     public boolean collision = false;
     public String description;
     //public int paperNumber;
+    public Object entity;
 
     public Entity() {
         
@@ -260,7 +261,10 @@ public class Entity {
             if(name == "BT1" && gp.obj[390] != null) {
                 g2.drawImage(image, screenX, screenY, 18 * gp.scale, 16 * gp.scale, null); 
             }
-            if(name == "BT2" && (gp.obj[388] != null || gp.obj[389] != null)) {
+            if(name == "BT21" && gp.obj[388] != null ) {
+                g2.drawImage(image, screenX, screenY, 19 * gp.scale, 16 * gp.scale, null); 
+            }
+            if(name == "BT22" && gp.obj[389] != null) {
                 g2.drawImage(image, screenX, screenY, 19 * gp.scale, 16 * gp.scale, null); 
             }
             if(name == "GA") {

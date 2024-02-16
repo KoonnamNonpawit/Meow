@@ -11,9 +11,9 @@ public class OBJ_SCV extends Entity{
         down1 = setup("res/props/PropsSCV");
         
         solidArea.x = 0;
-        solidArea.y = 0;
+        solidArea.y = 11*3;
         solidArea.width = 32*3;
-        solidArea.height = 57*3;
+        solidArea.height = 46*3;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         collision = true;

@@ -10,5 +10,12 @@ public class OBJ_SCH extends Entity{
         name = "SCH";
         down1 = setup("res/props/PropsSCH");
         
+        solidArea.x = 0;
+        solidArea.y = 11*3;
+        solidArea.width = 64*3;
+        solidArea.height = 25*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

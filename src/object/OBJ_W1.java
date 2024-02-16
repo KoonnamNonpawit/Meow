@@ -11,5 +11,12 @@ public class OBJ_W1 extends Entity{
         name = "W1";
         down1 = setup("res/tiles/TilesetW1");
         
+        solidArea.x = 0;
+        solidArea.y = 0;
+        solidArea.width = 32*3;
+        solidArea.height = 8*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

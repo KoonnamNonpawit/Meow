@@ -10,5 +10,12 @@ public class OBJ_W extends Entity{
         name = "W";
         down1 = setup("res/props/PropsW");
         
+        solidArea.x = 0;
+        solidArea.y = 11*3;
+        solidArea.width = 55*3;
+        solidArea.height = 38*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

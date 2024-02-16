@@ -11,5 +11,12 @@ public class OBJ_PoB extends Entity{
         name = "PoB";
         down1 = setup("res/props/PropsPoB");
        
+        solidArea.x = 1*3;
+        solidArea.y = 20*3;
+        solidArea.width = 23*3;
+        solidArea.height = 7*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

@@ -11,5 +11,12 @@ public class OBJ_PBT6 extends Entity {
         name = "PBT6";
         down1 = setup("res/plant/PlantBT6");
 
+        solidArea.x = 14*3;
+        solidArea.y = 17*3;
+        solidArea.width = 10*3;
+        solidArea.height = 12*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

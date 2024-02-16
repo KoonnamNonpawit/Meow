@@ -1548,10 +1548,12 @@ public class AssetSetter {
         // gp.obj[387].worldY = 21 * gp.tileSize;
 
         gp.obj[388] = new OBJ_BT2();
+        gp.obj[388].name = "BT21";
         gp.obj[388].worldX = 11 * gp.tileSize - (4 * gp.scale);
         gp.obj[388].worldY = 19 * gp.tileSize + (18 * gp.scale);
 
         gp.obj[389] = new OBJ_BT2();
+        gp.obj[389].name = "BT22";
         gp.obj[389].worldX = 35 * gp.tileSize + (5 * gp.scale);
         gp.obj[389].worldY = 29 * gp.tileSize + (10 * gp.scale);
 

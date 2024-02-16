@@ -218,42 +218,42 @@ public class Player extends Entity{
                     hasPaper += 1;
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
-                    gp.entityList.remove(i);
                     gp.ui.showMessage("You got a paper!");
                     break;
                 case "FW1":
                     hasFlower += 1;
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
-                    gp.entityList.remove(i);
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "FW2":
                     hasFlower += 1;
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
-                    gp.entityList.remove(i);
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "FW3":
                     hasFlower += 1;
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
-                    gp.entityList.remove(i);
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "BT1":
                     hasBrick += 1;
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
-                    gp.entityList.remove(i);
                     gp.ui.showMessage("You got a Brick!");
                     break;
-                case "BT2":
+                case "BT21":
                     hasBrick += 1;
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
-                    gp.entityList.remove(i);
+                    gp.ui.showMessage("You got a Brick!");
+                    break;
+                case "BT22":
+                    hasBrick += 1;
+                    inventory.add(gp.obj[i]);
+                    gp.obj[i] = null;
                     gp.ui.showMessage("You got a Brick!");
                     break;
             }
@@ -282,7 +282,7 @@ public class Player extends Entity{
                         start = 3;
                         speak(start);
                     }
-                    if(i == 3 && hasFlower != 3 && hasPaper < 2) {
+                    if(i == 3 && hasFlower < 3 && hasPaper < 2) {
                         start = 3;
                         speak(start);
                     }
@@ -298,9 +298,21 @@ public class Player extends Entity{
                         start = 6;
                         speak(start);
                     }
-                    if((i == 376 || i == 377 || i == 378) && hasFlower == 3 && giveFlower < 3) {
-                        giveFlower = 3;
-                        hasFlower = 0;
+                    if(i == 376 && hasFlower == 3 && giveFlower < 3) {
+                        giveFlower += 1;
+                        hasFlower += 1;
+                        start = 7;
+                        speak(start);
+                    }
+                    if(i == 377 && hasFlower == 4 && giveFlower < 3) {
+                        giveFlower += 1;
+                        hasFlower += 1;
+                        start = 7;
+                        speak(start);
+                    }
+                    if(i == 378 && hasFlower == 5 && giveFlower < 3) {
+                        giveFlower += 1;
+                        hasFlower -= 1;
                         start = 7;
                         speak(start);
                     }

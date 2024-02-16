@@ -11,5 +11,12 @@ public class OBJ_SBE extends Entity{
         name = "SBE";
         down1 = setup("res/props/PropsSBE");
         
+        solidArea.x = 8*3;
+        solidArea.y = 11*3;
+        solidArea.width = 19*3;
+        solidArea.height = 50*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }

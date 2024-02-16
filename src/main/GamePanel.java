@@ -8,22 +8,42 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 import tile.TileManager;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import data.SaveLoad;
 import entity.Entity;
 import entity.Player;
+import object.OBJ_A;
+import object.OBJ_BLM;
+import object.OBJ_GC;
+import object.OBJ_LM;
+import object.OBJ_ST2;
+import object.OBJ_ST4;
+import object.OBJ_T3U;
+import object.OBJ_W0;
+import object.OBJ_W1;
+import object.OBJ_W15;
+import object.OBJ_W16;
+import object.OBJ_W17;
+import object.OBJ_W18;
+import object.OBJ_W19;
+import object.OBJ_W2;
+import object.OBJ_W22;
+import object.OBJ_W23;
+import object.OBJ_W24;
+import object.OBJ_W25;
+import object.OBJ_W26;
+import object.OBJ_W27;
+import object.OBJ_W3;
+import object.OBJ_W7;
+import object.OBJ_W8;
+import object.OBJ_W9;
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -71,8 +91,8 @@ public class GamePanel extends JPanel implements Runnable {
     public Entity obj[] = new Entity[500];
     public ArrayList<Entity> entityList = new ArrayList<>();
 
-    public Entity entity;
-    public Player p;
+    // public Entity entity;
+    // public Player p;
 
 
     // GAME STATE
@@ -223,8 +243,11 @@ public class GamePanel extends JPanel implements Runnable {
             entityList.add(player);
 
             for(int i = 0; i < obj.length; i++) {
-                if(obj[i] != null) {
+                if(obj[i] != null && !(obj[i] instanceof OBJ_A) && !(obj[i] instanceof OBJ_BLM) && !(obj[i] instanceof OBJ_LM) && !(obj[i] instanceof OBJ_ST2) && !(obj[i] instanceof OBJ_ST4) && !(obj[i] instanceof OBJ_GC) && !(obj[i] instanceof OBJ_W0) && !(obj[i] instanceof OBJ_W1) && !(obj[i] instanceof OBJ_W2) && !(obj[i] instanceof OBJ_W3) && !(obj[i] instanceof OBJ_W7) && !(obj[i] instanceof OBJ_W8) && !(obj[i] instanceof OBJ_W9) && !(obj[i] instanceof OBJ_W18) && !(obj[i] instanceof OBJ_W19) && !(obj[i] instanceof OBJ_W22) && !(obj[i] instanceof OBJ_W26) && !(obj[i] instanceof OBJ_W27) && !(obj[i] instanceof OBJ_W15) && !(obj[i] instanceof OBJ_W16) && !(obj[i] instanceof OBJ_W17) && !(obj[i] instanceof OBJ_W23) && !(obj[i] instanceof OBJ_W24) && !(obj[i] instanceof OBJ_W25) && !(obj[i] instanceof OBJ_T3U)) {
                     entityList.add(obj[i]);
+                }
+                if(obj[i] instanceof OBJ_A || obj[i] instanceof OBJ_BLM || obj[i] instanceof OBJ_LM || obj[i] instanceof OBJ_ST2 || obj[i] instanceof OBJ_ST4 || obj[i] instanceof OBJ_GC || obj[i] instanceof OBJ_W0 || obj[i] instanceof OBJ_W1 || obj[i] instanceof OBJ_W2 || obj[i] instanceof OBJ_W3 || obj[i] instanceof OBJ_W7 || obj[i] instanceof OBJ_W8 || obj[i] instanceof OBJ_W9 || obj[i] instanceof OBJ_W18 || obj[i] instanceof OBJ_W19 || obj[i] instanceof OBJ_W22 || obj[i] instanceof OBJ_W26 || obj[i] instanceof OBJ_W27 || obj[i] instanceof OBJ_W15 || obj[i] instanceof OBJ_W16 || obj[i] instanceof OBJ_W17 || obj[i] instanceof OBJ_W23 || obj[i] instanceof OBJ_W24 || obj[i] instanceof OBJ_W25) {
+                    obj[i].draw(g2, this);
                 }
             }
 
@@ -260,6 +283,10 @@ public class GamePanel extends JPanel implements Runnable {
             // EMPTY ENTITY LIST
             for (int i = 0; i < entityList.size(); i++) {
                 entityList.remove(i);
+            }
+
+            if(obj[426] instanceof OBJ_T3U) {
+                obj[426].draw(g2, this);
             }
         
             // UI

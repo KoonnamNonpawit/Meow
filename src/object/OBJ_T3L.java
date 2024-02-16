@@ -10,5 +10,12 @@ public class OBJ_T3L extends Entity{
         name = "T3L";
         down1 = setup("res/plant/PlantT3L");
         
+        solidArea.x = 51*3;
+        solidArea.y = 32*3;
+        solidArea.width = 9*3;
+        solidArea.height = 32*3;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        collision = true;
     }
 }
