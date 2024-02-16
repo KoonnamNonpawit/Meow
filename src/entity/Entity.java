@@ -195,6 +195,12 @@ public class Entity {
             if(name == "W9") {
                 g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
             }
+            if(name == "W16") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
+            if(name == "W24") {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
+            }
             if(name == "W19") {
                 g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null); 
             }
