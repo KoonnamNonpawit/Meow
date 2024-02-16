@@ -238,16 +238,15 @@ public class UI {
     public void drawDialogueScreenForPaper(int i) {
         p = new Player(gp, null);
         // WINDOW
-        int x = gp.tileSize;
-        int y = gp.tileSize*6;
-        int width = gp.screenWidth - (x*2);
-        int height = gp.tileSize*2;
+        int x = gp.tileSize + 50;
+        int y = gp.tileSize + 40;
+        //int width = gp.tileSize*3;
+        //int height = gp.tileSize*6;
 
-        drawSubWindow(x, y, width, height);
-
-        g2.setFont(g2.getFont().deriveFont(Font.PLAIN,30));
-        x += 32*2;
-        y += 32*2;
+        //drawSubWindow(x, y, width, height);
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 20));
+        x += 16;
+        y += 8;
 
         if(p.dialogues[i][j] != null) {
             currentDialogue = p.dialogues[i][j];

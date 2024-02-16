@@ -531,7 +531,7 @@ public class Player extends Entity{
         // DIALOGUE THAT PLAYER WILL READ ON THE PAPER
         dialogues[15][0] = "This language is called Java.\r\n" + //
                         "\r\n" + //
-                        "Java started by the file HelloWorld.java. Java files have a .java extension. \r\n" + //
+                        "Java started by the file HelloWorld.java. \r\nJava files have a .java extension. \r\n" + //
                         "\r\n" + //
                         "Inside HelloWorld.java, we had a class:\r\n" + //
                         "\r\n" + //
