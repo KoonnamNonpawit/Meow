@@ -50,7 +50,7 @@ public class GamePanel extends JPanel implements Runnable {
     Graphics2D g2;
     public boolean fullScreenOn = false;
 
-    // FPS
+    // FPSa
     int FPS = 60;
     int fps;
 

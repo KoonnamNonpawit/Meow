@@ -35,7 +35,7 @@ public class UI {
     public int slotRow = 0;
 
     public Player p;
-    Entity paperNumber;
+    //Entity paperNumber;
     public Entity entity = new Entity();
     public OBJ_Paper paper;
     int index;
@@ -106,12 +106,14 @@ public class UI {
                     } break;
                 
                 case 1:
-                    drawReadPaperScreen();
-                    drawTextPaperScreen(gp.player.inventory.get(index).paperNumber);
                     drawInventory();
-                    if(gp.keyH.rPressed == true) {
+                    if(gp.player.inventory.get(index).name == "Paper") {
+                        drawReadPaperScreen();                        
+                        drawTextPaperScreen(paper.getPaperNumber());
+                        if(gp.keyH.rPressed == true) {
                         subState = 0;
                         gp.keyH.rPressed = false;
+                        }
                     } break;
             }
         }
@@ -293,17 +295,9 @@ public class UI {
         String text = "";
 
         switch (paperNumber) {
-            case 1:
-                text =  "123456789";
-                break;
-        
-            case 2:
-                text = "qwertyuiop[]";
-                break;
-
-            case 3:
-                text = "asdfghjkl;";
-                break;
+            case 1: text = "qwertyuiop[] no.1"; break;
+            case 2: text = "asdfghjkl; no.2"; break;
+            case 3: text = "zxcvbnm,./ no.3"; break;   
         }
 
         for(String line : text.split("\n")) {

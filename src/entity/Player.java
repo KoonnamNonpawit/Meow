@@ -12,6 +12,8 @@ import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.KeyHandler;
+import object.OBJ_BT1;
+import object.OBJ_BT2;
 import object.OBJ_Paper;
 
 
@@ -242,14 +244,14 @@ public class Player extends Entity{
                     break;
                 case "BT1":
                     hasBrick += 1;
-                    // inventory.add(gp.obj[i]);
+                    inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.entityList.remove(i);
                     gp.ui.showMessage("You got a Brick!");
                     break;
                 case "BT2":
                     hasBrick += 1;
-                    // inventory.add(gp.obj[i]);
+                    inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.entityList.remove(i);
                     gp.ui.showMessage("You got a Brick!");
@@ -305,7 +307,8 @@ public class Player extends Entity{
                     if(i == 379 && giveFlower == 3) {
                         giveFlower = 0;
                         hasPaper += 1;
-                        // inventory.add(gp.obj[i]);
+                        OBJ_Paper p2 = new OBJ_Paper(2);
+                        inventory.add(p2);
                         gp.ui.showMessage("You got a paper!");
                     }
                 }
@@ -326,7 +329,8 @@ public class Player extends Entity{
                     }
                     else if(i == 5 && giveBrick == 3 && hasPaper < 3) {
                         hasPaper+=1;
-                        // inventory.add(gp.obj[i]);
+                        OBJ_Paper p3 = new OBJ_Paper(3);
+                        inventory.add(p3);
                         gp.ui.showMessage("You got a paper!");
                     }
                     else if(i == 5 && giveBrick == 3 && hasPaper == 3) {
