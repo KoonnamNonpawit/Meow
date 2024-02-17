@@ -683,15 +683,26 @@ public class UI {
         int x;
         int y;
         String text;
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 1100));
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 80));
 
-        text = "Game Over";
+        text = "You have not passed our test.";
         // Shadow
         g2.setColor(Color.black);
         x = getXforCenteredText(text);
-        y = gp.tileSize*4;
+        y = gp.tileSize*2;
         g2.drawString(text, x, y);
-        // Main
+        // Mains
+        g2.setColor(Color.white);
+        g2.drawString(text, x-5, y-5);
+
+        text = "The path of hope will be extinguished forever.";
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 60));
+        // Shadow
+        g2.setColor(Color.black);
+        x = getXforCenteredText(text);
+        y = (gp.tileSize*2) + 70;
+        g2.drawString(text, x, y);
+        // Mains
         g2.setColor(Color.white);
         g2.drawString(text, x-5, y-5);
 
@@ -708,7 +719,7 @@ public class UI {
         // Back to the title screen
         text = "Quit";
         x = getXforCenteredText(text);
-        y += 55;
+        y += 80;
         g2.drawString(text, x, y);
         if(commandNum == 1) {
             g2.drawString(">", x-40, y);
