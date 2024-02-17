@@ -88,7 +88,7 @@ public class GamePanel extends JPanel implements Runnable {
     // ENTITY AND OBJECT
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player = new Player(this,keyH);
-    public Entity obj[] = new Entity[500];
+    public Entity obj[] = new Entity[600];
     public ArrayList<Entity> entityList = new ArrayList<>();
 
     // public Entity entity;

@@ -316,6 +316,15 @@ public class Entity {
             if(name == "Cr") {
                 g2.drawImage(image, screenX, screenY, 32 * gp.scale, 46 * gp.scale, null); 
             }
+            if(name == "CrS") {
+                g2.drawImage(image, screenX, screenY, 26 * gp.scale, 39 * gp.scale, null); 
+            }
+            if(name == "SC") {
+                g2.drawImage(image, screenX, screenY, 32 * gp.scale, 46 * gp.scale, null); 
+            }
+            if(name == "PBT2") {
+                g2.drawImage(image, screenX, screenY, 27 * gp.scale, 25 * gp.scale, null); 
+            }
             if(name == "PBT4") {
                 g2.drawImage(image, screenX, screenY, 47 * gp.scale, 42 * gp.scale, null); 
             }
