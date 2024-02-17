@@ -268,30 +268,43 @@ public class KeyHandler implements KeyListener {
             }
             if (code == KeyEvent.VK_ENTER) {
                 if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 0) {
-                    gp.gameState = gp.playState;
+                    
                     if(gp.ui.p.correctChoice == 1) {
+                        gp.gameState = gp.playState;
                         gp.ui.p.pz3Finished = true;
+                    }
+                    else if(gp.ui.p.correctChoice != 1){
+                        gp.gameState = gp.gameOverState;
                     }
                 }
                 if(gp.ui.commandPRNum == 0 && gp.ui.commandPCNum == 1) {
-                    gp.gameState = gp.playState;
                     if(gp.ui.p.correctChoice == 2) {
+                        gp.gameState = gp.playState;
                         gp.ui.p.pz2Finished = true;
+                    }
+                    else if(gp.ui.p.correctChoice != 2){
+                        gp.gameState = gp.gameOverState;
                     }
                 }
                 if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 0) {
-                    gp.gameState = gp.playState;
                     if(gp.ui.p.correctChoice == 3) {
+                        gp.gameState = gp.playState;
                         gp.ui.p.pz4Finished = true;
+                    }
+                    else if(gp.ui.p.correctChoice != 3){
+                        gp.gameState = gp.gameOverState;
                     }
                 }
                 if(gp.ui.commandPRNum == 1 && gp.ui.commandPCNum == 1) {
-                    gp.gameState = gp.playState;
                     if(gp.ui.p.correctChoice == 4) {
+                        gp.gameState = gp.playState;
                         gp.ui.p.pz1Finished = true;
                         if(gp.ui.p.pz3Finished == true) {
                             gp.ui.p.correct = 1;
                         }
+                    }
+                    else if(gp.ui.p.correctChoice != 4){
+                        gp.gameState = gp.gameOverState;
                     }
                 }
             }        
