@@ -11,10 +11,10 @@ public class OBJ_PBT2 extends Entity {
         name = "PBT2";
         down1 = setup("res/plant/PlantBT2");
 
-        solidArea.x = 14*3;
-        solidArea.y = 17*3;
-        solidArea.width = 10*3;
-        solidArea.height = 12*3;
+        solidArea.x = 10*3;
+        solidArea.y = 14*3;
+        solidArea.width = 7*3;
+        solidArea.height = 8*3;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         collision = true;

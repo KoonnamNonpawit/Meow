@@ -15,9 +15,9 @@ public class OBJ_CrS extends Entity {
         down1 = setup("res/props/PropsCrS");
 
         solidArea.x = 0;
-        solidArea.y = 23*3;
-        solidArea.width = 32*3;
-        solidArea.height = 23*3;
+        solidArea.y = 20*3;
+        solidArea.width = 26*3;
+        solidArea.height = 19*3;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         collision = true;

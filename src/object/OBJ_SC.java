@@ -16,7 +16,7 @@ public class OBJ_SC extends Entity {
 
         solidArea.x = 0;
         solidArea.y = 23*3;
-        solidArea.width = 32*3;
+        solidArea.width = 31*3;
         solidArea.height = 23*3;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
