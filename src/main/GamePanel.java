@@ -139,6 +139,8 @@ public class GamePanel extends JPanel implements Runnable {
         player.setItems();
         aSetter.setObject();
         // restart puzzle progress
+        player.resetProgress();
+        update();
     }
 
     public void setFullScreen() {
