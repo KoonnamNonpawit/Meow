@@ -32,7 +32,8 @@ public class Sound {
         sound[14] = "res/sound/paper-crinkle-80916.wav"; // paper close
         sound[15] = "res/sound/negative_beeps-6008.wav"; // gameover
         sound[16] = "res/sound/moving-atmosphere-spherical-music-8010.wav"; // ending
-        sound[17] = "res/sound/Meow.wav";
+        sound[17] = "res/sound/Meow.wav"; // meow
+        sound[18] = "res/sound/coin_c_02-102844.wav"; // pick up item
     }
 
     public void setFile(int i) {

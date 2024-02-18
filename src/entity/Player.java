@@ -1,9 +1,6 @@
 package entity;
 
-import java.awt.Font;
-import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,8 +9,6 @@ import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.KeyHandler;
-import object.OBJ_BT1;
-import object.OBJ_BT2;
 import object.OBJ_Paper;
 
 public class Player extends Entity{
@@ -63,7 +58,7 @@ public class Player extends Entity{
 
         setDefaultValues();
         getPlayerImage();
-        setItems();
+        //setItems();
 
         setDialogue();
     }
@@ -72,14 +67,14 @@ public class Player extends Entity{
 
         worldX = (gp.tileSize * 23) + (24*gp.scale);
         worldY = (gp.tileSize * 23) - (5*gp.scale);
-        speed = 7; //7
+        speed = 7;
         direction = "down";
     }
 
-    public void setItems() {
+    // public void setItems() {
 
-        inventory.clear();
-    }
+        
+    // }
 
     public void resetProgress() {
         hasBrick = 0;
@@ -218,11 +213,6 @@ public class Player extends Entity{
             spriteCounter = 0;
 
         }
-
-        // check game over
-        // if(isGameOver == true) {
-        //     gp.gameState = gp.gameOverState;
-        // }
     }
     public void pickUpObject(int i) {
 
@@ -233,43 +223,49 @@ public class Player extends Entity{
             switch (objectName) {
                 case "Paper":
                     hasPaper += 1;
+                    gp.playSE(18);
                     inventory.add(new OBJ_Paper(1));
-                    //paper.folder.add(new OBJ_Paper(1));
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a paper!");
                     break;
                 case "FW1":
                     hasFlower += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "FW2":
                     hasFlower += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "FW3":
                     hasFlower += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "BT1":
                     hasBrick += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a Brick!");
                     break;
                 case "BT21":
                     hasBrick += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a Brick!");
                     break;
                 case "BT22":
                     hasBrick += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a Brick!");
@@ -338,6 +334,7 @@ public class Player extends Entity{
                         giveFlower = 0;
                         hasPaper += 1;
                         //OBJ_Paper p2 = new OBJ_Paper(2);
+                        gp.playSE(18);
                         inventory.add(new OBJ_Paper(2));
                         gp.ui.showMessage("You got a paper!");
                     }
@@ -359,7 +356,6 @@ public class Player extends Entity{
                     }
                     else if(i == 5 && giveBrick == 3 && hasPaper < 3) {
                         hasPaper+=1;
-                        //OBJ_Paper p3 = new OBJ_Paper(3);
                         inventory.add(new OBJ_Paper(3));
                         gp.ui.showMessage("You got a paper!");
                     }
@@ -401,105 +397,6 @@ public class Player extends Entity{
         }
         gp.keyH.enterPressed = false;
     }
-
-    // public void draw(Graphics2D g2) {
-
-    //     int playerTileSize = 48 * gp.scale;
-
-    //     BufferedImage image = null;
-
-    //     int screenX = worldX - gp.player.worldX + gp.player.screenX;
-    //     int screenY = worldY - gp.player.worldY + gp.player.screenY;
-
-    //     if(worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
-    //        worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
-    //        worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
-    //        worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
-    //         switch (direction) {
-    //             case "up": 
-    //                 if(spriteNum == 1) {
-    //                     image = up1;
-    //                 }
-    //                 if(spriteNum == 2) {
-    //                     image = up2;
-    //                 }
-    //                 if(spriteNum == 3) {
-    //                     image = up3;
-    //                 }
-    //                 if(spriteNum == 4) {
-    //                     image = up4;
-    //                 }
-    //                 if(spriteNum == 5) {
-    //                     image = up5;
-    //                 }
-    //                 if(spriteNum == 6) {
-    //                     image = up6;
-    //                 }
-    //                 break;
-    //             case "down":
-    //                 if(spriteNum == 1) {
-    //                     image = down1;
-    //                 }
-    //                 if(spriteNum == 2) {
-    //                     image = down2;
-    //                 }
-    //                 if(spriteNum == 3) {
-    //                     image = down3;
-    //                 }
-    //                 if(spriteNum == 4) {
-    //                     image = down4;
-    //                 }
-    //                 if(spriteNum == 5) {
-    //                     image = down5;
-    //                 }
-    //                 if(spriteNum == 6) {
-    //                     image = down6;
-    //                 }
-    //                 break; 
-    //             case "left":
-    //                 if(spriteNum == 1) {
-    //                     image = left1;
-    //                 }
-    //                 if(spriteNum == 2) {
-    //                     image = left2;
-    //                 }
-    //                 if(spriteNum == 3) {
-    //                     image = left3;
-    //                 }
-    //                 if(spriteNum == 4) {
-    //                     image = left4;
-    //                 }
-    //                 if(spriteNum == 5) {
-    //                     image = left5;
-    //                 }
-    //                 if(spriteNum == 6) {
-    //                     image = left6;
-    //                 }
-    //                 break;
-    //             case "right":
-    //                 if(spriteNum == 1) {
-    //                     image = right1;
-    //                 }
-    //                 if(spriteNum == 2) {
-    //                     image = right2;
-    //                 }
-    //                 if(spriteNum == 3) {
-    //                     image = right3;
-    //                 }
-    //                 if(spriteNum == 4) {
-    //                     image = right4;
-    //                 }
-    //                 if(spriteNum == 5) {
-    //                     image = right5;
-    //                 }
-    //                 if(spriteNum == 6) {
-    //                     image = right6;
-    //                 }
-    //                 break;
-    //         }
-    //         g2.drawImage(image, screenX, screenY, playerTileSize, playerTileSize, null);
-    //     }
-    // }
 
     public void setDialogue() {
 

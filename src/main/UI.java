@@ -36,7 +36,6 @@ public class UI {
     public int slotRow = 0;
 
     public Player p;
-    //Entity paperNumber;
     public Entity entity = new Entity();
     public OBJ_Paper paper;
 
@@ -157,7 +156,7 @@ public class UI {
         // g2.setColor(new Color(0,0,0));
         // g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
 
-        // DRAW IMAGE AS BACKGROUND MAYBE
+        // DRAW IMAGE AS BACKGROUND
         try{
             img = ImageIO.read(new FileInputStream("res/background/Start_Page.png"));
             g2.drawImage(img, 0, 0, 16*gp.tileSize, 9*gp.tileSize, null);
@@ -212,7 +211,9 @@ public class UI {
     
     public void drawPauseScreen() {
 
-        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 80F));
+        drawSubWindow((gp.tileSize*5)+48, (gp.tileSize*3)+12, gp.tileSize*5, gp.tileSize*2);
+
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 96F));
         String text = "PAUSED";
         int x = getXforCenteredText(text);
         int y = gp.screenHeight/2;
@@ -265,10 +266,7 @@ public class UI {
         // WINDOW
         int x = gp.tileSize + 50;
         int y = gp.tileSize + 40;
-        //int width = gp.tileSize*3;
-        //int height = gp.tileSize*6;
-
-        //drawSubWindow(x, y, width, height);
+        
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 20));
         x += 16;
         y += 8;
@@ -384,10 +382,33 @@ public class UI {
             case 0: option_top(frameX, frameY); break;
             case 1: option_fullScreenNotification(frameX, frameY); break;
             case 2: option_control(frameX, frameY); break;
-            case 3: option_endGameConfirmation(frameX, frameY); break;
+            case 3: saveNotification(frameX, frameY); break;
+            case 4: option_endGameConfirmation(frameX, frameY); break;
         }
 
         gp.keyH.enterPressed = false;
+    }
+
+    public void saveNotification(int frameX, int frameY) {
+        int textX = frameX + gp.tileSize;
+        int textY = frameY + gp.tileSize*3;
+
+        currentDialogue = "Your game progresses \nhave been saved";
+
+        for(String line : currentDialogue.split("\n")) {
+            g2.drawString(line, textX, textY);
+            textY += 40;
+        }
+
+        // BACK
+        textY = (int) (frameY + gp.tileSize*5);
+        g2.drawString("Back", textX, textY);
+        if(commandNum == 0) {
+            g2.drawString(">", textX-25, textY);
+            if(gp.keyH.enterPressed == true) {
+                subState = 0;
+            }
+        }
     }
 
     public void option_top(int frameX, int frameY) {
@@ -443,13 +464,25 @@ public class UI {
             }
         }
 
-        // QUIT
+        // SAVE
         textY += gp.tileSize*0.5;
-        g2.drawString("Back to Title", textX, textY);
+        g2.drawString("Save the Game", textX, textY);
         if(commandNum == 4) {
             g2.drawString(">", textX-25, textY);
             if(gp.keyH.enterPressed == true) {
+                gp.saveLoad.save();
                 subState = 3;
+                commandNum = 0;
+            }
+        }
+
+        // QUIT
+        textY += gp.tileSize*0.5;
+        g2.drawString("Back to Title screen", textX, textY);
+        if(commandNum == 5) {
+            g2.drawString(">", textX-25, textY);
+            if(gp.keyH.enterPressed == true) {
+                subState = 4;
                 commandNum = 0;
             }
         }
@@ -457,7 +490,7 @@ public class UI {
         // BACK
         textY += gp.tileSize*1.5;
         g2.drawString("Back", textX, textY);
-        if(commandNum == 5) {
+        if(commandNum == 6) {
             g2.drawString(">", textX-25, textY);
             if(gp.keyH.enterPressed == true) {
                 gp.gameState = gp.playState;
@@ -671,8 +704,6 @@ public class UI {
 
         p.dialoguesSet = p.start;
         drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
- 
-        //drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
 
         int frameX = (gp.tileSize) + (10*gp.scale);
         int frameY = (gp.tileSize*6) - (10*gp.scale);

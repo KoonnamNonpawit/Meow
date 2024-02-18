@@ -17,8 +17,6 @@ public class AssetSetter {
 
     public void setObject() {
 
-        // p = new Player(gp, keyH);
-
         gp.obj[0] = new OBJ_Angel();
         gp.obj[0].worldX = (24 * gp.tileSize) - (3 * gp.scale);
         gp.obj[0].worldY = (21 * gp.tileSize) - (20 * gp.scale);
@@ -46,14 +44,6 @@ public class AssetSetter {
         gp.obj[6] = new OBJ_SCV();
         gp.obj[6].worldX = 9 * gp.tileSize;
         gp.obj[6].worldY = 5 * gp.tileSize;
-
-        // gp.obj[7] = new OBJ_T3L();
-        // gp.obj[7].worldX = 6 * gp.tileSize;
-        // gp.obj[7].worldY = (5 * gp.tileSize) - (10 * gp.scale);// move to obj(425)
-
-        // gp.obj[8] = new OBJ_T3U();
-        // gp.obj[8].worldX = 6 * gp.tileSize;
-        // gp.obj[8].worldY = (2 * gp.tileSize) + (11 * gp.scale);// move to obj(426)
 
         gp.obj[7] = new OBJ_W16();
         gp.obj[7].worldX = 31 * gp.tileSize + (20 * gp.scale);
@@ -1539,10 +1529,6 @@ public class AssetSetter {
         gp.obj[385].worldX = 10 * gp.tileSize;
         gp.obj[385].worldY = 20 * gp.tileSize;
 
-        // gp.obj[386] = new OBJ_FW2();
-        // gp.obj[386].worldX = 12 * gp.tileSize;
-        // gp.obj[386].worldY = 11 * gp.tileSize;
-
         gp.obj[387] = new OBJ_PoA();
         gp.obj[387].worldX = 41 * gp.tileSize + (4 * gp.scale);
         gp.obj[387].worldY = 21 * gp.tileSize - (2 * gp.scale);
@@ -2144,10 +2130,6 @@ public class AssetSetter {
         gp.obj[537] = new OBJ_ST2();
         gp.obj[537].worldX = 46 * gp.tileSize + (6 * gp.scale);
         gp.obj[537].worldY = 22 * gp.tileSize + (10 * gp.scale);
-
-        // gp.obj[538] = new OBJ_PBT2();
-        // gp.obj[538].worldX = 44 * gp.tileSize + (12 * gp.scale);
-        // gp.obj[538].worldY = 25 * gp.tileSize - (8 * gp.scale);
 
         gp.obj[539] = new OBJ_Cr();
         gp.obj[539].worldX = 37 * gp.tileSize - (4 * gp.scale);

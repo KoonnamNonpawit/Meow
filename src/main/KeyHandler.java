@@ -117,12 +117,17 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_ENTER) {
             if(gp.ui.commandNum == 0) {
                 gp.playSE(6);
-                gp.gameState = gp.playState;
                 gp.stopMusic();
                 gp.playMusic(0);
+                gp.gameState = gp.playState;
+                gp.startOver();
             }
             if(gp.ui.commandNum == 1) {
-                // LOAD GAME add later
+                gp.playSE(6);
+                gp.saveLoad.load();
+                gp.stopMusic();
+                gp.gameState = gp.playState;
+                gp.playMusic(0);
             }
             if(gp.ui.commandNum == 2) {
                 System.exit(0);
@@ -163,7 +168,7 @@ public class KeyHandler implements KeyListener {
 
         int maxCommandNum = 0;
         switch (gp.ui.subState) {
-            case 0: maxCommandNum = 5; break;
+            case 0: maxCommandNum = 6; break;
             case 3: maxCommandNum = 1; break;
         }
         if(code == KeyEvent.VK_W) {
