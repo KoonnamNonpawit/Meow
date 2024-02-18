@@ -38,7 +38,6 @@ public class Entity {
     public String description;
     public static int paperNumber;
     //public int paperNumber;
-    public Object entity;
 
     public Entity() {
         

@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -41,6 +42,14 @@ public class UI {
 
     int index;
     int j;
+
+    // Ending
+    public int sceneNum ;
+    public int scenePhase = 0;
+    int counter = 0;
+    float alpha = 0f;
+    int y;
+    String endCredit;
 
     public UI(GamePanel gp) {
         this.gp = gp;
@@ -132,6 +141,11 @@ public class UI {
         // GAME OVER STATE
         if(gp.gameState == gp.gameOverState) {
             drawGameOverScreen();
+        }
+
+        // ENDING STATE
+        if(gp.gameState == gp.gameEndingState) {
+            drawEnding();
         }
     }
 
@@ -739,5 +753,133 @@ public class UI {
         return x;
     }
 
+    public void drawEnding() {
+
+        scene_ending();
+    }
+
+    public void scene_ending() {
+        if(scenePhase == 0) {
+            gp.stopMusic();
+            scenePhase++;
+        }
+        if(scenePhase == 1) {
+            // Display dialogues
+            // gp.ui.drawDialogueScreen();
+            scenePhase++;
+        }
+        if(scenePhase == 2) {
+            // Play the fanfare
+            // gp.playSE(4);
+            scenePhase++;
+        }
+        if(scenePhase == 3) {
+            // Wait until the sound effect ends
+            if(counterReached(300) == true) {
+                scenePhase++;
+            }
+        }
+        if(scenePhase == 4) {
+            // The screen get darker
+            alpha += 0.005f;
+            if(alpha > 1f) {
+                alpha = 1f;
+            }
+            drawBlackBackground(alpha);
+
+            if(alpha == 1f) {
+                alpha = 0;
+                scenePhase++;
+            } 
+        }
+        if(scenePhase == 5) {
+
+            drawBlackBackground(1f);
+
+            alpha += 0.005f;
+            if(alpha > 1f) {
+                alpha = 1f;
+            }
+
+            String text = "You have passed all the trials. \nNow you have proven yourself worthy \nand qualified to be a noble creature, not a beast. \nWishing you the best of luck.";
+            drawString(alpha, 38f, 200, text, 70);
+
+            if(counterReached(780) == true) {
+                gp.playMusic(0);
+                scenePhase++;
+            }
+        }
+        if(scenePhase == 6) {
+
+            drawBlackBackground(1f);
+
+            drawString(1f, 120f, gp.screenHeight/2, "MEOW", 50);
+
+            if(counterReached(480) == true) {
+                scenePhase++;
+            }
+        }
+        if(scenePhase == 7) {
+
+            drawBlackBackground(1f);
+
+            endCredit = "Program \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nPannathorn Nobparat 66050858 \nArt \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nMusic \nPannathorn Nobparat 66050858 \n\n\n\n\n\n\n\n\n\n\n\n\nSpecial Thanks \nAj.Suntana Oudomying \n\n\n\n\n\nThank you for playing!";
+
+            y = gp.tileSize*2;
+            drawString(1f, 38f, y, endCredit, 60);
+
+            if(counterReached(480) == true) {
+                scenePhase++;
+            }
+        }
+        if(scenePhase == 8) {
+
+            drawBlackBackground(1f);
+
+            // Scrolling the creadit
+            y--;
+            drawString(1f, 38f, y, endCredit, 60);
+
+            if(counterReached(1920) == true) {
+                scenePhase++;
+            }
+        }
+        if(scenePhase == 9) {
+            gp.gameState = gp.titleState;
+        }
+    }
+    public boolean counterReached(int target) {
+
+        boolean counterReached = false;
+
+        counter++;
+        if(counter > target) {
+            counterReached = true;
+            counter = 0;
+        }
+
+        return counterReached;
+    }
+    public void drawBlackBackground(float alpha) {
+
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,alpha));
+        g2.setColor(Color.black);
+        g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,1f));
+    }
+
+    public void drawString(float alpha, float fontSize, int y, String text, int lineHeight) {
+
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,alpha));
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(fontSize));
+
+        for(String line: text.split("\n")) {
+            int x = getXforCenteredText(line);
+            g2.drawString(line, x ,y);
+            y+= lineHeight;
+        }
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,1f));
+    }
 }
 

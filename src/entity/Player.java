@@ -16,7 +16,6 @@ import object.OBJ_BT1;
 import object.OBJ_BT2;
 import object.OBJ_Paper;
 
-
 public class Player extends Entity{
     
     GamePanel gp;
@@ -316,7 +315,7 @@ public class Player extends Entity{
                     }
                     if(i == 378 && hasFlower == 5 && giveFlower < 3) {
                         giveFlower += 1;
-                        hasFlower -= 1;
+                        hasFlower += 1;
                         start = 7;
                         speak(start);
                     }
@@ -373,9 +372,13 @@ public class Player extends Entity{
                     }
                 }
                 if (pz3Finished == true && pz4Finished == true) {
-                    if(i == 0) {
+                    if(i == 0 && hasPaper == 3) {
                         start = 13;
                         speak(start);
+                        hasPaper++;
+                    }
+                    else if(i == 0 && hasPaper > 3) {
+                        gp.gameState = gp.gameEndingState;
                     }
                 }
             }
@@ -519,9 +522,9 @@ public class Player extends Entity{
         dialogues[10][2] = "In harmony, they dance and play, Guiding the steps along life's way. \nFor to be noble is to understand, The union of heart, head, and hand. \nSo let us strive, with wisdom's might, To walk with grace and inner light.";
         dialogues[10][3] = "For in the noble animal, we find, A reflection of the noblest kind.";
 
-        dialogues[11][0] = "What is missing from this Java program? \npublic class LanguageFacts { \n \n    // Covers the history of the Java programming language \n \n}";
+        dialogues[11][0] = "[1/2] What is missing from this Java program? \npublic class LanguageFacts { \n \n    // Covers the history of the Java programming language \n \n}";
 
-        dialogues[12][0] = "In Java, what is the purpose of leaving comments in code?";
+        dialogues[12][0] = "[2/2] In Java, what is the purpose of leaving comments in code?";
 
         dialogues[13][0] = "In this moment, you've proven your worth, O Noble One, with wisdom's birth. \nYour mind, a fortress, strong and true, Envelops you in its golden hue. \nWith wisdom's cloak, you tread the path, Guided by hope, through shadow's wrath.";
         dialogues[13][1] = "Each step you take, with purpose clear, Brings you closer, ever near. \nThe light that shines within your soul, Leads you to your destined goal. \nThrough trials faced and battles won, You emerge as the chosen one.";
