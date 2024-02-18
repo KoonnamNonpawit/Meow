@@ -32,7 +32,7 @@ public class Player extends Entity{
     public int correct = 0;
 
     // Game Over occurs when player get a question wrong
-    public boolean isGameOver = false;
+    //public boolean isGameOver = false;
     public boolean pz1Finished,pz2Finished,pz3Finished,pz4Finished,flowerFinished,brickFinished = false;
 
     public int correctChoice = 0;
@@ -72,13 +72,28 @@ public class Player extends Entity{
 
         worldX = (gp.tileSize * 23) + (24*gp.scale);
         worldY = (gp.tileSize * 23) - (5*gp.scale);
-        speed = 10;
+        speed = 10; //7
         direction = "down";
     }
 
     public void setItems() {
 
         inventory.clear();
+    }
+
+    public void resetProgress() {
+        hasBrick = 0;
+        hasPaper = 0;
+        hasFlower = 0;
+        giveBrick = 0;
+        giveFlower = 0;
+        correct = 0;
+        pz1Finished = false;
+        pz2Finished = false;
+        pz3Finished = false;
+        pz4Finished = false;
+        flowerFinished = false;
+        brickFinished = false;
     }
 
     public void getPlayerImage() {
@@ -205,9 +220,9 @@ public class Player extends Entity{
         }
 
         // check game over
-        if(isGameOver == true) {
-            gp.gameState = gp.gameOverState;
-        }
+        // if(isGameOver == true) {
+        //     gp.gameState = gp.gameOverState;
+        // }
     }
     public void pickUpObject(int i) {
 
