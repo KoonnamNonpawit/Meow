@@ -9,20 +9,28 @@ import java.io.File;
 
 public class Sound {
     private Clip clip;
-    private String[] sound = new String[10];
+    private String[] sound = new String[20];
     FloatControl fc;
     int volumeScale = 3;
     float volume;
 
     public Sound() {
-        sound[0] = "res/sound/best-adventure-ever-122726.wav";
-        sound[1] = "res/sound/let-the-mystery-unfold-122118.wav";
-        sound[2] = "res/sound/secrets-of-the-old-library-140000.wav";
-        sound[3] = "res/sound/oh-disappointed-89251.wav"; // se
-        sound[4] = "res/sound/success_bell-6776.wav"; // se
-        sound[5] = "res/sound/success-fanfare-trumpets-6185.wav"; // se
-        sound[6] = "res/sound/switch-button-106349.wav"; // button
+        sound[0] = "res/sound/best-adventure-ever-122726.wav"; // playState
+        sound[1] = "res/sound/let-the-mystery-unfold-122118.wav"; // title
+        sound[2] = "res/sound/secrets-of-the-old-library-140000.wav"; // puzzle
+        sound[3] = "res/sound/oh-disappointed-89251.wav"; // get the puzzle wrong
+        sound[4] = "res/sound/success_bell-6776.wav"; // puzzle success
+        sound[5] = "res/sound/success-fanfare-trumpets-6185.wav"; // last puzzle done
+        sound[6] = "res/sound/switch-button-106349.wav"; // selected
         sound[7] = "res/sound/pause-89443.wav"; // pause
+        sound[8] = "res/sound/unpause-106278.wav"; // unpause
+        sound[9] = "res/sound/shooting-sound-fx-159024.wav"; // scroll
+        sound[10] = "res/sound/inventory-open-94932.wav"; // inventory open
+        sound[11] = "res/sound/inventory-close-94504.wav"; // inventory close
+        sound[12] = "res/sound/unfold-a-map-46452.wav"; // paper open
+        sound[13] = "res/sound/pageturn-102978.wav"; // next page
+        sound[14] = "res/sound/paper-crinkle-80916.wav"; // paper close
+        sound[15] = "res/sound/negative_beeps-6008.wav"; // gameover
     }
 
     public void setFile(int i) {

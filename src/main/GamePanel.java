@@ -118,12 +118,13 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void setupGame() {
 
+        gameState = titleState;
+
         // Play music when on TITLE Screen
         if(gameState == titleState) {
             playMusic(1);
         }
 
-        gameState = titleState;
         aSetter.setObject();
 
         tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB);
@@ -142,6 +143,13 @@ public class GamePanel extends JPanel implements Runnable {
         // restart puzzle progress
         player.resetProgress();
         update();
+        if(gameState == gameOverState) {
+           playMusic(0); 
+        }
+        if(gameState == titleState) {
+            playMusic(1);
+        }
+        
     }
 
     public void setFullScreen() {

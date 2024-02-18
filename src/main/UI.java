@@ -560,6 +560,8 @@ public class UI {
         if(commandNum == 0) {
             g2.drawString(">", textX-25, textY-100);
             if(gp.keyH.enterPressed == true) {
+                gp.stopMusic();
+                gp.playMusic(1);
                 subState = 0;
                 gp.gameState = gp.titleState;
             }
