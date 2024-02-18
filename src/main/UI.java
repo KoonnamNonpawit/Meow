@@ -849,7 +849,7 @@ public class UI {
             y--;
             drawString(1f, 38f, y, endCredit, 60);
 
-            if(counterReached(2400) == true) {
+            if(counterReached(2520) == true) {
                 scenePhase++;
             }
         }
