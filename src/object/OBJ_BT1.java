@@ -18,10 +18,10 @@ public class OBJ_BT1 extends Entity{
         down1 = setup("res/props/PropsBT1");
 
         try {
-            BufferedImage originalImage = ImageIO.read(new FileInputStream("res/props/PropsBT1.png"));
+            BufferedImage originalImage = ImageIO.read(new FileInputStream("res/props/PropsBT1R.png"));
 
-            int newWidth = 85;
-            int newHeight = 85;
+            int newWidth = 85; 
+            int newHeight = 85;  
 
             image = new BufferedImage(newWidth, newHeight, originalImage.getType());
 
