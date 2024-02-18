@@ -2079,9 +2079,9 @@ public class AssetSetter {
         gp.obj[524].worldX = 24 * gp.tileSize;
         gp.obj[524].worldY = (13 * gp.tileSize) - (6 * gp.scale);
 
-        gp.obj[525] = new OBJ_PoC();
-        gp.obj[525].worldX = 21 * gp.tileSize + (8 * gp.scale);
-        gp.obj[525].worldY = 16 * gp.tileSize;
+        // gp.obj[525] = new OBJ_PoC();
+        // gp.obj[525].worldX = 21 * gp.tileSize + (8 * gp.scale);
+        // gp.obj[525].worldY = 16 * gp.tileSize;
 
         gp.obj[526] = new OBJ_SBE();
         gp.obj[526].worldX = 38 * gp.tileSize + (12 * gp.scale);
