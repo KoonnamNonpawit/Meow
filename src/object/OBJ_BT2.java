@@ -42,6 +42,6 @@ public class OBJ_BT2 extends Entity{
         solidAreaDefaultY = solidArea.y;
         collision = true;
 
-        description = "A brick";
+        description = "[Brick]\nCollect 3 of them to repair the pillar";
     }
 }

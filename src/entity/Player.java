@@ -58,7 +58,7 @@ public class Player extends Entity{
 
         setDefaultValues();
         getPlayerImage();
-        setItems();
+        //setItems();
 
         setDialogue();
     }
@@ -71,10 +71,10 @@ public class Player extends Entity{
         direction = "down";
     }
 
-    public void setItems() {
+    // public void setItems() {
 
-        inventory.clear();
-    }
+        
+    // }
 
     public void resetProgress() {
         hasBrick = 0;
@@ -223,42 +223,49 @@ public class Player extends Entity{
             switch (objectName) {
                 case "Paper":
                     hasPaper += 1;
+                    gp.playSE(18);
                     inventory.add(new OBJ_Paper(1));
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a paper!");
                     break;
                 case "FW1":
                     hasFlower += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "FW2":
                     hasFlower += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "FW3":
                     hasFlower += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a flower!");
                     break;
                 case "BT1":
                     hasBrick += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a Brick!");
                     break;
                 case "BT21":
                     hasBrick += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a Brick!");
                     break;
                 case "BT22":
                     hasBrick += 1;
+                    gp.playSE(18);
                     inventory.add(gp.obj[i]);
                     gp.obj[i] = null;
                     gp.ui.showMessage("You got a Brick!");
@@ -326,6 +333,8 @@ public class Player extends Entity{
                     if(i == 379 && giveFlower == 3) {
                         giveFlower = 0;
                         hasPaper += 1;
+                        //OBJ_Paper p2 = new OBJ_Paper(2);
+                        gp.playSE(18);
                         inventory.add(new OBJ_Paper(2));
                         gp.ui.showMessage("You got a paper!");
                     }

@@ -132,7 +132,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void startOver() {
         player.setDefaultValues();
-        player.setItems();
+        player.inventory.clear();
         aSetter.setObject();
         // restart puzzle progress
         player.resetProgress();
