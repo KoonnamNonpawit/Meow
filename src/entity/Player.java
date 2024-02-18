@@ -72,7 +72,7 @@ public class Player extends Entity{
 
         worldX = (gp.tileSize * 23) + (24*gp.scale);
         worldY = (gp.tileSize * 23) - (5*gp.scale);
-        speed = 10; //7
+        speed = 7; //7
         direction = "down";
     }
 
@@ -639,7 +639,7 @@ public class Player extends Entity{
             text1 = "double num = 5.5";
             text2 = "String str = \"Java\";";
             text3 = "int counter = 10;";
-            text4 = "System.out.println(\"Meow\")";
+            text4 = "System.out.println(\"Meow\");";
             correctChoice = 1;
         }
         if(start == 11) {

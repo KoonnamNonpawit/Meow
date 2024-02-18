@@ -41,7 +41,7 @@ public class UI {
     public OBJ_Paper paper;
 
     int index;
-    int j;
+    public int j;
 
     // Ending
     public int sceneNum ;
@@ -50,6 +50,8 @@ public class UI {
     float alpha = 0f;
     int y;
     String endCredit;
+
+    BufferedImage img;
 
     public UI(GamePanel gp) {
         this.gp = gp;
@@ -152,24 +154,33 @@ public class UI {
     public void drawTitleScreen() {
 
         // SET BACKGROUND COLOR
-        g2.setColor(new Color(0,0,0));
-        g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+        // g2.setColor(new Color(0,0,0));
+        // g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+
+        // DRAW IMAGE AS BACKGROUND MAYBE
+        try{
+            img = ImageIO.read(new FileInputStream("res/background/Start_Page.png"));
+            g2.drawImage(img, 0, 0, 16*gp.tileSize, 9*gp.tileSize, null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // TITLE NAME
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 96F));
         String text = "MEOW";
         int x = getXforCenteredText(text);
-        int y = gp.tileSize*3;
+        int y = gp.tileSize*2;
 
         // SHADOW (draw same text but shift right 5px)
-        g2.setColor(Color.gray);
+        g2.setColor(new Color(64,68,62,150));
         g2.drawString(text, x+5, y+5);
 
         // MAIN TITLE COLOR
-        g2.setColor(Color.white);
+        g2.setColor(new Color(64,68,62));
         g2.drawString(text, x, y);
 
-        // DRAW IMAGE AS BACKGROUND MAYBE
+        
+        
 
         // MENU
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 48F));
@@ -772,7 +783,7 @@ public class UI {
         }
         if(scenePhase == 2) {
             // Play the fanfare
-            // gp.playSE(4);
+            gp.playSE(16);
             scenePhase++;
         }
         if(scenePhase == 3) {
@@ -807,6 +818,8 @@ public class UI {
             drawString(alpha, 38f, 200, text, 70);
 
             if(counterReached(780) == true) {
+                gp.stopSE();
+                gp.playSE(17);
                 gp.playMusic(0);
                 scenePhase++;
             }
@@ -825,7 +838,7 @@ public class UI {
 
             drawBlackBackground(1f);
 
-            endCredit = "Program \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nPannathorn Nobparat 66050858 \nArt \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nMusic \nPannathorn Nobparat 66050858 \n\n\n\n\n\n\n\n\n\n\n\n\nSpecial Thanks \nAj.Suntana Oudomying \n\n\n\n\n\nThank you for playing!";
+            endCredit = "Program \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nPannathorn Nobparat 66050858 \nArt \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nMusic \nPannathorn Nobparat 66050858 \n\n\n\n\n\n\n\n\n\n\n\n\nSpecial Thanks \nCodecademy \nOpenGameArt.org \nPixabay \nFreeconvert \nCainos \nFreepik \nRyiSnow \nAj.Suntana Oudomying \n\n\n\n\n\nThank you for playing!";
 
             y = gp.tileSize*2;
             drawString(1f, 38f, y, endCredit, 60);
@@ -842,7 +855,7 @@ public class UI {
             y--;
             drawString(1f, 38f, y, endCredit, 60);
 
-            if(counterReached(1920) == true) {
+            if(counterReached(2400) == true) {
                 scenePhase++;
             }
         }

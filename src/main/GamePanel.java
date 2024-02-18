@@ -149,6 +149,7 @@ public class GamePanel extends JPanel implements Runnable {
         if(gameState == titleState) {
             playMusic(1);
         }
+        ui.j = 0;
         
     }
 
@@ -355,5 +356,9 @@ public class GamePanel extends JPanel implements Runnable {
 
         se.setFile(i);
         se.play();
+    }
+    public void stopSE() {
+
+        se.stop();
     }
 }

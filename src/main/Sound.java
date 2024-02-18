@@ -31,6 +31,8 @@ public class Sound {
         sound[13] = "res/sound/pageturn-102978.wav"; // next page
         sound[14] = "res/sound/paper-crinkle-80916.wav"; // paper close
         sound[15] = "res/sound/negative_beeps-6008.wav"; // gameover
+        sound[16] = "res/sound/moving-atmosphere-spherical-music-8010.wav"; // ending
+        sound[17] = "res/sound/Meow.wav";
     }
 
     public void setFile(int i) {
