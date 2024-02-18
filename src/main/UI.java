@@ -838,7 +838,7 @@ public class UI {
 
             drawBlackBackground(1f);
 
-            endCredit = "Program \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nPannathorn Nobparat 66050858 \nArt \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nMusic \nPannathorn Nobparat 66050858 \n\n\n\n\n\n\n\n\n\n\n\n\nSpecial Thanks \nCodecademy \nOpenGameArt.org \nPixabay \nFreeconvert \nCainos \nFreepik \nRyiSnow \nAj.Suntana Oudomying \n\n\n\n\n\nThank you for playing!";
+            endCredit = "Program \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nPannathorn Nobparat 66050858 \nArt \nNonpawit Jantaros 66050780 \nNantikarn Kaewlodla 66050803 \nMusic \nPannathorn Nobparat 66050858 \n\n\n\n\n\n\n\n\n\n\n\n\nSpecial Thanks \nCodecademy \nOpenGameArt.org \nPixabay \nFreeconvert \nChatGPT \nMachinetranslation \nCainos \nFreepik \nRyiSnow \nAj.Suntana Oudomying \n\n\n\n\n\nThank you for playing!";
 
             y = gp.tileSize*2;
             drawString(1f, 38f, y, endCredit, 60);
