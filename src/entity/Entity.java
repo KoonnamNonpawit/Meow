@@ -37,7 +37,6 @@ public class Entity {
     public boolean collision = false;
     public String description;
     public static int paperNumber;
-    //public int paperNumber;
 
     public Entity() {
         

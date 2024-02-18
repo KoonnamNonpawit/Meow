@@ -48,7 +48,7 @@ import object.OBJ_W9;
 public class GamePanel extends JPanel implements Runnable {
 
     // SCREEN SETTING
-    final int originalTileSize = 32; //16
+    final int originalTileSize = 32;
     public final int scale = 3;
 
     public final int tileSize = originalTileSize * scale; 
@@ -60,8 +60,6 @@ public class GamePanel extends JPanel implements Runnable {
     // WORLD MAP SETTINGS
     public final int maxWorldCol = 50;
     public final int maxWorldRow = 50;
-    //public final int worldWidth = tileSize * maxScreenCol;
-    //public final int worldHeight = tileSize * maxScreenRow;
 
     // FOR FULL SCREEN
     int screenWidth2 = screenWidth;
@@ -90,10 +88,6 @@ public class GamePanel extends JPanel implements Runnable {
     public Player player = new Player(this,keyH);
     public Entity obj[] = new Entity[600];
     public ArrayList<Entity> entityList = new ArrayList<>();
-
-    // public Entity entity;
-    // public Player p;
-
 
     // GAME STATE
     public int gameState;
@@ -240,16 +234,6 @@ public class GamePanel extends JPanel implements Runnable {
         } else {
             // TILE
             tileM.draw(g2);
-        
-            // // OBJECT
-            // for(int i = 0; i < obj.length; i++) {
-            //     if(obj[i] != null) {
-            //         obj[i].draw(g2, this);
-            //     }
-            // }
-                
-            // // PLAYER
-            // player.draw(g2);
 
             // ADD ENTITIES TO THE LIST
             entityList.add(player);
@@ -264,16 +248,6 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
             // SORT
-            // Collections.sort(entityList, new Comparator<Entity>() {
-
-            //     @Override
-            //     public int compare(Entity e1, Entity e2) {
-                    
-            //         int result = Integer.compare(e1.worldX, e2.worldY);
-            //         return result;
-            //     }
-                
-            // });
             Collections.sort(entityList, new Comparator<Entity>() {
                 @Override
                 public int compare(Entity e1, Entity e2) {
@@ -284,13 +258,6 @@ public class GamePanel extends JPanel implements Runnable {
             // DRAW ENTITIES
             for (int i = 0; i < entityList.size(); i++) {
                 entityList.get(i).draw(g2,this);
-                // if(entityList.get(i) == player) {
-                //     player.draw(g2);
-                // }
-                // else {
-                //     SuperObject s = (SuperObject)(entityList.get(i));
-                //     s.draw(g2);
-                // }
             }
             // EMPTY ENTITY LIST
             for (int i = 0; i < entityList.size(); i++) {

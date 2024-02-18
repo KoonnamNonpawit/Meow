@@ -36,7 +36,6 @@ public class UI {
     public int slotRow = 0;
 
     public Player p;
-    //Entity paperNumber;
     public Entity entity = new Entity();
     public OBJ_Paper paper;
 
@@ -157,7 +156,7 @@ public class UI {
         // g2.setColor(new Color(0,0,0));
         // g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
 
-        // DRAW IMAGE AS BACKGROUND MAYBE
+        // DRAW IMAGE AS BACKGROUND
         try{
             img = ImageIO.read(new FileInputStream("res/background/Start_Page.png"));
             g2.drawImage(img, 0, 0, 16*gp.tileSize, 9*gp.tileSize, null);
@@ -265,10 +264,7 @@ public class UI {
         // WINDOW
         int x = gp.tileSize + 50;
         int y = gp.tileSize + 40;
-        //int width = gp.tileSize*3;
-        //int height = gp.tileSize*6;
-
-        //drawSubWindow(x, y, width, height);
+        
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 20));
         x += 16;
         y += 8;
@@ -671,8 +667,6 @@ public class UI {
 
         p.dialoguesSet = p.start;
         drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
- 
-        //drawDialogueScreen_Resizable(gp.tileSize, gp.tileSize, gp.tileSize*14, gp.tileSize*7);
 
         int frameX = (gp.tileSize) + (10*gp.scale);
         int frameY = (gp.tileSize*6) - (10*gp.scale);
