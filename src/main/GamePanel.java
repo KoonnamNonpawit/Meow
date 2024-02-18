@@ -288,8 +288,11 @@ public class GamePanel extends JPanel implements Runnable {
                 entityList.remove(i);
             }
 
-            if(obj[426] instanceof OBJ_T3U) {
+            if(obj[426] instanceof OBJ_T3U || obj[508] instanceof OBJ_T3U || obj[522] instanceof OBJ_T3U || obj[560] instanceof OBJ_T3U) {
                 obj[426].draw(g2, this);
+                obj[508].draw(g2, this);
+                obj[522].draw(g2, this);
+                obj[560].draw(g2, this);
             }
         
             // UI
