@@ -171,11 +171,11 @@ public class UI {
         int y = gp.tileSize*2;
 
         // SHADOW (draw same text but shift right 5px)
-        g2.setColor(new Color(64,68,62,150));
+        g2.setColor(new Color(174,166,153,150));
         g2.drawString(text, x+5, y+5);
 
         // MAIN TITLE COLOR
-        g2.setColor(new Color(64,68,62));
+        g2.setColor(new Color(123,114,104));
         g2.drawString(text, x, y);
 
         
